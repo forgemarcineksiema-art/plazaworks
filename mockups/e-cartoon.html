@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PlazaWorks · makieta E · Wyspy</title>
+<style>
+@font-face {
+  font-family: 'Lilita One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/lilita-one-22.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lilita One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/lilita-one-23.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/rubik-24.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/rubik-25.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/rubik-24.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/rubik-25.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/rubik-24.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/rubik-25.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+/* Makieta E — kreskówkowe niebo z Orbling Skies i Cloudkeep: grube kontury, naklejki, chmury. Jeden jasny świat. */
+:root {
+  --sky1: #7cc8ff; --sky2: #d4efff; --ink: #2a2346; --paper: #ffffff; --cream: #fff7e8;
+  --orange: #ff8a3d; --yellow: #ffd23f; --green: #67cf58; --purple: #8e6cf0; --pink: #ff6fa8; --mute: #5d5675;
+  --f-head: "Lilita One", "Arial Rounded MT Bold", sans-serif;
+  --f-body: "Rubik", system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font: 400 1.05rem/1.6 var(--f-body); background: var(--sky2); overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+.wrap { max-width: 1180px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 36px); }
+.out { border: 3px solid var(--ink); box-shadow: 5px 6px 0 var(--ink); border-radius: 22px; }
+
+.sky { background: linear-gradient(180deg, var(--sky1) 0%, #a8dcff 60%, var(--sky2) 100%); position: relative; overflow: hidden; padding-bottom: 80px; }
+.cloud { position: absolute; width: 220px; height: 70px; background: #fff; border-radius: 60px; opacity: .9; }
+.cloud::before, .cloud::after { content: ""; position: absolute; background: #fff; border-radius: 50%; }
+.cloud::before { width: 90px; height: 90px; left: 30px; top: -45px; }
+.cloud::after { width: 120px; height: 120px; left: 90px; top: -60px; }
+@media (prefers-reduced-motion: no-preference) { .cloud { animation: drift 40s linear infinite alternate; } }
+@keyframes drift { to { transform: translateX(80px); } }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 20px; flex-wrap: wrap; position: relative; z-index: 2; }
+.logo { font: 400 2rem/1 var(--f-head); text-decoration: none; color: #fff; -webkit-text-stroke: 2px var(--ink); paint-order: stroke fill; text-shadow: 3px 4px 0 var(--ink); }
+.logo span { color: var(--yellow); }
+.top nav { display: flex; gap: 8px; flex-wrap: wrap; }
+.top nav a { text-decoration: none; font-weight: 700; background: #fff; padding: 8px 14px; border-radius: 999px; border: 2.5px solid var(--ink); }
+.top nav a:hover { background: var(--yellow); }
+
+.hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 40px; align-items: center; padding-top: 36px; position: relative; z-index: 2; }
+.hero h1 { font: 400 clamp(3rem, 6.8vw, 5.8rem)/.98 var(--f-head); color: #fff; -webkit-text-stroke: 3px var(--ink); paint-order: stroke fill; text-shadow: 5px 6px 0 var(--ink); }
+.hero h1 .y { color: var(--yellow); }
+.hero p.lead { margin-top: 24px; background: var(--paper); padding: 18px 20px; font-size: 1.1rem; max-width: 30em; }
+.cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+.btn { display: inline-block; text-decoration: none; font: 400 1.25rem/1 var(--f-head); letter-spacing: .02em; padding: 16px 24px; background: var(--orange); color: #fff; -webkit-text-stroke: 1px var(--ink); border: 3px solid var(--ink); border-radius: 18px; box-shadow: 0 6px 0 var(--ink); transition: transform .1s, box-shadow .1s; }
+.btn:hover { transform: translateY(2px); box-shadow: 0 4px 0 var(--ink); }
+.btn.green { background: var(--green); }
+.stack { position: relative; min-height: 380px; }
+.stack figure { position: absolute; margin: 0; width: 72%; overflow: hidden; background: #fff; }
+.stack figure img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.stack .s1 { left: 0; top: 0; transform: rotate(-5deg); z-index: 1; }
+.stack .s2 { right: 0; top: 110px; transform: rotate(4deg); z-index: 2; }
+.stack .s3 { left: 12%; top: 220px; transform: rotate(-1.5deg); z-index: 3; width: 60%; }
+.badge { position: absolute; z-index: 4; right: 4%; top: -10px; background: var(--yellow); font: 400 1rem/1.1 var(--f-head); text-align: center; width: 110px; height: 110px; border-radius: 50%; display: grid; place-items: center; border: 3px solid var(--ink); transform: rotate(10deg); box-shadow: 4px 5px 0 var(--ink); padding: 10px; }
+
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: -40px; position: relative; z-index: 3; }
+.stat { background: var(--paper); padding: 16px 18px; }
+.stat b { font: 400 2.2rem/1 var(--f-head); display: block; color: var(--purple); }
+.stat:nth-child(2) b { color: var(--orange); } .stat:nth-child(3) b { color: var(--green); } .stat:nth-child(4) b { color: var(--pink); }
+.stat span { color: var(--mute); font-size: .95rem; }
+
+section { padding-block: 80px; }
+.sh { text-align: center; margin-bottom: 40px; display: grid; gap: 10px; justify-items: center; }
+.sh h2 { font: 400 clamp(2.4rem, 5vw, 3.8rem)/1 var(--f-head); }
+.sh p { color: var(--mute); max-width: 34em; }
+
+.games { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.game { background: var(--paper); overflow: hidden; display: grid; grid-template-rows: auto 1fr; transition: transform .15s; }
+.game:nth-child(3n+1) { transform: rotate(-1deg); } .game:nth-child(3n+3) { transform: rotate(1deg); }
+.game:hover { transform: rotate(0) translateY(-6px); }
+.game img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-bottom: 3px solid var(--ink); }
+.game .b { padding: 16px 18px 20px; display: grid; gap: 8px; align-content: start; }
+.game h3 { font: 400 1.6rem/1.05 var(--f-head); }
+.game p { color: var(--mute); font-size: .96rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 4px 0 0; }
+.chips li { list-style: none; font: 700 .76rem/1 var(--f-body); padding: 6px 10px; border-radius: 999px; border: 2px solid var(--ink); background: var(--cream); }
+.chips li.hot { background: var(--yellow); }
+
+.svc-wrap { background: var(--cream); border-block: 3px solid var(--ink); }
+.svcs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.svc { background: var(--paper); padding: 22px; display: grid; gap: 10px; align-content: start; }
+.svc .ico { width: 56px; height: 56px; border-radius: 16px; border: 3px solid var(--ink); display: grid; place-items: center; font: 400 1.4rem/1 var(--f-head); color: #fff; -webkit-text-stroke: 1px var(--ink); }
+.svc h3 { font: 400 1.5rem/1.05 var(--f-head); }
+.svc p { color: var(--mute); font-size: .96rem; }
+
+.ai { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
+.bubble { background: var(--paper); padding: 24px; position: relative; }
+.bubble h3 { font: 400 1.8rem/1 var(--f-head); margin-bottom: 12px; }
+.bubble ul { margin: 0; padding: 0; display: grid; gap: 10px; }
+.bubble li { list-style: none; padding-left: 30px; position: relative; color: var(--mute); }
+.bubble li::before { content: "★"; position: absolute; left: 0; top: -2px; font-size: 1.2rem; color: var(--orange); -webkit-text-stroke: 1px var(--ink); }
+.bubble::after { content: ""; position: absolute; left: 40px; bottom: -22px; width: 30px; height: 30px; background: var(--paper); border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); transform: rotate(45deg) skew(10deg, 10deg); }
+
+.contact { background: linear-gradient(180deg, var(--sky2), var(--sky1)); text-align: center; padding-block: 100px; position: relative; overflow: hidden; }
+.contact h2 { font: 400 clamp(2.8rem, 7vw, 5.4rem)/1 var(--f-head); color: #fff; -webkit-text-stroke: 3px var(--ink); paint-order: stroke fill; text-shadow: 5px 6px 0 var(--ink); }
+.contact p { margin: 22px auto 30px; max-width: 32em; font-size: 1.12rem; }
+footer { background: var(--ink); color: #cfc8ea; padding-block: 18px; font-size: .9rem; }
+
+@media (max-width: 900px) {
+  .hero, .ai { grid-template-columns: minmax(0, 1fr); }
+  .games { grid-template-columns: minmax(0, 1fr); }
+  .stats, .svcs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stack { min-height: 0; display: grid; gap: 14px; } .stack figure { position: relative; inset: auto; width: 100%; transform: none !important; } .stack .s3 { display: none; } .badge { display: none; }
+  .stats { margin-top: 24px; }
+}
+@media (max-width: 520px) { .svcs { grid-template-columns: minmax(0, 1fr); } }
+</style>
+</head>
+<body>
+<div class="sky">
+  <span class="cloud" style="left:6%;top:160px"></span>
+  <span class="cloud" style="right:10%;top:90px;transform:scale(.7)"></span>
+  <span class="cloud" style="left:44%;top:560px;transform:scale(.8)"></span>
+  <div class="wrap">
+    <div class="top">
+      <a class="logo" href="#">Plaza<span>Works</span></a>
+      <nav><a href="#gry">Gry</a><a href="#uslugi">Usługi</a><a href="#ai">AI</a><a href="#kontakt">Kontakt</a></nav>
+    </div>
+    <header class="hero">
+      <div>
+        <h1>Gry, które chce się <span class="y">odpalić</span> jeszcze raz!</h1>
+        <p class="lead out">Cześć, jestem Marcin, a PlazaWorks to moje mini studio. Robię gry na przeglądarkę i desktop, strony, aplikacje i programy na zamówienie. Od pomysłu do premiery, z AI na pokładzie.</p>
+        <div class="cta"><a class="btn" href="#gry">Zobacz gry</a><a class="btn green" href="#kontakt">Napisz do mnie</a></div>
+      </div>
+      <div class="stack">
+        <figure class="out s1"><img src="../assets/img/orbling-cover.webp" alt="Orbling Skies"></figure>
+        <figure class="out s2"><img src="../assets/img/cloudkeep-cover.webp" alt="Cloudkeep"></figure>
+        <figure class="out s3"><img src="../assets/img/fragile-hub.webp" alt="Fragile Express"></figure>
+        <div class="badge">Gotowe na Poki!</div>
+      </div>
+    </header>
+  </div>
+</div>
+
+<div class="wrap stats">
+  <div class="stat out"><b>48</b><span>Orblingów do złapania</span></div>
+  <div class="stat out"><b>620 KB</b><span>cała gra, z grafiką i dźwiękiem</span></div>
+  <div class="stat out"><b>10</b><span>języków w jednej grze</span></div>
+  <div class="stat out"><b>263 000</b><span>linii kodu w Ruście</span></div>
+</div>
+
+<section id="gry"><div class="wrap">
+  <div class="sh"><h2>Moje gry</h2><p>Grafika i dźwięk w wielu z nich powstają w samym kodzie, więc ładują się w mgnieniu oka.</p></div>
+  <div class="games">
+    <article class="game out"><img src="../assets/img/orbling-battle.webp" alt="Orbling Skies, walka"><div class="b"><h3>Orbling Skies</h3><p>Łap Orblingi na sześciu latających wyspach, trenuj je w turowych walkach i zbierz 12 legend Zodiaku.</p><ul class="chips"><li class="hot">Gotowa na Poki</li><li>9 języków</li></ul></div></article>
+    <article class="game out"><img src="../assets/img/blast-cover.webp" alt="Blast Battalion"><div class="b"><h3>Blast Battalion</h3><p>Run-and-gun z niszczalnym terenem: 12 bohaterów, 3 bossów i tryb Arcade z kartami ulepszeń.</p><ul class="chips"><li class="hot">v1.33</li><li>Pixel art</li></ul></div></article>
+    <article class="game out"><img src="../assets/img/cloudkeep-cover.webp" alt="Cloudkeep"><div class="b"><h3>Cloudkeep</h3><p>Broń latającej fortecy przed armadą Mosiężnego Barona. Co poziom nowa wieża albo mocniejsze działo.</p><ul class="chips"><li class="hot">1.0 RC</li><li>Pion i poziom</li></ul></div></article>
+    <article class="game out"><img src="../assets/img/fragile-hub.webp" alt="Fragile Express"><div class="b"><h3>Fragile Express</h3><p>Sortuj paczki, ładuj vany i zatrudniaj ludzi, aż sortownia działa sama. Ostrożnie ze szkłem!</p><ul class="chips"><li class="hot">MVP</li><li>10 języków</li></ul></div></article>
+    <article class="game out"><img src="../assets/img/driving-coast.webp" alt="Untitled Driving Game"><div class="b"><h3>Untitled Driving Game</h3><p>Otwarta wyspa, siedem klas aut i pościgi aż po helikopter z reflektorem.</p><ul class="chips"><li class="hot">W produkcji</li><li>Three.js</li></ul></div></article>
+    <article class="game out"><img src="../assets/img/tanki-sniper.webp" alt="Tanki"><div class="b"><h3>Tanki</h3><p>Bitwy czołgów 7 na 7 w przeglądarce. Bitwa startuje w 20 sekund od kliknięcia.</p><ul class="chips"><li class="hot">W produkcji</li><li>Boty</li></ul></div></article>
+  </div>
+</div></section>
+
+<section class="svc-wrap" id="uslugi"><div class="wrap">
+  <div class="sh"><h2>Co mogę dla Ciebie zrobić?</h2><p>Ogarnę całość albo dołączę tam, gdzie brakuje rąk.</p></div>
+  <div class="svcs">
+    <div class="svc out"><span class="ico" style="background:var(--orange)">G</span><h3>Gry</h3><p>Od pomysłu do premiery na Poki, CrazyGames, w przeglądarce i na desktopie.</p></div>
+    <div class="svc out"><span class="ico" style="background:var(--purple)">W</span><h3>Strony i aplikacje</h3><p>Projekt, frontend, backend i wdrożenie. Ładnie i szybko.</p></div>
+    <div class="svc out"><span class="ico" style="background:var(--green)">S</span><h3>Programy</h3><p>Narzędzia, automatyzacje i serwery. Gdy liczy się wydajność, Rust.</p></div>
+    <div class="svc out"><span class="ico" style="background:var(--pink)">AI</span><h3>Wdrożenia AI</h3><p>Modele językowe, agenci i automatyzacja pracy, z zasadami jakości.</p></div>
+  </div>
+</div></section>
+
+<section id="ai"><div class="wrap">
+  <div class="sh"><h2>AI w moim warsztacie</h2></div>
+  <div class="ai">
+    <div class="bubble out"><h3>W grach</h3><ul><li>Boty wypełniają drużyny w Tanki</li><li>Symulowani gracze testują Blast Battalion przed premierą</li><li>Bot-gracz sprawdza ekonomię Fragile Express</li></ul></div>
+    <div class="bubble out"><h3>W produkcji</h3><ul><li>Zespół agentów AI pisze i testuje kod</li><li>Zielone testy przed każdym commitem</li><li>Spisane kontrakty etapów i warunki odbioru</li></ul></div>
+  </div>
+</div></section>
+
+<section class="contact" id="kontakt"><div class="wrap">
+  <h2>Zróbmy razem coś fajnego!</h2>
+  <p>Gra, strona, aplikacja albo wdrożenie AI. Napisz, a odpowiem z pomysłem, terminem i wyceną.</p>
+  <a class="btn" href="https://github.com/forgemarcineksiema-art">Napisz do mnie</a>
+</div></section>
+<footer><div class="wrap">© 2026 PlazaWorks · Marcin Płaza</div></footer>
+</body>
+</html>

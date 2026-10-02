@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PlazaWorks · makieta D · Plan techniczny</title>
+<style>
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/ibm-plex-mono-12.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/ibm-plex-mono-13.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/ibm-plex-mono-14.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/ibm-plex-mono-15.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/ibm-plex-sans-condensed-16.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/ibm-plex-sans-condensed-17.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/ibm-plex-sans-condensed-18.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/ibm-plex-sans-condensed-19.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/ibm-plex-sans-condensed-20.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/ibm-plex-sans-condensed-21.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+/* Makieta D — rysunek techniczny: niebieski papier, siatka, linie wymiarowe i tabliczka rysunkowa. Celowo jeden, ciemny motyw. */
+:root {
+  --paper: #0d3a6b; --paper2: #0a3060; --ink: #e9f2ff; --dim: #9fbbe0; --grid: rgb(233 242 255 / .07); --grid2: rgb(233 242 255 / .14);
+  --amber: #ffc857; --line: rgb(233 242 255 / .55);
+  --f-head: "IBM Plex Sans Condensed", "Arial Narrow", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); font: 400 1rem/1.6 var(--f-head); overflow-x: hidden;
+  background-color: var(--paper);
+  background-image: linear-gradient(var(--grid2) 1px, transparent 1px), linear-gradient(90deg, var(--grid2) 1px, transparent 1px), linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+.wrap { max-width: 1200px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 40px); }
+.mono { font-family: var(--f-mono); }
+.note { font: 400 .74rem/1.4 var(--f-mono); color: var(--amber); letter-spacing: .04em; }
+.sheet { border: 2px solid var(--ink); margin-block: 24px; position: relative; }
+.sheet::before { content: ""; position: absolute; inset: 6px; border: 1px solid var(--line); pointer-events: none; }
+
+.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding: 22px 26px; border-bottom: 1px solid var(--line); }
+.logo { font: 700 1.3rem/1 var(--f-head); letter-spacing: .14em; text-transform: uppercase; text-decoration: none; }
+.top nav { display: flex; gap: 22px; flex-wrap: wrap; font: 400 .85rem/1 var(--f-mono); }
+.top nav a { text-decoration: none; color: var(--dim); }
+.top nav a:hover { color: var(--amber); }
+
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; padding: clamp(28px, 5vw, 56px) 26px; align-items: center; }
+.hero h1 { font: 700 clamp(2.2rem, 4vw, 3.7rem)/.95 var(--f-head); text-transform: uppercase; letter-spacing: .01em; }
+.hero h1 span { color: var(--amber); }
+.hero .lead { margin-top: 22px; color: var(--dim); font-size: 1.12rem; max-width: 32em; }
+.cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+.btn { font: 500 .85rem/1 var(--f-mono); text-decoration: none; padding: 14px 18px; border: 1.5px solid var(--ink); text-transform: uppercase; letter-spacing: .06em; }
+.btn.fill { background: var(--ink); color: var(--paper); }
+.btn:hover { border-color: var(--amber); color: var(--amber); }
+.btn.fill:hover { background: var(--amber); color: var(--paper); }
+
+/* Rysunek z liniami wymiarowymi */
+.drawing { position: relative; padding: 28px 0 0 36px; }
+.drawing img { border: 1.5px solid var(--ink); width: 100%; aspect-ratio: 16/9; object-fit: cover; filter: saturate(.85); }
+.dim-h { position: absolute; top: 4px; left: 36px; right: 0; height: 14px; border-left: 1px solid var(--ink); border-right: 1px solid var(--ink); }
+.dim-h::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; border-top: 1px solid var(--ink); }
+.dim-h span, .dim-v span { position: absolute; background: var(--paper); padding: 0 6px; font: 400 .7rem/1 var(--f-mono); }
+.dim-h span { left: 50%; top: 1px; transform: translateX(-50%); }
+.dim-v { position: absolute; left: 6px; top: 28px; bottom: 0; width: 14px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.dim-v::before { content: ""; position: absolute; top: 0; bottom: 0; left: 7px; border-left: 1px solid var(--ink); }
+.dim-v span { top: 50%; left: -10px; transform: translateY(-50%) rotate(-90deg); }
+.callout { position: absolute; right: -8px; bottom: 26px; background: var(--paper); border: 1px solid var(--amber); padding: 8px 10px; font: 400 .72rem/1.4 var(--f-mono); color: var(--amber); max-width: 230px; }
+
+.titleblock { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.titleblock div { padding: 12px 18px; border-left: 1px solid var(--line); }
+.titleblock div:first-child { border-left: 0; }
+.titleblock small { display: block; font: 400 .66rem/1.2 var(--f-mono); color: var(--dim); text-transform: uppercase; letter-spacing: .08em; }
+.titleblock b { font: 600 1.05rem/1.4 var(--f-head); }
+
+section { padding: 56px 26px; border-top: 1px solid var(--line); }
+.sh { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 18px; margin-bottom: 32px; }
+.sh .note { order: -1; width: 100%; }
+.sh h2 { font: 700 clamp(1.9rem, 3.8vw, 3rem)/1 var(--f-head); text-transform: uppercase; }
+
+.parts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.part { border: 1px solid var(--line); background: rgb(10 48 96 / .6); display: grid; grid-template-rows: auto 1fr; }
+.part figure { margin: 0; position: relative; border-bottom: 1px solid var(--line); }
+.part img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.part figure figcaption { position: absolute; left: 8px; top: 8px; background: var(--paper); border: 1px solid var(--ink); font: 400 .66rem/1 var(--f-mono); padding: 5px 7px; }
+.part .b { padding: 16px 18px 18px; display: grid; gap: 10px; align-content: start; }
+.part h3 { font: 700 1.4rem/1.05 var(--f-head); text-transform: uppercase; }
+.part p { color: var(--dim); font-size: .95rem; }
+.spec { width: 100%; border-collapse: collapse; font: 400 .74rem/1.4 var(--f-mono); }
+.spec td { border-top: 1px dashed var(--line); padding: 6px 0; vertical-align: top; }
+.spec td:first-child { color: var(--dim); width: 40%; text-transform: uppercase; }
+
+.schema { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 36px; align-items: center; }
+.schema p { color: var(--dim); }
+.tree { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; position: relative; }
+.node { border: 1.5px solid var(--ink); padding: 10px 12px; background: var(--paper2); font: 400 .75rem/1.4 var(--f-mono); }
+.node b { display: block; font: 600 .95rem/1.2 var(--f-head); text-transform: uppercase; color: var(--amber); margin-bottom: 4px; }
+
+.svc { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); }
+.svc div { padding: 20px; border-left: 1px solid var(--line); display: grid; gap: 8px; align-content: start; }
+.svc div:first-child { border-left: 0; }
+.svc h3 { font: 700 1.25rem/1.1 var(--f-head); text-transform: uppercase; }
+.svc p { color: var(--dim); font-size: .94rem; }
+
+.contact { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+.contact h2 { font: 700 clamp(2.4rem, 5.4vw, 4.6rem)/.95 var(--f-head); text-transform: uppercase; }
+.contact p { color: var(--dim); margin-top: 16px; max-width: 34em; }
+footer { padding: 14px 26px; border-top: 1px solid var(--line); font: 400 .72rem/1 var(--f-mono); color: var(--dim); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 900px) {
+  .hero, .schema, .contact { grid-template-columns: minmax(0, 1fr); }
+  .parts { grid-template-columns: minmax(0, 1fr); }
+  .svc { grid-template-columns: repeat(2, minmax(0, 1fr)); } .svc div:nth-child(3) { border-left: 0; } .svc div:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .titleblock { grid-template-columns: repeat(2, minmax(0, 1fr)); } .titleblock div:nth-child(3) { border-left: 0; } .titleblock div:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .callout { position: static; margin-top: 10px; max-width: none; }
+}
+@media (max-width: 520px) { .tree { grid-template-columns: repeat(2, minmax(0, 1fr)); } .svc { grid-template-columns: minmax(0, 1fr); } .svc div { border-left: 0; border-top: 1px solid var(--line); } .svc div:first-child { border-top: 0; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="sheet">
+  <div class="top">
+    <a class="logo" href="#">PlazaWorks</a>
+    <nav><a href="#czesci">01 Projekty</a><a href="#schemat">02 Rust</a><a href="#uslugi">03 Usługi</a><a href="#kontakt">04 Kontakt</a></nav>
+  </div>
+
+  <header class="hero">
+    <div>
+      <p class="note">ARKUSZ 1 · WIDOK OGÓLNY</p>
+      <h1 style="margin-top:14px">Inżynieria <span>gier</span> i oprogramowania</h1>
+      <p class="lead">PlazaWorks to mini studio Marcina Płazy. Gry, strony, aplikacje i software na zamówienie, zaprojektowane jak maszyna: z pomiarem, testem i budżetem wydajności.</p>
+      <div class="cta"><a class="btn fill" href="#czesci">Zobacz projekty</a><a class="btn" href="#kontakt">Kontakt</a></div>
+    </div>
+    <div class="drawing">
+      <div class="dim-h"><span>960 px</span></div>
+      <div class="dim-v"><span>540 px</span></div>
+      <img src="../assets/img/wot-garage.webp" alt="Tiger II w garażu, render z silnika WOT">
+      <div class="callout">A — renderer wgpu: cienie kaskadowe, SSAO, HDR, bloom. Cel 60 FPS na GeForce MX330.</div>
+    </div>
+  </header>
+
+  <div class="titleblock">
+    <div><small>Projektant</small><b>Marcin Płaza</b></div>
+    <div><small>Pracownia</small><b>PlazaWorks</b></div>
+    <div><small>Specjalność</small><b>Gry · Web · Rust · AI</b></div>
+    <div><small>Kod Rust (WOT)</small><b>263 000 linii · 35 crate'ów</b></div>
+  </div>
+
+  <section id="czesci">
+    <div class="sh"><p class="note">ARKUSZ 2 · ZESTAWIENIE CZĘŚCI</p><h2>Projekty</h2></div>
+    <div class="parts">
+      <article class="part">
+        <figure><img src="../assets/img/driving-streets.webp" alt="Untitled Driving Game"><figcaption>POZ. 01</figcaption></figure>
+        <div class="b"><h3>Untitled Driving Game</h3><p>Open world w przeglądarce. Każde auto to bryła sztywna z zawieszeniem i skrzynią biegów.</p>
+          <table class="spec"><tr><td>Silnik</td><td>Three.js + Rapier</td></tr><tr><td>Assety</td><td>0 plików, wszystko z kodu</td></tr><tr><td>Status</td><td>W produkcji</td></tr></table></div>
+      </article>
+      <article class="part">
+        <figure><img src="../assets/img/tanki-sniper.webp" alt="Tanki"><figcaption>POZ. 02</figcaption></figure>
+        <div class="b"><h3>Tanki</h3><p>Bitwy czołgów 7v7 z botami. Bez losowych obrażeń, każdy strzał ma werdykt.</p>
+          <table class="spec"><tr><td>Silnik</td><td>TypeScript + Three.js</td></tr><tr><td>Start</td><td>bitwa w 20 s</td></tr><tr><td>Status</td><td>W produkcji</td></tr></table></div>
+      </article>
+      <article class="part">
+        <figure><img src="../assets/img/orbling-battle.webp" alt="Orbling Skies"><figcaption>POZ. 03</figcaption></figure>
+        <div class="b"><h3>Orbling Skies</h3><p>RPG z łapaniem stworków na latających wyspach. 48 Orblingów, 9 języków.</p>
+          <table class="spec"><tr><td>Silnik</td><td>JavaScript + Canvas</td></tr><tr><td>Rozmiar</td><td>ok. 620 KB (zip)</td></tr><tr><td>Status</td><td>Gotowa na Poki</td></tr></table></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="schemat">
+    <div class="sh"><p class="note">ARKUSZ 3 · SCHEMAT BLOKOWY</p><h2>Rust w skali produkcyjnej</h2></div>
+    <div class="schema">
+      <p>WOT to workspace z 35 crate'ami, od kerneli geometrii po serwer dedykowany. Każdy pojazd to jeden plik RON, z którego powstaje hitbox, pancerz i siatka do renderu. Każda zmiana ma test, który blokuje jej zachowanie.</p>
+      <div class="tree">
+        <div class="node"><b>foundation</b>game_core, terrain</div>
+        <div class="node"><b>kernels</b>sdf, sweep, loft, revolve</div>
+        <div class="node"><b>vehicle</b>forge, build, recipes</div>
+        <div class="node"><b>world</b>map_forge, scene_build</div>
+        <div class="node"><b>runtime</b>sim, physics, net, audio</div>
+        <div class="node"><b>render</b>renderer_wgpu</div>
+        <div class="node"><b>apps</b>client, server, editor</div>
+        <div class="node"><b>ui</b>ui_kit</div>
+        <div class="node"><b>tooling</b>quality</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="uslugi">
+    <div class="sh"><p class="note">ARKUSZ 4 · ZAKRES PRAC</p><h2>Usługi</h2></div>
+    <div class="svc">
+      <div><span class="note">A</span><h3>Gry</h3><p>Od koncepcji do premiery na portalach, w przeglądarce i na desktopie.</p></div>
+      <div><span class="note">B</span><h3>Strony i aplikacje</h3><p>Projekt UI, frontend, backend, testy E2E i wdrożenie.</p></div>
+      <div><span class="note">C</span><h3>Software</h3><p>Narzędzia, edytory, automatyzacje i serwery w Ruście, Node.js i Pythonie.</p></div>
+      <div><span class="note">D</span><h3>AI</h3><p>Integracje LLM, agenci i workflow AI dla zespołów, z bramkami jakości.</p></div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="contact">
+    <div><p class="note">ARKUSZ 5 · ZAMÓWIENIE</p><h2 style="margin-top:12px">Masz projekt do zbudowania?</h2><p>Opisz, czego potrzebujesz. Odpowiem z zakresem, terminem i wyceną.</p></div>
+    <div class="cta" style="justify-content:flex-end"><a class="btn fill" href="https://github.com/forgemarcineksiema-art">GitHub ↗</a></div>
+  </section>
+
+  <footer><span>© 2026 PlazaWorks · Marcin Płaza</span><span>SKALA 1:1 · ARKUSZ 1–5</span></footer>
+</div>
+</div>
+</body>
+</html>

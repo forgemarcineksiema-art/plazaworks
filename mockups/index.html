@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlazaWorks · makiety stylu</title>
+<style>
+:root { --bg: #f2f2f0; --ink: #141414; --mute: #666; --card: #fff; --line: #ddd; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --bg: #111; --ink: #eee; --mute: #999; --card: #1b1b1b; --line: #2c2c2c; color-scheme: dark; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.55 system-ui, sans-serif; }
+.wrap { max-width: 1200px; margin-inline: auto; padding: 40px 16px 64px; }
+h1 { margin: 0 0 6px; font-size: 2rem; }
+p.lead { margin: 0 0 32px; color: var(--mute); max-width: 44em; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 24px; }
+a.card { display: grid; text-decoration: none; color: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; transition: transform .15s; }
+a.card:hover { transform: translateY(-3px); }
+a.card img { width: 100%; height: auto; aspect-ratio: 16/10; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid var(--line); }
+.b { padding: 16px 18px 20px; display: grid; gap: 6px; }
+.b h2 { margin: 0; font-size: 1.15rem; }
+.b p { margin: 0; color: var(--mute); font-size: .95rem; }
+.k { font: 600 .72rem/1 ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>PlazaWorks · makiety stylu</h1>
+  <p class="lead">Ta sama treść i te same zrzuty z gier w pięciu różnych stylach. Kliknij makietę, żeby otworzyć pełną stronę. Każda działa też na telefonie.</p>
+  <div class="grid">
+    <a class="card" href="../index.html"><img src="thumbs/a.webp" alt="Makieta A"><div class="b"><span class="k">A · obecna strona</span><h2>Hala produkcyjna</h2><p>Beton, tusz i żółty sygnał z oznaczeń posadzki. Profesjonalnie i technicznie, z odrobiną charakteru. Jasny i ciemny motyw, PL/EN.</p></div></a>
+    <a class="card" href="b-arcade.html"><img src="thumbs/b.webp" alt="Makieta B"><div class="b"><span class="k">B</span><h2>Automat</h2><p>Salon gier: piksele, neon, scanlines, „Wybierz grę” i „Continue?”. Od razu widać, że to studio gier.</p></div></a>
+    <a class="card" href="c-swiss.html"><img src="thumbs/c.webp" alt="Makieta C"><div class="b"><span class="k">C</span><h2>Indeks</h2><p>Styl szwajcarski: jeden krój, siatka, czerwona kropka i projekty jako tabela. Najbardziej „agencyjnie”, dobre dla klientów spoza gier.</p></div></a>
+    <a class="card" href="d-blueprint.html"><img src="thumbs/d.webp" alt="Makieta D"><div class="b"><span class="k">D</span><h2>Plan techniczny</h2><p>Rysunek inżynierski: niebieski papier, linie wymiarowe, tabliczka rysunkowa i schemat crate'ów. Podkreśla Rust i inżynierię.</p></div></a>
+    <a class="card" href="e-cartoon.html"><img src="thumbs/e.webp" alt="Makieta E"><div class="b"><span class="k">E</span><h2>Wyspy</h2><p>Kreskówkowe niebo jak w Orbling Skies i Cloudkeep: grube kontury, naklejki, chmury. Najcieplejsze i najbardziej przyjazne.</p></div></a>
+  </div>
+</div>
+</body>
+</html>

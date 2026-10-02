@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PlazaWorks · makieta B · Automat</title>
+<style>
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/chakra-petch-0.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/chakra-petch-1.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/chakra-petch-2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/chakra-petch-3.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/chakra-petch-4.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/chakra-petch-5.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/pixelify-sans-6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/pixelify-sans-7.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/pixelify-sans-6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/pixelify-sans-7.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/press-start-2p-8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/press-start-2p-9.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+/* Makieta B — salon gier: indygo, piksele, neon z okładki Blast Battalion. Jeden ciemny świat, celowo bez motywu jasnego. */
+:root {
+  --bg: #120f2e; --bg2: #1b1745; --panel: #221d55; --ink: #f4f1ff; --dim: #a59fd6;
+  --pink: #ff4fa3; --cyan: #3fd8ff; --gold: #ffd23f; --line: #3a3480;
+  --f-pix: "Pixelify Sans", "Courier New", monospace;
+  --f-8bit: "Press Start 2P", "Courier New", monospace;
+  --f-body: "Chakra Petch", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.05rem/1.6 var(--f-body); overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+.wrap { max-width: 1180px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 36px); }
+.px { box-shadow: 0 -4px 0 0 var(--c, var(--line)), 0 4px 0 0 var(--c, var(--line)), -4px 0 0 0 var(--c, var(--line)), 4px 0 0 0 var(--c, var(--line)); }
+.label { font: 400 .62rem/1.6 var(--f-8bit); letter-spacing: .04em; text-transform: uppercase; }
+
+.hud { background: #000; border-bottom: 4px solid var(--line); }
+.hud .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; padding-block: 10px; }
+.hud span b { color: var(--gold); font-weight: 400; }
+.hud span:first-child b { color: var(--pink); }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; flex-wrap: wrap; }
+.logo { font: 700 1.7rem/1 var(--f-pix); text-decoration: none; letter-spacing: .02em; }
+.logo span { color: var(--cyan); }
+.top nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.top nav a { text-decoration: none; color: var(--dim); }
+.top nav a:hover { color: var(--gold); }
+
+.hero { position: relative; padding-block: 56px 72px; overflow: hidden; }
+.hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgb(0 0 0 / .18) 0 2px, transparent 2px 4px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.hero h1 { font: 700 clamp(3rem, 7.4vw, 6.2rem)/.92 var(--f-pix); text-shadow: 4px 4px 0 var(--pink), 8px 8px 0 #000; }
+.hero h1 em { font-style: normal; color: var(--gold); }
+.hero p.lead { margin-top: 24px; font-size: 1.18rem; color: var(--ink); max-width: 32em; }
+.cta { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 32px; }
+.btn { --c: #000; display: inline-block; text-decoration: none; padding: 16px 20px; background: var(--gold); color: #120f2e; font: 400 .72rem/1 var(--f-8bit); }
+.btn.alt { background: var(--cyan); }
+.btn:hover { transform: translate(-2px, -2px); }
+.blink { animation: blink 1.1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .blink { animation: none; } }
+.screen { --c: var(--cyan); background: #000; padding: 10px; transform: rotate(1.2deg); }
+.screen img { image-rendering: pixelated; width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.screen .label { display: flex; justify-content: space-between; padding: 10px 2px 2px; color: var(--cyan); }
+
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; padding-block: 8px 72px; }
+.stat { --c: var(--line); background: var(--bg2); padding: 18px; }
+.stat b { display: block; font: 700 2.2rem/1 var(--f-pix); color: var(--gold); }
+.stat span { color: var(--dim); font-size: .95rem; }
+
+section.block { padding-block: 72px; border-top: 4px dashed var(--line); }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 36px; }
+.head h2 { font: 700 clamp(2rem, 4.4vw, 3.2rem)/1 var(--f-pix); }
+.head h2::before { content: "▶ "; color: var(--pink); }
+.head .label { color: var(--dim); }
+
+.select { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.game { --c: var(--line); background: var(--panel); display: grid; grid-template-rows: auto 1fr; transition: transform .12s; }
+.game:hover { --c: var(--gold); transform: translateY(-4px); }
+.game img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-bottom: 4px solid #000; }
+.game .body { padding: 18px 20px 22px; display: grid; gap: 10px; align-content: start; }
+.game h3 { font: 700 1.7rem/1 var(--f-pix); }
+.game .label { color: var(--cyan); }
+.game p { color: var(--dim); font-size: .98rem; }
+.bars { display: grid; gap: 6px; margin-top: 4px; }
+.bar { display: grid; grid-template-columns: 92px minmax(0, 1fr); align-items: center; gap: 10px; font: 400 .55rem/1 var(--f-8bit); color: var(--dim); }
+.bar i { display: block; height: 10px; background: repeating-linear-gradient(90deg, var(--pink) 0 8px, transparent 8px 10px); width: var(--v); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.tags li { list-style: none; font: 400 .55rem/1 var(--f-8bit); padding: 7px 8px; background: #000; color: var(--gold); }
+.tags { padding: 0; margin: 6px 0 0; }
+
+.powerups { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.pu { --c: var(--line); background: var(--bg2); padding: 22px; display: grid; gap: 12px; align-content: start; }
+.pu .ico { width: 48px; height: 48px; display: grid; place-items: center; font: 400 1.1rem/1 var(--f-8bit); color: #120f2e; background: var(--k); }
+.pu h3 { font: 700 1.4rem/1.1 var(--f-pix); }
+.pu p { color: var(--dim); font-size: .95rem; }
+
+.ai { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+.terminal { --c: var(--cyan); background: #000; padding: 22px; font: 400 .95rem/1.8 "Courier New", monospace; color: #b8f7ff; }
+.terminal .p { color: var(--pink); }
+.ai-copy { display: grid; gap: 16px; align-content: start; }
+.ai-copy p { color: var(--dim); }
+.ai-copy ul { margin: 0; padding: 0; display: grid; gap: 10px; }
+.ai-copy li { list-style: none; padding-left: 26px; position: relative; }
+.ai-copy li::before { content: "★"; position: absolute; left: 0; color: var(--gold); }
+
+.continue { text-align: center; padding-block: 96px; border-top: 4px dashed var(--line); background: radial-gradient(ellipse at center, #2a2170 0%, var(--bg) 70%); }
+.continue h2 { font: 700 clamp(2.6rem, 8vw, 6rem)/1 var(--f-pix); color: var(--gold); text-shadow: 4px 4px 0 var(--pink); }
+.continue p { margin: 20px auto 32px; max-width: 34em; color: var(--dim); font-size: 1.1rem; }
+.count { font: 400 2rem/1 var(--f-8bit); color: var(--pink); margin-top: 18px; }
+footer { padding-block: 22px; background: #000; color: var(--dim); }
+
+@media (max-width: 860px) {
+  .hero-grid, .ai { grid-template-columns: minmax(0, 1fr); }
+  .stats, .powerups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .select { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) { .stats, .powerups { grid-template-columns: minmax(0, 1fr); } .hud span:nth-child(2) { display: none; } }
+</style>
+</head>
+<body>
+<div class="hud label"><div class="wrap">
+  <span>1UP <b>MARCIN PŁAZA</b></span>
+  <span>HI-SCORE <b>263 000</b> LINII RUSTA</span>
+  <span>CREDITS <b>9</b></span>
+</div></div>
+
+<div class="wrap top">
+  <a class="logo" href="#">PLAZA<span>WORKS</span></a>
+  <nav><a href="#gry">Gry</a><a href="#uslugi">Usługi</a><a href="#ai">AI</a><a href="#kontakt">Kontakt</a></nav>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="label" style="color:var(--cyan);margin-bottom:22px">Mini studio · gry · web · Rust · AI</p>
+      <h1>Gram <em>na serio.</em> Kodzę na serio.</h1>
+      <p class="lead">PlazaWorks to mini studio Marcina Płazy. Robię gry na przeglądarkę i desktop, strony, aplikacje i oprogramowanie na zamówienie. Od pomysłu do premiery, z AI na każdym etapie.</p>
+      <div class="cta">
+        <a class="btn px" href="#gry">▶ Start</a>
+        <a class="btn alt px" href="#kontakt">2P: Kontakt</a>
+      </div>
+      <p class="label blink" style="margin-top:28px;color:var(--gold)">Press start to continue</p>
+    </div>
+    <figure class="screen px" style="margin:0">
+      <img src="../assets/img/blast-cover.webp" width="1280" height="720" alt="Okładka Blast Battalion">
+      <figcaption class="label"><span>Blast Battalion</span><span>v1.33</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="wrap stats">
+  <div class="stat px"><b>263K</b><span>linii Rusta w jednym silniku</span></div>
+  <div class="stat px"><b>3000+</b><span>testów w Ruście</span></div>
+  <div class="stat px"><b>620 KB</b><span>cała gra Orbling Skies</span></div>
+  <div class="stat px"><b>10</b><span>języków w jednej grze</span></div>
+</div>
+
+<section class="block" id="gry">
+  <div class="wrap">
+    <div class="head"><h2>Wybierz grę</h2><span class="label">7 tytułów · 2 prototypy</span></div>
+    <div class="select">
+      <article class="game px">
+        <img src="../assets/img/driving-coast.webp" alt="Untitled Driving Game">
+        <div class="body">
+          <span class="label">Open world · przeglądarka</span>
+          <h3>Untitled Driving Game</h3>
+          <p>Kradniesz, rozbijasz, zmieniasz auto i gubisz policję na wyspie z czterema dzielnicami. Cały świat i muzyka powstają w kodzie.</p>
+          <div class="bars"><div class="bar">Fizyka<i style="--v:90%"></i></div><div class="bar">Chaos<i style="--v:80%"></i></div></div>
+          <ul class="tags"><li>TypeScript</li><li>Three.js</li><li>Rapier</li></ul>
+        </div>
+      </article>
+      <article class="game px">
+        <img src="../assets/img/wot-garage.webp" alt="WOT, garaż">
+        <div class="body">
+          <span class="label">Sieć · Windows · Rust</span>
+          <h3>WOT</h3>
+          <p>Czołgi 7v7 i 15v15, własny renderer wgpu i serwer autorytatywny. Penetracja liczona względem prawdziwych płyt pancerza 3D.</p>
+          <div class="bars"><div class="bar">Silnik<i style="--v:100%"></i></div><div class="bar">Sieć<i style="--v:85%"></i></div></div>
+          <ul class="tags"><li>Rust</li><li>wgpu</li><li>WGSL</li></ul>
+        </div>
+      </article>
+      <article class="game px">
+        <img src="../assets/img/orbling-cover.webp" alt="Orbling Skies">
+        <div class="body">
+          <span class="label">RPG · gotowa na Poki</span>
+          <h3>Orbling Skies</h3>
+          <p>48 Orblingów do złapania na sześciu latających wyspach. 9 języków, ok. 620 KB, zero plików graficznych.</p>
+          <div class="bars"><div class="bar">Urok<i style="--v:95%"></i></div><div class="bar">Lekkość<i style="--v:100%"></i></div></div>
+          <ul class="tags"><li>JavaScript</li><li>Canvas</li></ul>
+        </div>
+      </article>
+      <article class="game px">
+        <img src="../assets/img/cloudkeep-cover.webp" alt="Cloudkeep">
+        <div class="body">
+          <span class="label">Tower survivor · 1.0 RC</span>
+          <h3>Cloudkeep</h3>
+          <p>Latająca forteca kontra armada Mosiężnego Barona. Co poziom 1 z 3 ulepszeń, po czterech minutach boss.</p>
+          <div class="bars"><div class="bar">Akcja<i style="--v:85%"></i></div><div class="bar">Taktyka<i style="--v:70%"></i></div></div>
+          <ul class="tags"><li>JavaScript</li><li>Canvas</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="uslugi">
+  <div class="wrap">
+    <div class="head"><h2>Power-upy</h2><span class="label">co mogę dla Ciebie zrobić</span></div>
+    <div class="powerups">
+      <div class="pu px"><span class="ico" style="--k:var(--gold)">G</span><h3>Gry</h3><p>Od pomysłu do premiery na Poki, CrazyGames, w przeglądarce i na desktopie.</p></div>
+      <div class="pu px"><span class="ico" style="--k:var(--cyan)">W</span><h3>Strony i aplikacje</h3><p>Projekt, frontend, backend i wdrożenie. Szybko i responsywnie.</p></div>
+      <div class="pu px"><span class="ico" style="--k:var(--pink)">S</span><h3>Software</h3><p>Programy, narzędzia, automatyzacje i serwery. Gdy liczy się wydajność, Rust.</p></div>
+      <div class="pu px"><span class="ico" style="--k:#8dff6a">AI</span><h3>Wdrożenia AI</h3><p>Modele językowe, agenci i automatyzacja z zasadami, które pilnują jakości.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="ai">
+  <div class="wrap ai">
+    <div class="ai-copy">
+      <div class="head" style="margin:0"><h2>Tryb AI</h2></div>
+      <p>Boty wypełniają drużyny w Tanki, symulowani gracze testują Blast Battalion przed premierą, a zespół agentów AI pisze i testuje kod według spisanych zasad.</p>
+      <ul><li>Claude Code, Codex i Cursor na wspólnych kontraktach etapów</li><li>Zielone testy przed każdym commitem</li><li>Polowanie na błędy ze zrzutami porównywanymi ze wzorcami</li></ul>
+    </div>
+    <pre class="terminal px" style="margin:0"><span class="p">$</span> pnpm test:battle
+✓ pojedynki 1v1 botów
+✓ bitwy 7v7
+✓ tryb Front
+
+<span class="p">$</span> npm run verify
+✓ wszystkie testy zielone</pre>
+  </div>
+</section>
+
+<section class="continue" id="kontakt">
+  <div class="wrap">
+    <h2>Continue?</h2>
+    <p>Gra, strona, aplikacja albo wdrożenie AI. Napisz, czego potrzebujesz, a odpowiem z propozycją i wyceną.</p>
+    <a class="btn px" href="https://github.com/forgemarcineksiema-art">▶ Napisz do mnie</a>
+    <p class="count blink">10</p>
+  </div>
+</section>
+<footer class="label"><div class="wrap">© 2026 PlazaWorks · Marcin Płaza · Game over? Nigdy.</div></footer>
+</body>
+</html>

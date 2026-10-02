@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PlazaWorks · makieta C · Indeks</title>
+<style>
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url("fonts/archivo-10.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url("fonts/archivo-11.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+/* Makieta C — styl szwajcarski: siatka 12 kolumn, jeden krój w wielu szerokościach, czerwień tylko jako sygnał. */
+:root {
+  --bg: #f7f7f5; --ink: #0b0b0b; --mute: #6b6b6b; --line: #d9d9d5; --red: #e1251b; --card: #ffffff;
+  --f: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #0d0d0d; --ink: #f2f2ef; --mute: #9a9a95; --line: #2a2a28; --red: #ff3b2f; --card: #161616; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #0d0d0d; --ink: #f2f2ef; --mute: #9a9a95; --line: #2a2a28; --red: #ff3b2f; --card: #161616; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.02rem/1.55 var(--f); overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p { margin: 0; }
+.wrap { max-width: 1320px; margin-inline: auto; padding-inline: clamp(16px, 3vw, 40px); }
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; }
+.cap { font: 600 .74rem/1.3 var(--f); font-stretch: 110%; font-variation-settings: "wdth" 110; letter-spacing: .06em; text-transform: uppercase; color: var(--mute); }
+.dot { display: inline-block; width: .42em; height: .42em; background: var(--red); border-radius: 50%; vertical-align: .12em; margin-left: .06em; }
+
+header.top { border-bottom: 1px solid var(--ink); }
+header.top .grid { padding-block: 16px; align-items: baseline; }
+.brand { grid-column: span 3; font: 800 1.15rem/1 var(--f); font-stretch: 80%; font-variation-settings: "wdth" 80; letter-spacing: -.01em; }
+.meta { grid-column: span 3; }
+header nav { grid-column: span 6; display: flex; justify-content: flex-end; gap: 28px; font-weight: 500; }
+header nav a:hover { color: var(--red); }
+
+.hero { padding-block: clamp(48px, 9vw, 120px) 48px; }
+.hero h1 { grid-column: 1 / -1; font: 800 clamp(3.4rem, 11.4vw, 11rem)/.84 var(--f); font-stretch: 62%; font-variation-settings: "wdth" 62; letter-spacing: -.02em; text-transform: uppercase; }
+.hero-info { margin-top: clamp(32px, 5vw, 64px); padding-top: 18px; border-top: 1px solid var(--line); row-gap: 24px; }
+.hero-info .lead { grid-column: 1 / span 6; font-size: clamp(1.2rem, 1.8vw, 1.55rem); line-height: 1.4; font-weight: 450; }
+.hero-info .facts { grid-column: 8 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; }
+.fact b { display: block; font: 700 2.4rem/1 var(--f); font-stretch: 75%; font-variation-settings: "wdth" 75; font-variant-numeric: tabular-nums; }
+.fact span { color: var(--mute); font-size: .9rem; }
+
+.strip { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; padding-bottom: 72px; }
+.strip img { width: 100%; height: 100%; aspect-ratio: 16/9; object-fit: cover; filter: grayscale(1) contrast(1.05); transition: filter .4s; }
+.strip img:hover { filter: none; }
+.strip figure { margin: 0; }
+
+section { padding-block: 72px; border-top: 1px solid var(--ink); }
+.sec-head { margin-bottom: 40px; align-items: baseline; }
+.sec-head .cap { grid-column: span 3; }
+.sec-head h2 { grid-column: 4 / -1; font: 700 clamp(2rem, 4.4vw, 3.8rem)/1 var(--f); font-stretch: 70%; font-variation-settings: "wdth" 70; letter-spacing: -.01em; text-transform: uppercase; }
+
+.index { width: 100%; border-collapse: collapse; }
+.index th { text-align: left; font: 600 .72rem/1 var(--f); font-stretch: 110%; font-variation-settings: "wdth" 110; letter-spacing: .06em; text-transform: uppercase; color: var(--mute); padding: 0 12px 12px 0; border-bottom: 1px solid var(--ink); }
+.index td { padding: 18px 12px 18px 0; border-bottom: 1px solid var(--line); vertical-align: baseline; }
+.index tr { transition: background .15s; }
+.index tbody tr:hover { background: var(--card); }
+.index tbody tr:hover .t { color: var(--red); }
+.index .t { font: 700 clamp(1.3rem, 2.4vw, 2rem)/1.05 var(--f); font-stretch: 72%; font-variation-settings: "wdth" 72; text-transform: uppercase; }
+.index .n { color: var(--mute); font-variant-numeric: tabular-nums; width: 3ch; }
+.index .s { white-space: nowrap; }
+.index .s.live::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--red); margin-right: 8px; }
+.tablebox { overflow-x: auto; }
+
+.services .grid { row-gap: 40px; }
+.svc { grid-column: span 3; border-top: 3px solid var(--ink); padding-top: 16px; display: grid; gap: 10px; align-content: start; }
+.svc h3 { font: 700 1.5rem/1.05 var(--f); font-stretch: 75%; font-variation-settings: "wdth" 75; text-transform: uppercase; }
+.svc p { color: var(--mute); font-size: .97rem; }
+
+.ai .grid { row-gap: 32px; }
+.ai blockquote { grid-column: 4 / -1; margin: 0; font: 600 clamp(1.8rem, 3.6vw, 3.2rem)/1.08 var(--f); font-stretch: 80%; font-variation-settings: "wdth" 80; letter-spacing: -.01em; }
+.ai blockquote span { color: var(--red); }
+.ai .cols { grid-column: 4 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.ai .cols p { color: var(--mute); }
+.ai .cols h3 { font: 700 1.05rem/1.2 var(--f); text-transform: uppercase; font-stretch: 100%; font-variation-settings: "wdth" 100; margin-bottom: 6px; }
+
+.contact { background: var(--ink); color: var(--bg); border-top: 0; padding-block: 96px; }
+.contact h2 { grid-column: 1 / span 9; font: 800 clamp(3rem, 9vw, 8.4rem)/.86 var(--f); font-stretch: 62%; font-variation-settings: "wdth" 62; text-transform: uppercase; letter-spacing: -.02em; }
+.contact .side { grid-column: 10 / -1; align-self: end; display: grid; gap: 16px; }
+.contact .side p { opacity: .7; }
+.contact .side a { display: inline-flex; justify-content: space-between; border-bottom: 2px solid var(--red); padding-bottom: 8px; font-weight: 600; font-size: 1.1rem; }
+footer { padding-block: 18px; font-size: .85rem; color: var(--mute); }
+
+@media (max-width: 900px) {
+  .brand, .meta { grid-column: span 6; } header nav { grid-column: 1 / -1; justify-content: flex-start; margin-top: 10px; flex-wrap: wrap; gap: 18px; }
+  .hero-info .lead, .hero-info .facts, .sec-head .cap, .sec-head h2, .ai blockquote, .ai .cols, .contact h2, .contact .side { grid-column: 1 / -1; }
+  .svc { grid-column: span 6; }
+  .strip { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .strip figure:first-child { grid-column: 1 / -1; }
+  .hide-m { display: none; }
+}
+@media (max-width: 560px) { .svc { grid-column: 1 / -1; } .ai .cols { grid-template-columns: minmax(0, 1fr); } .meta { display: none; } }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap grid">
+  <a class="brand" href="#">PLAZAWORKS<span class="dot"></span></a>
+  <span class="meta cap">Marcin Płaza / mini studio</span>
+  <nav><a href="#indeks">Projekty</a><a href="#uslugi">Usługi</a><a href="#ai">AI</a><a href="#kontakt">Kontakt</a></nav>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <div class="grid"><h1>Gry, web<br>i software<span class="dot"></span></h1></div>
+  <div class="grid hero-info">
+    <p class="lead">PlazaWorks to mini studio Marcina Płazy. Projektuję i buduję gry, strony, aplikacje i oprogramowanie na zamówienie. TypeScript, Rust, C++ i AI w całym procesie, od pomysłu do premiery.</p>
+    <div class="facts">
+      <div class="fact"><b>263 000</b><span>linii Rusta w silniku WOT</span></div>
+      <div class="fact"><b>3 000+</b><span>testów automatycznych</span></div>
+      <div class="fact"><b>620 KB</b><span>cała gra Orbling Skies</span></div>
+      <div class="fact"><b>10</b><span>języków w Fragile Express</span></div>
+    </div>
+  </div>
+</div>
+<div class="wrap strip">
+  <figure><img src="../assets/img/driving-coast.webp" alt="Untitled Driving Game"></figure>
+  <figure><img src="../assets/img/tanki-sniper.webp" alt="Tanki"></figure>
+  <figure><img src="../assets/img/fragile-hub.webp" alt="Fragile Express"></figure>
+</div>
+
+<section id="indeks"><div class="wrap">
+  <div class="grid sec-head"><span class="cap">Indeks projektów</span><h2>Wybrane prace</h2></div>
+  <div class="tablebox">
+  <table class="index">
+    <thead><tr><th>Nr</th><th>Projekt</th><th class="hide-m">Gatunek</th><th class="hide-m">Technologia</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="n">01</td><td class="t">Untitled Driving Game</td><td class="hide-m">Open world, przeglądarka</td><td class="hide-m">TypeScript, Three.js, Rapier</td><td class="s live">W produkcji</td></tr>
+      <tr><td class="n">02</td><td class="t">WOT</td><td class="hide-m">Czołgi online, Windows</td><td class="hide-m">Rust, wgpu, serwer</td><td class="s live">W produkcji</td></tr>
+      <tr><td class="n">03</td><td class="t">Tanki</td><td class="hide-m">Bitwy 7v7, przeglądarka</td><td class="hide-m">TypeScript, Three.js</td><td class="s live">W produkcji</td></tr>
+      <tr><td class="n">04</td><td class="t">Orbling Skies</td><td class="hide-m">RPG, Poki</td><td class="hide-m">JavaScript, Canvas</td><td class="s">Gotowa na Poki</td></tr>
+      <tr><td class="n">05</td><td class="t">Blast Battalion</td><td class="hide-m">Run-and-gun, portale</td><td class="hide-m">JavaScript, Canvas</td><td class="s">v1.33</td></tr>
+      <tr><td class="n">06</td><td class="t">Cloudkeep</td><td class="hide-m">Tower survivor, Poki</td><td class="hide-m">JavaScript, Canvas</td><td class="s">1.0 RC</td></tr>
+      <tr><td class="n">07</td><td class="t">Fragile Express</td><td class="hide-m">Tycoon, Poki</td><td class="hide-m">TypeScript, PixiJS</td><td class="s">MVP</td></tr>
+      <tr><td class="n">08</td><td class="t">Tidebreak</td><td class="hide-m">Silnik akcji</td><td class="hide-m">C++, DirectX 11</td><td class="s">Prototyp</td></tr>
+      <tr><td class="n">09</td><td class="t">Imperium z ulicy</td><td class="hide-m">Sandbox TPP</td><td class="hide-m">Unity 6, C#</td><td class="s">Preprodukcja</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div></section>
+
+<section class="services" id="uslugi"><div class="wrap">
+  <div class="grid sec-head"><span class="cap">Usługi</span><h2>Od pomysłu do premiery</h2></div>
+  <div class="grid">
+    <div class="svc"><span class="cap">Gry</span><h3>Gry na przeglądarkę i desktop</h3><p>Projekt, kod, grafika, dźwięk, balans i wydanie na Poki, CrazyGames, w przeglądarce albo na desktopie.</p></div>
+    <div class="svc"><span class="cap">Web</span><h3>Strony i aplikacje</h3><p>Projekt UI, frontend, backend i wdrożenie. Szybkie, responsywne, przetestowane.</p></div>
+    <div class="svc"><span class="cap">Software</span><h3>Oprogramowanie na zamówienie</h3><p>Programy desktopowe, narzędzia, automatyzacje i serwery. Rust tam, gdzie liczy się wydajność.</p></div>
+    <div class="svc"><span class="cap">AI</span><h3>Wdrożenia AI</h3><p>Integracje modeli językowych, agenci i automatyzacja pracy z zasadami jakości.</p></div>
+  </div>
+</div></section>
+
+<section class="ai" id="ai"><div class="wrap">
+  <div class="grid sec-head"><span class="cap">Sztuczna inteligencja</span><h2>AI w grach i w produkcji</h2></div>
+  <div class="grid">
+    <blockquote>Jeden goal = jeden mierzalny dowód, jedna faza, jasne non-goals, <span>konkretna walidacja.</span></blockquote>
+    <div class="cols">
+      <div><h3>W grach</h3><p>Boty wypełniają drużyny 7v7, symulowani gracze przechodzą kampanię przed premierą, a policja reaguje tylko na to, co widzi.</p></div>
+      <div><h3>W produkcji</h3><p>Zespół agentów AI pracuje według spisanych kontraktów etapów. Testy są zielone przed każdym commitem, a żaden test nie jest luzowany, żeby przejść.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="contact" id="kontakt"><div class="wrap grid">
+  <h2>Zróbmy coś razem<span class="dot"></span></h2>
+  <div class="side">
+    <p>Gra, strona, aplikacja albo wdrożenie AI. Odpowiem z konkretną propozycją, terminem i wyceną.</p>
+    <a href="https://github.com/forgemarcineksiema-art">GitHub <span>↗</span></a>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 PlazaWorks · Marcin Płaza</div></footer>
+</body>
+</html>
