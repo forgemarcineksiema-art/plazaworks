@@ -17,6 +17,27 @@ const META = {
   },
 };
 
+// Grywalne demo na stronie: wpisz adres hostowanego buildu (np. GitHub Pages lub itch.io).
+// Pusty url = sekcja ukryta. Gra ładuje się dopiero po kliknięciu „Uruchom grę”.
+const DEMO = { url: "", title: "Orbling Skies", poster: "assets/img/orbling-cover.webp" };
+
+if (DEMO.url) {
+  document.getElementById("zagraj").hidden = false;
+  document.getElementById("demo-title").textContent = DEMO.title;
+  document.getElementById("demo-open").href = DEMO.url;
+  document.getElementById("demo-poster").src = DEMO.poster;
+  document.getElementById("demo-start").addEventListener("click", () => {
+    const frame = document.createElement("iframe");
+    frame.src = DEMO.url;
+    frame.title = DEMO.title;
+    frame.allow = "autoplay; fullscreen; gamepad";
+    frame.allowFullscreen = true;
+    const screen = document.getElementById("demo-screen");
+    screen.replaceChildren(frame);
+    frame.focus();
+  });
+}
+
 // Linki „Zagraj”: wpisz adres gry w atrybucie href w index.html. Pusty href = link ukryty.
 document.querySelectorAll("a.play").forEach((a) => {
   if (!a.getAttribute("href")) a.hidden = true;

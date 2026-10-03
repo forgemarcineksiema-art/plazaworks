@@ -37,6 +37,7 @@
     <a class="brand" href="#top">Marcin Płaza<span class="dot"></span><small>PlazaWorks</small></a>
     <nav class="nav" aria-label="Menu">
       <a href="#projekty"><span lang="pl">Projekty</span><span lang="en">Projects</span></a>
+      <a href="#jak-to-dziala"><span lang="pl">Jak to działa</span><span lang="en">How it works</span></a>
       <a href="#umiejetnosci"><span lang="pl">Umiejętności</span><span lang="en">Skills</span></a>
       <a href="#o-mnie"><span lang="pl">O mnie</span><span lang="en">About</span></a>
       <a href="#kontakt"><span lang="pl">Kontakt</span><span lang="en">Contact</span></a>
@@ -84,6 +85,18 @@
         <h2><span lang="pl">Gry, które zbudowałem</span><span lang="en">Games I have built</span></h2>
         <p lang="pl">Wszystkie projekty są moje: rozgrywka, kod, grafika generowana w kodzie, dźwięk, narzędzia i testy. Żaden nie jest jeszcze oficjalnie wydany. Pierwsze tytuły zgłaszam do Poki i CrazyGames.</p>
         <p lang="en">Every project is mine: gameplay, code, art generated in code, audio, tools and tests. None is officially released yet. I am submitting the first titles to Poki and CrazyGames.</p>
+      </div>
+
+      <div class="demo" id="zagraj" hidden>
+        <div class="demo-bar">
+          <span class="cap"><span lang="pl">Zagraj tutaj</span><span lang="en">Play here</span></span>
+          <strong id="demo-title"></strong>
+          <a id="demo-open" href="#" target="_blank" rel="noopener"><span lang="pl">Otwórz w nowej karcie ↗</span><span lang="en">Open in a new tab ↗</span></a>
+        </div>
+        <div class="demo-screen" id="demo-screen">
+          <img id="demo-poster" src="assets/img/orbling-cover.webp" width="1280" height="720" alt="">
+          <button type="button" id="demo-start"><span lang="pl">▶ Uruchom grę</span><span lang="en">▶ Start the game</span></button>
+        </div>
       </div>
 
       <div class="featured">
@@ -203,6 +216,63 @@
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= JAK TO DZIAŁA ================= -->
+  <section class="how" id="jak-to-dziala">
+    <div class="wrap">
+      <div class="grid sec-head">
+        <span class="cap"><span lang="pl">Jak to działa</span><span lang="en">How it works</span></span>
+        <h2><span lang="pl">Jeden opis czołgu, trzy wyniki</span><span lang="en">One tank description, three outputs</span></h2>
+        <p lang="pl">W mojej grze w Ruście nie modeluję czołgów ręcznie. Każdy pojazd powstaje z danych: z dokumentacji, pliku z listą części i geometrii proceduralnej. Z tego samego źródła wychodzi obraz, pancerz do obliczeń i dane dla serwera, więc to, co widzisz, jest dokładnie tym, w co trafiasz.</p>
+        <p lang="en">In my Rust game I do not model tanks by hand. Each vehicle is built from data: a reference dossier, a part list file and procedural geometry. The same source produces the picture, the armour for the maths and the data for the server, so what you see is exactly what you hit.</p>
+      </div>
+
+      <ol class="flow">
+        <li>
+          <span class="cap"><span lang="pl">Dokumentacja</span><span lang="en">Dossier</span></span>
+          <h3><span lang="pl">Wymiary ze zdjęć i źródeł</span><span lang="en">Measurements from photos and sources</span></h3>
+          <p lang="pl">Dla każdego pojazdu spisuję grubości i kąty pancerza, np. przedni pancerz T-54: 100 mm pod kątem 60°.</p>
+          <p lang="en">For each vehicle I record armour thickness and angles, e.g. the T-54 glacis: 100 mm at 60°.</p>
+        </li>
+        <li>
+          <span class="cap"><span lang="pl">Plik RON</span><span lang="en">RON file</span></span>
+          <h3><span lang="pl">Lista części</span><span lang="en">Part list</span></h3>
+          <p lang="pl">Kadłub, wieża, jarzmo, włazy, śruby, spawy. Brak którejkolwiek części zatrzymuje testy.</p>
+          <p lang="en">Hull, turret, mantlet, hatches, bolts, welds. A missing part fails the tests.</p>
+        </li>
+        <li>
+          <span class="cap"><span lang="pl">Geometria</span><span lang="en">Geometry</span></span>
+          <h3><span lang="pl">Kernele proceduralne</span><span lang="en">Procedural kernels</span></h3>
+          <p lang="pl">Pola SDF zamieniane na siatkę (surface nets), części działa z obrotu profilu, płyty pancerza jako bryły, śruby i spawy jako detal.</p>
+          <p lang="en">SDF fields meshed with surface nets, gun parts revolved from a profile, armour plates as solids, bolts and welds as detail.</p>
+        </li>
+        <li>
+          <span class="cap">Bake</span>
+          <h3><span lang="pl">Wypalenie zasobów</span><span lang="en">Asset bake</span></h3>
+          <p lang="pl">Siatka do renderu, hitbox, bryły pancerza i mocowania dział. Wszystko z jednego źródła.</p>
+          <p lang="en">The render mesh, the hitbox, armour volumes and gun mounts. All from one source.</p>
+        </li>
+      </ol>
+
+      <div class="outputs">
+        <div><span class="cap"><span lang="pl">Wynik 1</span><span lang="en">Output 1</span></span><h4>Render</h4><p lang="pl">Renderer wgpu rysuje model z cieniami, SSAO i bloomem.</p><p lang="en">The wgpu renderer draws the model with shadows, SSAO and bloom.</p></div>
+        <div><span class="cap"><span lang="pl">Wynik 2</span><span lang="en">Output 2</span></span><h4><span lang="pl">Symulacja</span><span lang="en">Simulation</span></h4><p lang="pl">Pocisk sprawdza te same płyty pancerza: kąt, grubość, rykoszet.</p><p lang="en">A shell tests the same armour plates: angle, thickness, ricochet.</p></div>
+        <div><span class="cap"><span lang="pl">Wynik 3</span><span lang="en">Output 3</span></span><h4><span lang="pl">Serwer</span><span lang="en">Server</span></h4><p lang="pl">Serwer liczy bitwę bez karty graficznej, na tych samych danych.</p><p lang="en">The server runs the battle without a GPU, on the same data.</p></div>
+      </div>
+
+      <div class="grid how-foot">
+        <div class="term">
+<pre><span class="c">// t54_1951.inventory.ron</span>
+(class: <b>UpperHull</b>,  source: "glacis 100 mm @ 60°"),
+(class: <b>Cupola</b>,     source: "commander cupola LEFT"),
+(class: <b>GunBarrel</b>,  source: "plain tapering D-10T barrel"),
+(class: <b>FinalDrives</b>, source: "sprocket rings, 40 bolts"),</pre>
+        </div>
+        <p lang="pl">Fragment prawdziwego pliku z repozytorium. Każdy wpis wskazuje źródło w dokumentacji pojazdu, a test pilnuje, żeby żadna część nie zginęła przy zmianach.</p>
+        <p lang="en">An excerpt from the real file in the repository. Each entry points to its source in the vehicle dossier, and a test makes sure no part goes missing when things change.</p>
       </div>
     </div>
   </section>

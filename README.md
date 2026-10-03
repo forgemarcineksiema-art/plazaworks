@@ -39,6 +39,7 @@ Potem otwórz <http://localhost:8080/>.
 |---|---|
 | Teksty (PL i EN obok siebie) | `index.html`, elementy z `lang="pl"` / `lang="en"` |
 | Linki „Zagraj” | `index.html`, atrybut `href` w linkach `class="play"` (pusty = ukryty) |
+| Grywalne demo na stronie | `assets/site.js`, stała `DEMO` (`url` pusty = sekcja ukryta) |
 | E-mail kontaktowy | `assets/site.js`, stała `CONTACT_EMAIL` (pusty = ukryty) |
 | Inne style (makiety) | `mockups/index.html` |
 | Kolory, fonty, układ | `assets/site.css`, tokeny w bloku `:root` |
