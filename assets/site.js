@@ -1,4 +1,4 @@
-// PlazaWorks — przełącznik języka i motywu, e-mail kontaktowy, drobna typografia.
+// Portfolio — przełącznik języka i motywu, linki „Zagraj”, e-mail kontaktowy, drobna typografia.
 
 // Wpisz tu adres, który ma się pojawić w sekcji Kontakt, np. "kontakt@plazaworks.pl".
 // Pusty ciąg ukrywa blok z e-mailem (zostaje przycisk GitHuba).
@@ -8,14 +8,19 @@ const root = document.documentElement;
 
 const META = {
   pl: {
-    title: "PlazaWorks · Marcin Płaza — gry, web, Rust, AI",
-    description: "PlazaWorks to mini studio Marcina Płazy: gry przeglądarkowe i natywne, strony, aplikacje i oprogramowanie na zamówienie, Rust i wdrożenia AI.",
+    title: "Marcin Płaza · programista gier i aplikacji webowych",
+    description: "Portfolio Marcina Płazy (PlazaWorks): gry przeglądarkowe, grafika 3D w Three.js, TypeScript, Rust i praca z agentami AI. Szukam pracy i zleceń.",
   },
   en: {
-    title: "PlazaWorks · Marcin Płaza — games, web, Rust, AI",
-    description: "PlazaWorks is Marcin Płaza’s indie studio: browser and native games, websites, apps and custom software, Rust and AI integration.",
+    title: "Marcin Płaza · game and web developer",
+    description: "Portfolio of Marcin Płaza (PlazaWorks): browser games, 3D graphics with Three.js, TypeScript, Rust and working with AI agents. Open to work.",
   },
 };
+
+// Linki „Zagraj”: wpisz adres gry w atrybucie href w index.html. Pusty href = link ukryty.
+document.querySelectorAll("a.play").forEach((a) => {
+  if (!a.getAttribute("href")) a.hidden = true;
+});
 
 function store(key, value) {
   try { localStorage.setItem(key, value); } catch (e) { /* tryb prywatny: bez zapamiętywania */ }
@@ -55,12 +60,6 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
   root.setAttribute("data-theme", next);
   store("pw-theme", next);
 });
-
-// Kreska pod nagłówkiem po przewinięciu.
-const head = document.querySelector(".site-head");
-const onScroll = () => head.classList.toggle("is-scrolled", window.scrollY > 8);
-window.addEventListener("scroll", onScroll, { passive: true });
-onScroll();
 
 // E-mail kontaktowy.
 if (CONTACT_EMAIL) {

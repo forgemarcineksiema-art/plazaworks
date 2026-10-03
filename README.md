@@ -1,12 +1,12 @@
 # PlazaWorks
 
-Strona mini studia **PlazaWorks** (Marcin Płaza): gry, strony i aplikacje webowe,
-oprogramowanie w Ruście i wdrożenia AI.
+Portfolio **Marcina Płazy** (PlazaWorks): gry przeglądarkowe, Three.js, TypeScript, Rust
+i praca z agentami AI. Styl: szwajcarski „Indeks” (makieta C z `mockups/`).
 
 ![Podgląd strony](docs/preview.jpg)
 
 Statyczna strona bez frameworka i bez zależności: `index.html`, `assets/site.css`,
-`assets/site.js`, lokalne fonty i zrzuty z gier. Bez ciasteczek, trackerów i zewnętrznych
+`assets/site.js`, lokalny font Archivo i zrzuty z gier. Bez ciasteczek, trackerów i zewnętrznych
 zapytań.
 
 ## Funkcje
@@ -38,7 +38,9 @@ Potem otwórz <http://localhost:8080/>.
 | Co | Gdzie |
 |---|---|
 | Teksty (PL i EN obok siebie) | `index.html`, elementy z `lang="pl"` / `lang="en"` |
+| Linki „Zagraj” | `index.html`, atrybut `href` w linkach `class="play"` (pusty = ukryty) |
 | E-mail kontaktowy | `assets/site.js`, stała `CONTACT_EMAIL` (pusty = ukryty) |
+| Inne style (makiety) | `mockups/index.html` |
 | Kolory, fonty, układ | `assets/site.css`, tokeny w bloku `:root` |
 | Zrzuty z gier | `assets/img/` (WebP, 1280 px szerokości) |
 | Obraz do udostępniania (Open Graph) | `assets/img/og.jpg` (1200×630) |

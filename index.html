@@ -3,17 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PlazaWorks · Marcin Płaza — gry, web, Rust, AI</title>
-<meta name="description" content="PlazaWorks to mini studio Marcina Płazy: gry przeglądarkowe i natywne, strony, aplikacje i oprogramowanie na zamówienie, Rust i wdrożenia AI.">
-<meta name="theme-color" content="#11141c">
+<title>Marcin Płaza · programista gier i aplikacji webowych</title>
+<meta name="description" content="Portfolio Marcina Płazy (PlazaWorks): gry przeglądarkowe, grafika 3D w Three.js, TypeScript, Rust i praca z agentami AI. Szukam pracy i zleceń.">
+<meta name="theme-color" content="#0b0b0b">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PlazaWorks · Marcin Płaza">
-<meta property="og:description" content="Gry, strony, aplikacje i oprogramowanie. TypeScript, Rust, C++ i AI w całym procesie produkcji.">
+<meta property="og:title" content="Marcin Płaza · programista gier i aplikacji webowych">
+<meta property="og:description" content="Gry przeglądarkowe, Three.js, TypeScript, Rust i AI. Zagraj w moje projekty.">
 <meta property="og:image" content="assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="assets/fonts/big-shoulders-display-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/big-shoulders-display-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <script>
@@ -33,25 +32,12 @@
 <body>
 <a class="skip" href="#main"><span lang="pl">Przejdź do treści</span><span lang="en">Skip to content</span></a>
 
-<header class="site-head" id="top">
-  <div class="wrap head-row">
-    <a class="brand" href="#top" aria-label="PlazaWorks">
-      <svg viewBox="0 0 29 39" aria-hidden="true">
-        <g fill="currentColor">
-          <rect x="0" y="0" width="9" height="9"/><rect x="10" y="0" width="9" height="9"/><rect x="20" y="0" width="9" height="9"/>
-          <rect x="0" y="10" width="9" height="9"/><rect x="20" y="10" width="9" height="9"/>
-          <rect x="0" y="20" width="9" height="9"/><rect x="10" y="20" width="9" height="9"/><rect x="20" y="20" width="9" height="9"/>
-          <rect x="0" y="30" width="9" height="9"/>
-        </g>
-        <rect x="10" y="10" width="9" height="9" fill="var(--signal)"/>
-      </svg>
-      <span class="brand-word">Plaza<span>Works</span></span>
-    </a>
+<header class="top" id="top">
+  <div class="wrap top-row">
+    <a class="brand" href="#top">Marcin Płaza<span class="dot"></span><small>PlazaWorks</small></a>
     <nav class="nav" aria-label="Menu">
-      <a href="#projekty"><span lang="pl">Projekty</span><span lang="en">Work</span></a>
-      <a href="#uslugi"><span lang="pl">Usługi</span><span lang="en">Services</span></a>
-      <a href="#technologie"><span lang="pl">Technologie</span><span lang="en">Stack</span></a>
-      <a href="#ai">AI</a>
+      <a href="#projekty"><span lang="pl">Projekty</span><span lang="en">Projects</span></a>
+      <a href="#umiejetnosci"><span lang="pl">Umiejętności</span><span lang="en">Skills</span></a>
       <a href="#o-mnie"><span lang="pl">O mnie</span><span lang="en">About</span></a>
       <a href="#kontakt"><span lang="pl">Kontakt</span><span lang="en">Contact</span></a>
     </nav>
@@ -71,547 +57,266 @@
 <main id="main">
 
   <!-- ================= HERO ================= -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow"><span lang="pl">Mini studio · gry · web · Rust · AI</span><span lang="en">Indie studio · games · web · Rust · AI</span></p>
-        <h1>
-          <span class="line"><span lang="pl">Projektuję.</span><span lang="en">Design.</span></span>
-          <span class="line"><span lang="pl">Buduję.</span><span lang="en">Build.</span></span>
-          <span class="line hl"><span lang="pl">Dowożę.</span><span lang="en">Ship.</span></span>
-        </h1>
-        <p class="lead" lang="pl"><strong>PlazaWorks</strong> to mini studio Marcina Płazy. Tworzę gry na przeglądarkę i desktop, a do tego strony, aplikacje i oprogramowanie na zamówienie. Piszę w TypeScripcie, Ruście i C++, a AI pracuje ze mną na każdym etapie. Jeden kontakt, cały proces: projekt, kod, grafika, dźwięk, testy i wydanie.</p>
-        <p class="lead" lang="en"><strong>PlazaWorks</strong> is Marcin Płaza’s indie studio. I make games for the browser and desktop, plus websites, apps and custom software. I write TypeScript, Rust and C++, and AI works with me at every stage. One contact, the whole process: design, code, art, audio, testing and release.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#projekty"><span lang="pl">Zobacz projekty</span><span lang="en">See the work</span>
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a>
-          <a class="btn" href="#kontakt"><span lang="pl">Porozmawiajmy</span><span lang="en">Let’s talk</span>
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        </div>
-      </div>
-
-      <div class="collage">
-        <figure class="frame frame--main">
-          <img src="assets/img/driving-coast.webp" width="1280" height="720" alt="Czerwone auto na plaży o zachodzie słońca w Untitled Driving Game" data-alt-en="A red car on the beach at sunset in Untitled Driving Game" fetchpriority="high">
-          <figcaption><span>Untitled Driving Game</span><span>TypeScript · Three.js · Rapier</span></figcaption>
-        </figure>
-        <figure class="frame frame--a">
-          <img src="assets/img/orbling-battle.webp" width="1280" height="720" alt="Turowa walka Orblingów na lodowej wyspie" data-alt-en="A turn-based Orbling battle on the ice isle" loading="lazy">
-          <figcaption><span>Orbling Skies</span><span>JS · Canvas</span></figcaption>
-        </figure>
-        <figure class="frame frame--b">
-          <img src="assets/img/tanki-sniper.webp" width="1280" height="720" alt="Celownik snajperski i trafiony czołg w grze Tanki" data-alt-en="Sniper sight on a hit tank in Tanki" loading="lazy">
-          <figcaption><span>Tanki</span><span>TS · Three.js</span></figcaption>
-        </figure>
+  <div class="wrap hero">
+    <p class="status"><span lang="pl">Szukam pracy i zleceń</span><span lang="en">Open to work and freelance</span></p>
+    <h1>Marcin Płaza</h1>
+    <p class="role"><span lang="pl">Programista gier i aplikacji webowych</span><span lang="en">Game and web developer</span><span class="dot"></span></p>
+    <div class="grid hero-info">
+      <p class="lead" lang="pl">Robię gry przeglądarkowe i aplikacje w TypeScripcie, grafikę 3D w Three.js i systemy w Ruście. Pracuję z agentami AI, a sam odpowiadam za architekturę, decyzje i jakość kodu. Poniżej możesz zagrać w moje projekty i zajrzeć do ich kodu.</p>
+      <p class="lead" lang="en">I build browser games and apps in TypeScript, 3D graphics with Three.js and systems in Rust. I work with AI agents and own the architecture, the decisions and the code quality myself. Below you can play my projects and read their code.</p>
+      <div class="cta">
+        <a class="btn btn-red" href="#projekty"><span lang="pl">Zobacz i zagraj</span><span lang="en">See and play</span><span aria-hidden="true">↓</span></a>
+        <a class="btn" href="#kontakt"><span lang="pl">Kontakt</span><span lang="en">Contact</span><span aria-hidden="true">→</span></a>
       </div>
     </div>
-  </section>
-
-  <div class="stripe" aria-hidden="true"></div>
-  <div class="wrap">
-    <div class="specs">
-      <div class="spec"><b><span lang="pl">260 tys.+</span><span lang="en">260k+</span></b><span><span lang="pl">linii kodu w Ruście w jednym projekcie gry</span><span lang="en">lines of Rust in a single game project</span></span></div>
-      <div class="spec"><b><span lang="pl">3 000+</span><span lang="en">3,000+</span></b><span><span lang="pl">testów automatycznych pilnujących tego silnika</span><span lang="en">automated tests guarding that engine</span></span></div>
-      <div class="spec"><b>620 KB</b><span><span lang="pl">cała gra Orbling Skies po spakowaniu, z grafiką i dźwiękiem</span><span lang="en">all of Orbling Skies zipped, art and audio included</span></span></div>
-      <div class="spec"><b>10</b><span><span lang="pl">języków interfejsu w jednej grze na portale</span><span lang="en">interface languages in a single portal game</span></span></div>
-    </div>
+  </div>
+  <div class="wrap strip">
+    <figure><img src="assets/img/driving-coast.webp" width="1280" height="720" alt="Untitled Driving Game: auto na plaży o zachodzie słońca" data-alt-en="Untitled Driving Game: a car on the beach at sunset" fetchpriority="high"></figure>
+    <figure><img src="assets/img/orbling-battle.webp" width="1280" height="720" alt="Orbling Skies: turowa walka" data-alt-en="Orbling Skies: a turn-based battle"></figure>
+    <figure><img src="assets/img/tanki-sniper.webp" width="1280" height="720" alt="Tanki: widok przez celownik" data-alt-en="Tanki: sniper sight view"></figure>
   </div>
 
   <!-- ================= PROJEKTY ================= -->
-  <section class="section" id="projekty">
+  <section id="projekty">
     <div class="wrap">
-      <header class="section-head">
-        <p class="eyebrow"><span lang="pl">Projekty</span><span lang="en">Work</span></p>
-        <h2><span lang="pl">Gry z mojego warsztatu</span><span lang="en">Games from my workshop</span></h2>
-        <p lang="pl">Każdy z tych projektów robię od podstaw: systemy, kod, grafikę generowaną w kodzie, dźwięk, narzędzia i testy. Obrazy to zrzuty z buildów i materiały promocyjne gier.</p>
-        <p lang="en">I build each of these from the ground up: systems, code, art generated in code, audio, tools and tests. The images are captures from the builds and the games’ promo art.</p>
-      </header>
-
-      <div class="subhead">
-        <h3><span lang="pl">Gry 3D i symulacja</span><span lang="en">3D games and simulation</span></h3>
-        <p>TypeScript · Rust · WebGL · wgpu</p>
+      <div class="grid sec-head">
+        <span class="cap"><span lang="pl">Projekty</span><span lang="en">Projects</span></span>
+        <h2><span lang="pl">Gry, które zbudowałem</span><span lang="en">Games I have built</span></h2>
+        <p lang="pl">Wszystkie projekty są moje: rozgrywka, kod, grafika generowana w kodzie, dźwięk, narzędzia i testy. Żaden nie jest jeszcze oficjalnie wydany. Pierwsze tytuły zgłaszam do Poki i CrazyGames.</p>
+        <p lang="en">Every project is mine: gameplay, code, art generated in code, audio, tools and tests. None is officially released yet. I am submitting the first titles to Poki and CrazyGames.</p>
       </div>
 
-      <article class="feature">
-        <figure class="shot">
-          <img src="assets/img/driving-streets.webp" width="1280" height="720" alt="Dostawa przez dzielnicę Palm Gardens w Untitled Driving Game" data-alt-en="A delivery through Palm Gardens in Untitled Driving Game" loading="lazy">
-          <span class="pill pill--wip"><span lang="pl">W produkcji</span><span lang="en">In production</span></span>
-        </figure>
-        <div class="f-body">
-          <p class="f-kicker"><span lang="pl">Otwarty świat · przeglądarka</span><span lang="en">Open world · browser</span></p>
-          <h3>Untitled Driving Game</h3>
-          <p lang="pl">Arkadowa gra samochodowa z otwartym światem. Jesteś kierowcą, który nigdy nie trzyma się jednego auta: kradniesz je, rozbijasz, zmieniasz i gubisz pościg. Cztery dzielnice na jednej wyspie, siedem klas pojazdów, zlecenia w całym mieście i policja, która reaguje tylko na to, co naprawdę widzi.</p>
-          <p lang="en">An open-world arcade driving game. You are the getaway driver who never keeps a car: steal it, wreck it, swap it and lose the police. Four districts on one island, seven vehicle classes, jobs all over the map and police who only react to what they actually see.</p>
-          <p class="proof" lang="pl"><b>Zero pobieranych assetów.</b> Modele, niebo, morze, efekty i muzyka powstają w kodzie, a każde auto to bryła sztywna z zawieszeniem, skrzynią biegów i przyczepnością.</p>
-          <p class="proof" lang="en"><b>No asset downloads.</b> Models, sky, sea, effects and music are generated in code, and every car is a rigid body with suspension, gearing and grip.</p>
-          <ul class="chips"><li>TypeScript</li><li>Three.js</li><li>Rapier · WASM</li><li>Web Audio</li><li>Vite</li><li>Vitest</li><li>Playwright</li></ul>
-          <a class="more" href="https://github.com/forgemarcineksiema-art/driving-game" target="_blank" rel="noopener"><span lang="pl">Kod na GitHubie</span><span lang="en">Code on GitHub</span>
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-        </div>
-      </article>
-
-      <article class="feature">
-        <figure class="shot">
-          <img src="assets/img/wot-garage.webp" width="960" height="540" alt="Tiger II w garażu, render z silnika WOT napisanego w Ruście" data-alt-en="A Tiger II in the garage, rendered by the WOT engine written in Rust" loading="lazy">
-          <span class="pill pill--wip"><span lang="pl">W produkcji</span><span lang="en">In production</span></span>
-        </figure>
-        <div class="f-body">
-          <p class="f-kicker"><span lang="pl">Gra sieciowa · Windows · Rust</span><span lang="en">Online game · Windows · Rust</span></p>
-          <h3>WOT</h3>
-          <p lang="pl">Czołgowa gra sieciowa napisana od zera w Ruście: pojazdy z czasów II wojny światowej, bitwy 7 na 7 i 15 na 15 na kilometrowych mapach, własny renderer na wgpu i autorytatywny serwer bez grafiki. Obrażenia są deterministyczne, a penetrację liczę względem prawdziwych płyt pancerza w 3D.</p>
-          <p lang="en">A tank combat game written from scratch in Rust: WWII vehicles, 7v7 and 15v15 battles on 1 km maps, a native wgpu renderer and a headless authoritative server. Damage is deterministic and penetration is resolved against the vehicle’s actual 3D armour plates.</p>
-          <p class="proof" lang="pl"><b>35 crate’ów, 260 tys.+ linii Rusta, 3 000+ testów.</b> Edytor map, deterministyczne powtórki, zniszczalne budynki replikowane przez sieć i cel 60 FPS na laptopowej GeForce MX330.</p>
-          <p class="proof" lang="en"><b>35 crates, 260k+ lines of Rust, 3,000+ tests.</b> A map editor, deterministic replays, destructible buildings replicated over the network and a 60 FPS target on a laptop GeForce MX330.</p>
-          <ul class="chips"><li>Rust</li><li>wgpu</li><li>WGSL</li><li>RON</li><li><span lang="pl">serwer dedykowany</span><span lang="en">dedicated server</span></li><li>SSAO · HDR · bloom</li></ul>
-          <a class="more" href="https://github.com/forgemarcineksiema-art/wot-rust" target="_blank" rel="noopener"><span lang="pl">Kod na GitHubie</span><span lang="en">Code on GitHub</span>
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-        </div>
-      </article>
-
-      <article class="feature">
-        <figure class="shot">
-          <img src="assets/img/tanki-sniper.webp" width="1280" height="720" alt="Widok przez celownik, panel uszkodzeń i minimapa w grze Tanki" data-alt-en="Sight view, damage panel and minimap in Tanki" loading="lazy">
-          <span class="pill pill--wip"><span lang="pl">W produkcji</span><span lang="en">In production</span></span>
-        </figure>
-        <div class="f-body">
-          <p class="f-kicker"><span lang="pl">Bitwy czołgów · przeglądarka</span><span lang="en">Tank battles · browser</span></p>
-          <h3>Tanki</h3>
-          <p lang="pl">Bitwy czołgów 7 na 7 w przeglądarce, w duchu World of Tanks i War Thunder. Boty uzupełniają drużyny, więc nie ma kolejek. Nie ma też losowych obrażeń, a każdy strzał kończy się czytelnym werdyktem: przebicie, rykoszet albo brak penetracji.</p>
-          <p lang="en">7v7 tank battles in the browser, in the spirit of World of Tanks and War Thunder. Bots fill the teams, so there are no queues. There is no random damage either, and every shot ends with a clear verdict: penetration, ricochet or no penetration.</p>
-          <p class="proof" lang="pl"><b>Bitwa w 20 sekund od kliknięcia.</b> Symulacja działa bez grafiki, więc całe serie bitew botów odpalam z linii komend i sprawdzam na nich balans.</p>
-          <p class="proof" lang="en"><b>A battle within 20 seconds of the click.</b> The simulation runs without graphics, so whole series of bot battles run from the command line to check the balance.</p>
-          <ul class="chips"><li>TypeScript</li><li>Three.js</li><li>pnpm monorepo</li><li>Vitest</li><li>Playwright</li></ul>
-          <a class="more" href="https://github.com/forgemarcineksiema-art/tanki" target="_blank" rel="noopener"><span lang="pl">Kod na GitHubie</span><span lang="en">Code on GitHub</span>
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-        </div>
-      </article>
-
-      <div class="subhead">
-        <h3><span lang="pl">Gry na portale HTML5</span><span lang="en">HTML5 portal games</span></h3>
-        <p><span lang="pl">Poki · CrazyGames · telefon i desktop</span><span lang="en">Poki · CrazyGames · phone and desktop</span></p>
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <figure class="shot">
-            <img src="assets/img/orbling-cover.webp" width="1280" height="720" alt="Okładka Orbling Skies: Orblingi na latających wyspach" data-alt-en="Orbling Skies cover art: Orblings on floating isles" loading="lazy">
-            <span class="pill pill--go"><span lang="pl">Gotowa na Poki</span><span lang="en">Poki-ready</span></span>
-          </figure>
-          <div class="card-body">
-            <h4>Orbling Skies</h4>
-            <p class="f-kicker"><span lang="pl">RPG z łapaniem stworków</span><span lang="en">Monster-taming RPG</span></p>
-            <p lang="pl">Latasz między sześcioma Gwiezdnymi Wyspami, łapiesz Orblingi, trenujesz je w turowych walkach i zbierasz 12 legendarnych Orblingów Zodiaku. Baza z warsztatami pracuje nawet wtedy, gdy nie grasz.</p>
-            <p lang="en">Fly between six floating Star Isles, catch Orblings, train them in turn-based battles and collect all 12 legendary Zodiac Orblings. Your home Base keeps working while you are away.</p>
-            <p class="proof" lang="pl"><b>48 Orblingów, 9 języków, ok. 620 KB.</b> Bez plików graficznych i dźwiękowych: wszystko generuje kod.</p>
-            <p class="proof" lang="en"><b>48 Orblings, 9 languages, about 620 KB.</b> No image or audio files: the code generates all of it.</p>
-            <ul class="chips"><li>JavaScript</li><li>Canvas 2D</li><li><span lang="pl">zero zależności</span><span lang="en">zero dependencies</span></li></ul>
-            <a class="more" href="https://github.com/forgemarcineksiema-art/orbling-skies" target="_blank" rel="noopener"><span lang="pl">Kod na GitHubie</span><span lang="en">Code on GitHub</span>
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
+      <div class="featured">
+        <article class="grid feat">
+          <figure class="shot"><img src="assets/img/orbling-cover.webp" width="1280" height="720" alt="Orbling Skies: okładka" data-alt-en="Orbling Skies cover art" loading="lazy"></figure>
+          <div class="body">
+            <span class="badge soon"><span lang="pl">Przed premierą · Poki</span><span lang="en">Pre-release · Poki</span></span>
+            <h3>Orbling Skies</h3>
+            <p lang="pl">RPG z łapaniem stworków na przeglądarkę i telefon. Latasz między sześcioma wyspami, łapiesz Orblingi, walczysz turowo i ewoluujesz drużynę. Grafika i dźwięk powstają w kodzie, bez plików graficznych.</p>
+            <p lang="en">A monster-taming RPG for browser and phone. Fly between six isles, catch Orblings, fight turn-based battles and evolve your team. Art and audio are generated in code, with no image files.</p>
+            <ul class="facts">
+              <li><span lang="pl">Technologia</span><span lang="en">Tech</span><span lang="pl">JavaScript, Canvas 2D, bez zależności</span><span lang="en">JavaScript, Canvas 2D, zero dependencies</span></li>
+              <li><span lang="pl">Zawartość</span><span lang="en">Content</span><span lang="pl">48 Orblingów, 6 wysp, 9 języków</span><span lang="en">48 Orblings, 6 isles, 9 languages</span></li>
+              <li><span lang="pl">Rozmiar</span><span lang="en">Size</span><span lang="pl">ok. 620 KB po spakowaniu</span><span lang="en">about 620 KB zipped</span></li>
+            </ul>
+            <p class="links">
+              <a class="play" href="" target="_blank" rel="noopener"><span lang="pl">Zagraj ↗</span><span lang="en">Play ↗</span></a>
+              <a href="https://github.com/forgemarcineksiema-art/orbling-skies" target="_blank" rel="noopener"><span lang="pl">Kod ↗</span><span lang="en">Code ↗</span></a>
+            </p>
           </div>
         </article>
 
-        <article class="card">
-          <figure class="shot">
-            <img src="assets/img/blast-cover.webp" width="1280" height="720" alt="Okładka Blast Battalion: czterech pikselowych bohaterów i eksplozje" data-alt-en="Blast Battalion cover art: four pixel-art heroes and explosions" loading="lazy">
-            <span class="pill pill--go">v1.33</span>
-          </figure>
-          <div class="card-body">
-            <h4>Blast Battalion</h4>
-            <p class="f-kicker">Run-and-gun · pixel art</p>
-            <p lang="pl">Strzelanka akcji z niszczalnym terenem, w której świat jest bronią: beczki, cieknące rury z paliwem i mosty linowe do zestrzelenia. 12 bohaterów, 14 typów wrogów, 3 bossów, 15 misji i niekończący się tryb Arcade z kartami ulepszeń.</p>
-            <p lang="en">A run-and-gun action game with destructible terrain where the world is a weapon: explosive barrels, leaking fuel pipes and rope bridges you can shoot down. 12 heroes, 14 enemy types, 3 bosses, 15 missions and an endless Arcade mode with upgrade cards.</p>
-            <p class="proof" lang="pl"><b>Symulowani gracze przed premierą.</b> Boty o trzech poziomach umiejętności przechodzą kampanię, a model lejka przewiduje konwersję, długość sesji i retencję D1.</p>
-            <p class="proof" lang="en"><b>Simulated players before launch.</b> Bots at three skill levels play the campaign, and a funnel model predicts conversion, session length and D1 retention.</p>
-            <ul class="chips"><li>JavaScript</li><li>Canvas 2D</li><li>Python</li><li>Poki SDK</li><li>CrazyGames SDK</li></ul>
-            <a class="more" href="https://github.com/forgemarcineksiema-art/blast-battalion" target="_blank" rel="noopener"><span lang="pl">Kod na GitHubie</span><span lang="en">Code on GitHub</span>
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
+        <article class="grid feat">
+          <figure class="shot"><img src="assets/img/driving-streets.webp" width="1280" height="720" alt="Untitled Driving Game: jazda przez miasto" data-alt-en="Untitled Driving Game: driving through town" loading="lazy"></figure>
+          <div class="body">
+            <span class="badge"><span lang="pl">W produkcji</span><span lang="en">In production</span></span>
+            <h3>Untitled Driving Game</h3>
+            <p lang="pl">Arkadowa gra samochodowa z otwartym światem w przeglądarce. Cztery dzielnice na jednej wyspie, siedem klas aut, zlecenia i pościgi z policją, która reaguje tylko na to, co widzi. Każde auto ma zawieszenie, skrzynię biegów i przyczepność.</p>
+            <p lang="en">An open-world arcade driving game in the browser. Four districts on one island, seven vehicle classes, jobs and police chases where the police only react to what they see. Every car has suspension, gearing and grip.</p>
+            <ul class="facts">
+              <li><span lang="pl">Technologia</span><span lang="en">Tech</span><span>TypeScript, Three.js, Rapier (WASM), Web Audio</span></li>
+              <li><span lang="pl">Testy</span><span lang="en">Tests</span><span lang="pl">Vitest (symulacja), Playwright (E2E)</span><span lang="en">Vitest (simulation), Playwright (E2E)</span></li>
+              <li><span lang="pl">Assety</span><span lang="en">Assets</span><span lang="pl">modele, niebo, morze i muzyka z kodu</span><span lang="en">models, sky, sea and music from code</span></li>
+            </ul>
+            <p class="links">
+              <a class="play" href="" target="_blank" rel="noopener"><span lang="pl">Zagraj ↗</span><span lang="en">Play ↗</span></a>
+              <a href="https://github.com/forgemarcineksiema-art/driving-game" target="_blank" rel="noopener"><span lang="pl">Kod ↗</span><span lang="en">Code ↗</span></a>
+            </p>
           </div>
         </article>
 
-        <article class="card">
-          <figure class="shot">
-            <img src="assets/img/cloudkeep-cover.webp" width="1280" height="720" alt="Okładka Cloudkeep: latająca forteca walczy z armadą Barona" data-alt-en="Cloudkeep cover art: a flying fortress fights the Baron’s armada" loading="lazy">
-            <span class="pill pill--go">1.0 RC</span>
-          </figure>
-          <div class="card-body">
-            <h4>Cloudkeep</h4>
-            <p class="f-kicker">Tower survivor</p>
-            <p lang="pl">Twoja latająca forteca wisi w środku nieba, a maszyny Mosiężnego Barona nadlatują ze wszystkich stron. Co poziom wybierasz 1 z 3 ulepszeń: nową wieżę, mocniejsze działo, mury albo całą twierdzę. Po czterech minutach przylatuje boss.</p>
-            <p lang="en">Your flying fortress hangs in the middle of the sky while the Brass Baron’s machines close in from every side. Every level you pick 1 of 3 upgrades: a new tower, a stronger cannon, walls or a whole keep. After four minutes the boss arrives.</p>
-            <p class="proof" lang="pl"><b>Bajkowa grafika rysowana w kodzie.</b> Ścieżki w rozdzielczości ekranu zamiast bitmap. Gra działa w pionie i poziomie, na klawiaturze, dotyku i padzie.</p>
-            <p class="proof" lang="en"><b>Storybook art drawn in code.</b> Paths at screen resolution instead of bitmaps. Plays in portrait and landscape, on keyboard, touch and gamepad.</p>
-            <ul class="chips"><li>JavaScript</li><li>Canvas 2D</li><li><span lang="pl">zero zależności</span><span lang="en">zero dependencies</span></li></ul>
-            <a class="more" href="https://github.com/forgemarcineksiema-art/cloudkeep" target="_blank" rel="noopener"><span lang="pl">Kod na GitHubie</span><span lang="en">Code on GitHub</span>
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
-        </article>
-
-        <article class="card">
-          <figure class="shot">
-            <img src="assets/img/fragile-hub.webp" width="1280" height="720" alt="Regionalna sortownia paczek z sześcioma dzielnicami w Fragile Express" data-alt-en="The regional parcel hub with six districts in Fragile Express" loading="lazy">
-            <span class="pill">MVP</span>
-          </figure>
-          <div class="card-body">
-            <h4>Fragile Express</h4>
-            <p class="f-kicker"><span lang="pl">Tycoon · sortownia paczek</span><span lang="en">Tycoon · parcel depot</span></p>
-            <p lang="pl">Tycoon w stylu Monkey Mart: nosisz stosy paczek z taśmy na regały i do vanów, kupujesz ulepszenia i zatrudniasz ludzi, aż sortownia działa sama. Paczki „ostrożnie” płacą ×3, ale tłuką się, gdy stos jest za wysoki.</p>
-            <p lang="en">A Monkey Mart–style tycoon: carry stacks of parcels from the belt to the shelves and vans, buy upgrades and hire workers until the depot runs itself. Fragile parcels pay ×3 but break when the stack gets too tall.</p>
-            <p class="proof" lang="pl"><b>Ekonomia sprawdzona przez bota.</b> Symulator tempa z „chciwym” botem-graczem przechodzi każdą lokację, zanim zrobi to człowiek. Do tego 10 języków.</p>
-            <p class="proof" lang="en"><b>An economy tested by a bot.</b> A pacing simulator with a greedy bot player clears every location before a human does. Plus 10 languages.</p>
-            <ul class="chips"><li>TypeScript</li><li>PixiJS v8</li><li>Vitest</li><li>Poki SDK</li></ul>
-            <a class="more" href="https://github.com/forgemarcineksiema-art/fragile-express" target="_blank" rel="noopener"><span lang="pl">Kod na GitHubie</span><span lang="en">Code on GitHub</span>
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
+        <article class="grid feat">
+          <figure class="shot"><img src="assets/img/wot-garage.webp" width="960" height="540" alt="Czołg w garażu, render z silnika w Ruście" data-alt-en="A tank in the garage, rendered by the Rust engine" loading="lazy"></figure>
+          <div class="body">
+            <span class="badge"><span lang="pl">W produkcji · Windows</span><span lang="en">In production · Windows</span></span>
+            <h3><span lang="pl">Gra czołgowa w Ruście</span><span lang="en">Tank game in Rust</span></h3>
+            <p lang="pl">Sieciowa gra czołgowa z własnym silnikiem: renderer na wgpu, serwer autorytatywny bez grafiki, deterministyczne obrażenia i penetracja liczona względem płyt pancerza w 3D. Do tego edytor map i powtórki bitew.</p>
+            <p lang="en">An online tank game on my own engine: a wgpu renderer, a headless authoritative server, deterministic damage and penetration resolved against 3D armour plates. Plus a map editor and battle replays.</p>
+            <ul class="facts">
+              <li><span lang="pl">Technologia</span><span lang="en">Tech</span><span>Rust, wgpu, WGSL, RON</span></li>
+              <li><span lang="pl">Struktura</span><span lang="en">Structure</span><span lang="pl">35 crate'ów: geometria, symulacja, sieć, render, edytor</span><span lang="en">35 crates: geometry, simulation, networking, render, editor</span></li>
+              <li><span lang="pl">Wydajność</span><span lang="en">Performance</span><span lang="pl">cel 60 FPS na GeForce MX330</span><span lang="en">60 FPS target on a GeForce MX330</span></li>
+            </ul>
+            <p class="links">
+              <a href="https://github.com/forgemarcineksiema-art/wot-rust" target="_blank" rel="noopener"><span lang="pl">Kod ↗</span><span lang="en">Code ↗</span></a>
+            </p>
           </div>
         </article>
       </div>
 
       <div class="subhead">
-        <h3><span lang="pl">Laboratorium</span><span lang="en">Lab</span></h3>
-        <p><span lang="pl">Własne silniki i prototypy</span><span lang="en">Own engines and prototypes</span></p>
+        <h3><span lang="pl">Pozostałe projekty</span><span lang="en">More projects</span></h3>
+        <span class="cap"><span lang="pl">Gry webowe, silnik i prototypy</span><span lang="en">Web games, engine and prototypes</span></span>
       </div>
-
-      <div class="lab">
-        <article class="lab-item">
-          <figure class="shot">
-            <img src="assets/img/engine-debug.webp" width="1264" height="500" alt="Widok debugowania kolizji i interakcji w silniku C++" data-alt-en="Collision and interaction debug view in the C++ engine" loading="lazy">
-          </figure>
-          <h4><span lang="pl">Tidebreak · silnik w C++</span><span lang="en">Tidebreak · a C++ engine</span></h4>
-          <p lang="pl">Fundament własnego silnika akcji i przygody: CMake, renderer DirectX 11 z zapasowym GDI, kamera TPP, kolizje świata, interakcje i testy dymne bez okna.</p>
-          <p lang="en">The foundation of my own action-adventure engine: CMake, a DirectX 11 renderer with a GDI fallback, a third-person camera, world collision, interactions and windowless smoke tests.</p>
-          <ul class="chips"><li>C++</li><li>CMake</li><li>DirectX 11</li></ul>
-        </article>
-        <article class="lab-item">
-          <div class="term" aria-label="Dokumenty preprodukcji">
-            <div class="term-bar"><i></i><i></i><i></i><span>docs/preproduction</span></div>
-<pre><span class="c">#</span> <span lang="pl">23 dokumenty preprodukcji</span><span lang="en">23 preproduction documents</span>
-00_manifest.md
-02_player_fantasy_core_loop.md
-06_game_systems.md
-07_mission_grammar.md
-18_world_state_model.md
-<span class="c">…</span></pre>
-          </div>
-          <h4>Imperium z ulicy</h4>
-          <p lang="pl">Fabularny sandbox TPP w Unity 6 o budowaniu imperium w fikcyjnym mieście lat 80. Pełna preprodukcja: manifest, pętla rozgrywki, gramatyka misji i model stanu świata, w którym każda decyzja zmienia miasto.</p>
-          <p lang="en">A story-driven third-person sandbox in Unity 6 about building an empire in a fictional 1980s city. Full preproduction: manifesto, core loop, mission grammar and a world-state model where every decision changes the city.</p>
-          <ul class="chips"><li>Unity 6</li><li>C#</li><li>URP</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= USŁUGI ================= -->
-  <section class="section" id="uslugi">
-    <div class="wrap">
-      <header class="section-head">
-        <p class="eyebrow"><span lang="pl">Usługi</span><span lang="en">Services</span></p>
-        <h2><span lang="pl">Ogarnę to od A do Z</span><span lang="en">Start to finish, handled</span></h2>
-        <p lang="pl">Przychodzisz z pomysłem, wychodzisz z działającym produktem. Mogę wziąć na siebie cały projekt albo dołączyć tam, gdzie brakuje rąk lub doświadczenia.</p>
-        <p lang="en">Bring an idea, leave with a working product. I can take on the whole project or join where you are short of hands or experience.</p>
-      </header>
-
-      <div class="services">
-        <article class="service">
-          <p class="service-tag">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="7" width="20" height="11" rx="3"/><path d="M7 11v3M5.5 12.5h3"/><circle cx="16" cy="11.5" r="1" fill="currentColor"/><circle cx="18" cy="14" r="1" fill="currentColor"/></svg>
-            <span lang="pl">Gry</span><span lang="en">Games</span>
-          </p>
-          <h3><span lang="pl">Gry od pomysłu do premiery</span><span lang="en">Games from idea to launch</span></h3>
-          <p lang="pl">Projekt rozgrywki, kod, grafika, dźwięk i balans, a potem wydanie: na portalu, w przeglądarce albo na desktopie.</p>
-          <p lang="en">Game design, code, art, audio and balance, then the release: on a portal, in the browser or on desktop.</p>
-          <ul lang="pl">
-            <li>Gry przeglądarkowe HTML5 i WebGL</li>
-            <li>Natywne gry 3D w Ruście i C++</li>
-            <li>Integracja Poki i CrazyGames: reklamy, zapisy, wydarzenia</li>
-            <li>Wiele języków, telefon i desktop, pion i poziom</li>
-          </ul>
-          <ul lang="en">
-            <li>HTML5 and WebGL browser games</li>
-            <li>Native 3D games in Rust and C++</li>
-            <li>Poki and CrazyGames integration: ads, saves, events</li>
-            <li>Many languages, phone and desktop, portrait and landscape</li>
-          </ul>
-        </article>
-
-        <article class="service">
-          <p class="service-tag">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="M2.5 8.5h19"/><circle cx="5.5" cy="6.25" r=".6" fill="currentColor"/><circle cx="7.5" cy="6.25" r=".6" fill="currentColor"/><path d="M6 12.5h7M6 15.5h4"/></svg>
-            Web
-          </p>
-          <h3><span lang="pl">Strony i aplikacje webowe</span><span lang="en">Websites and web apps</span></h3>
-          <p lang="pl">Projektuję i wykonuję strony firmowe, landing page, panele i aplikacje. Od makiety, przez frontend i backend, po wdrożenie.</p>
-          <p lang="en">I design and build company sites, landing pages, dashboards and apps. From the mock-up through frontend and backend to deployment.</p>
-          <ul lang="pl">
-            <li>Projekt UI/UX i spójny wygląd marki</li>
-            <li>Szybkie, responsywne i dostępne strony</li>
-            <li>Aplikacje, panele administracyjne, integracje API</li>
-            <li>Testy end-to-end, hosting i wdrożenie</li>
-          </ul>
-          <ul lang="en">
-            <li>UI/UX design and a consistent brand look</li>
-            <li>Fast, responsive and accessible sites</li>
-            <li>Web apps, admin dashboards, API integrations</li>
-            <li>End-to-end tests, hosting and deployment</li>
-          </ul>
-        </article>
-
-        <article class="service">
-          <p class="service-tag">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="4" width="19" height="16" rx="2"/><path d="m6.5 9.5 3 2.5-3 2.5M11.5 15h5"/></svg>
-            Software
-          </p>
-          <h3><span lang="pl">Oprogramowanie na zamówienie</span><span lang="en">Custom software</span></h3>
-          <p lang="pl">Programy i narzędzia, które oszczędzają czas: na desktop, w linii komend i na serwerze. Tam, gdzie liczy się wydajność i niezawodność, sięgam po Rusta.</p>
-          <p lang="en">Programs and tools that save time: on desktop, on the command line and on the server. Where speed and reliability matter, I reach for Rust.</p>
-          <ul lang="pl">
-            <li>Aplikacje desktopowe i narzędzia wewnętrzne</li>
-            <li>Edytory, generatory i przetwarzanie danych</li>
-            <li>Automatyzacja powtarzalnej pracy i boty</li>
-            <li>Serwery i backendy w Ruście, Node.js i Pythonie</li>
-          </ul>
-          <ul lang="en">
-            <li>Desktop apps and internal tools</li>
-            <li>Editors, generators and data processing</li>
-            <li>Automation of repetitive work, and bots</li>
-            <li>Servers and backends in Rust, Node.js and Python</li>
-          </ul>
-        </article>
-
-        <article class="service">
-          <p class="service-tag">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 10h4v4h-4z" fill="currentColor"/></svg>
-            AI
-          </p>
-          <h3><span lang="pl">Wdrożenia AI</span><span lang="en">AI integration</span></h3>
-          <p lang="pl">Wprowadzam AI do produktów i do codziennej pracy zespołów, razem z zasadami, które pilnują jakości.</p>
-          <p lang="en">I bring AI into products and into teams’ daily work, together with the rules that keep quality up.</p>
-          <ul lang="pl">
-            <li>Integracje modeli językowych (LLM) i agentów</li>
-            <li>Automatyzacja procesów i pracy z dokumentami</li>
-            <li>Workflow z agentami AI dla zespołów programistów</li>
-            <li>AI w grach: boty, przeciwnicy, symulowani gracze</li>
-          </ul>
-          <ul lang="en">
-            <li>Large language model (LLM) and agent integrations</li>
-            <li>Process and document automation</li>
-            <li>AI agent workflows for development teams</li>
-            <li>AI in games: bots, enemies, simulated players</li>
-          </ul>
-        </article>
-      </div>
-
-      <div class="process">
-        <div class="subhead">
-          <h3><span lang="pl">Jak pracuję</span><span lang="en">How I work</span></h3>
-          <p><span lang="pl">Ten sam proces dla gry, strony i aplikacji</span><span lang="en">The same process for a game, a site or an app</span></p>
-        </div>
-        <ol>
-          <li>
-            <h4>Brief</h4>
-            <p lang="pl">Ustalamy cel, odbiorców, budżet i to, co ma działać na koniec. Dostajesz plan i wycenę.</p>
-            <p lang="en">We agree on the goal, the audience, the budget and what has to work at the end. You get a plan and a quote.</p>
-          </li>
-          <li>
-            <h4><span lang="pl">Kontrakt etapu</span><span lang="en">Stage contract</span></h4>
-            <p lang="pl">Każdy etap ma spisany zakres, liczby, testy i warunek odbioru. Wiesz, za co płacisz i kiedy to dostaniesz.</p>
-            <p lang="en">Every stage has a written scope, numbers, tests and an acceptance gate. You know what you pay for and when you get it.</p>
-          </li>
-          <li>
-            <h4><span lang="pl">Małe kroki</span><span lang="en">Small steps</span></h4>
-            <p lang="pl">Pracuję w krótkich iteracjach. Każda kończy się zielonymi testami i wersją, którą możesz od razu uruchomić.</p>
-            <p lang="en">I work in short iterations. Each ends with green tests and a build you can run straight away.</p>
-          </li>
-          <li>
-            <h4><span lang="pl">Wydanie i opieka</span><span lang="en">Launch and support</span></h4>
-            <p lang="pl">Optymalizacja, publikacja na portalu, w sklepie albo na serwerze, a potem poprawki i dalszy rozwój.</p>
-            <p lang="en">Optimisation, publishing on a portal, a store or a server, then fixes and further development.</p>
-          </li>
-        </ol>
+      <div class="tablebox">
+        <table class="index">
+          <thead><tr>
+            <th><span lang="pl">Projekt</span><span lang="en">Project</span></th>
+            <th><span lang="pl">Co to jest</span><span lang="en">What it is</span></th>
+            <th class="hide-m"><span lang="pl">Technologia</span><span lang="en">Tech</span></th>
+            <th class="hide-m">Status</th>
+            <th></th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td class="t">Cloudkeep</td>
+              <td class="d"><span lang="pl">Tower survivor: latająca forteca kontra armada maszyn, 1 z 3 ulepszeń co poziom.</span><span lang="en">Tower survivor: a flying fortress against a machine armada, 1 of 3 upgrades per level.</span></td>
+              <td class="hide-m">JavaScript, Canvas</td>
+              <td class="s hide-m"><span lang="pl">Przed premierą</span><span lang="en">Pre-release</span></td>
+              <td class="l"><a class="play" href="" target="_blank" rel="noopener"><span lang="pl">Zagraj</span><span lang="en">Play</span></a><a href="https://github.com/forgemarcineksiema-art/cloudkeep" target="_blank" rel="noopener"><span lang="pl">Kod</span><span lang="en">Code</span></a></td>
+            </tr>
+            <tr>
+              <td class="t">Blast Battalion</td>
+              <td class="d"><span lang="pl">Run-and-gun z niszczalnym terenem, 12 bohaterami i trybem Arcade. Testowany przez symulowanych graczy.</span><span lang="en">Run-and-gun with destructible terrain, 12 heroes and an Arcade mode. Tested by simulated players.</span></td>
+              <td class="hide-m">JavaScript, Canvas</td>
+              <td class="s hide-m"><span lang="pl">Przed premierą</span><span lang="en">Pre-release</span></td>
+              <td class="l"><a class="play" href="" target="_blank" rel="noopener"><span lang="pl">Zagraj</span><span lang="en">Play</span></a><a href="https://github.com/forgemarcineksiema-art/blast-battalion" target="_blank" rel="noopener"><span lang="pl">Kod</span><span lang="en">Code</span></a></td>
+            </tr>
+            <tr>
+              <td class="t">Fragile Express</td>
+              <td class="d"><span lang="pl">Tycoon sortowni paczek. Ekonomię sprawdza bot-gracz w symulatorze tempa. 10 języków.</span><span lang="en">Parcel-depot tycoon. A bot player checks the economy in a pacing simulator. 10 languages.</span></td>
+              <td class="hide-m">TypeScript, PixiJS</td>
+              <td class="s hide-m">MVP</td>
+              <td class="l"><a class="play" href="" target="_blank" rel="noopener"><span lang="pl">Zagraj</span><span lang="en">Play</span></a><a href="https://github.com/forgemarcineksiema-art/fragile-express" target="_blank" rel="noopener"><span lang="pl">Kod</span><span lang="en">Code</span></a></td>
+            </tr>
+            <tr>
+              <td class="t">Tanki</td>
+              <td class="d"><span lang="pl">Bitwy czołgów 7 na 7 z botami w przeglądarce, bez losowych obrażeń.</span><span lang="en">7v7 tank battles with bots in the browser, no random damage.</span></td>
+              <td class="hide-m">TypeScript, Three.js</td>
+              <td class="s hide-m"><span lang="pl">W produkcji</span><span lang="en">In production</span></td>
+              <td class="l"><a class="play" href="" target="_blank" rel="noopener"><span lang="pl">Zagraj</span><span lang="en">Play</span></a><a href="https://github.com/forgemarcineksiema-art/tanki" target="_blank" rel="noopener"><span lang="pl">Kod</span><span lang="en">Code</span></a></td>
+            </tr>
+            <tr>
+              <td class="t">Tidebreak</td>
+              <td class="d"><span lang="pl">Fundament własnego silnika akcji: renderer DirectX 11, kamera TPP, kolizje, testy bez okna.</span><span lang="en">Foundation of my own action engine: DirectX 11 renderer, third-person camera, collisions, windowless tests.</span></td>
+              <td class="hide-m">C++, CMake</td>
+              <td class="s hide-m"><span lang="pl">Prototyp</span><span lang="en">Prototype</span></td>
+              <td class="l"><a href="https://github.com/forgemarcineksiema-art/game" target="_blank" rel="noopener"><span lang="pl">Kod</span><span lang="en">Code</span></a></td>
+            </tr>
+            <tr>
+              <td class="t">Imperium z ulicy</td>
+              <td class="d"><span lang="pl">Fabularny sandbox TPP: pełna preprodukcja i prototyp modelu stanu świata.</span><span lang="en">Story-driven third-person sandbox: full preproduction and a world-state prototype.</span></td>
+              <td class="hide-m">Unity 6, C#</td>
+              <td class="s hide-m"><span lang="pl">Preprodukcja</span><span lang="en">Preproduction</span></td>
+              <td class="l"><a href="https://github.com/forgemarcineksiema-art/poprostu" target="_blank" rel="noopener"><span lang="pl">Kod</span><span lang="en">Code</span></a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <!-- ================= TECHNOLOGIE ================= -->
-  <section class="section" id="technologie">
+  <!-- ================= UMIEJĘTNOŚCI ================= -->
+  <section class="skills" id="umiejetnosci">
     <div class="wrap">
-      <header class="section-head">
-        <p class="eyebrow"><span lang="pl">Technologie</span><span lang="en">Stack</span></p>
-        <h2><span lang="pl">Narzędzia dobrane do problemu</span><span lang="en">Tools that fit the problem</span></h2>
-        <p lang="pl">Gry 2D na portale piszę bez zależności, duże projekty 3D w TypeScripcie albo w Ruście, a prototypy w Unity, gdy liczy się czas.</p>
-        <p lang="en">I write 2D portal games with zero dependencies, large 3D projects in TypeScript or Rust, and prototypes in Unity when time matters most.</p>
-      </header>
-
-      <div class="stack">
-        <div class="stack-col">
-          <h3><span lang="pl">Gry</span><span lang="en">Games</span></h3>
-          <ul>
-            <li><span lang="pl">Własny silnik w Ruście</span><span lang="en">Own engine in Rust</span><small>wgpu · WGSL</small></li>
-            <li>Three.js<small><span lang="pl">3D w przeglądarce</span><span lang="en">3D in the browser</span></small></li>
-            <li>PixiJS<small>2D · WebGL</small></li>
-            <li>Canvas 2D<small><span lang="pl">gry bez zależności</span><span lang="en">zero-dependency games</span></small></li>
-            <li>Unity 6<small>C# · URP</small></li>
-            <li>C++<small>DirectX 11 · CMake</small></li>
-            <li>Rapier<small><span lang="pl">fizyka · WASM</span><span lang="en">physics · WASM</span></small></li>
-            <li>Web Audio<small><span lang="pl">dźwięk i muzyka z kodu</span><span lang="en">sound and music from code</span></small></li>
-          </ul>
+      <div class="grid sec-head">
+        <span class="cap"><span lang="pl">Umiejętności</span><span lang="en">Skills</span></span>
+        <h2><span lang="pl">Co mogę wnieść do zespołu</span><span lang="en">What I bring to a team</span></h2>
+        <p lang="pl">Każda umiejętność ma dowód w projekcie, który możesz otworzyć powyżej.</p>
+        <p lang="en">Each skill has proof in a project you can open above.</p>
+      </div>
+      <div class="grid">
+        <div class="skill">
+          <span class="cap">TypeScript · frontend</span>
+          <h3><span lang="pl">Interfejsy i aplikacje webowe</span><span lang="en">Web interfaces and apps</span></h3>
+          <p lang="pl">Menu, HUD-y i ekrany w wielu językach, responsywne od telefonu po desktop. Vite, testy Vitest i Playwright.</p>
+          <p lang="en">Menus, HUDs and screens in many languages, responsive from phone to desktop. Vite, Vitest and Playwright tests.</p>
+          <p class="proof"><span lang="pl">Dowód:</span><span lang="en">Proof:</span> Fragile Express, Tanki</p>
         </div>
-        <div class="stack-col">
-          <h3>Web</h3>
-          <ul>
-            <li>TypeScript · JavaScript<small>frontend · Node.js</small></li>
-            <li>HTML · CSS<small><span lang="pl">responsywnie i dostępnie</span><span lang="en">responsive and accessible</span></small></li>
-            <li>Vite<small><span lang="pl">build i serwer deweloperski</span><span lang="en">build and dev server</span></small></li>
-            <li>WebAssembly<small><span lang="pl">natywna szybkość w przeglądarce</span><span lang="en">native speed in the browser</span></small></li>
-            <li>Vitest · Playwright<small><span lang="pl">testy jednostkowe i E2E</span><span lang="en">unit and E2E tests</span></small></li>
-            <li>i18n<small><span lang="pl">do 10 języków</span><span lang="en">up to 10 languages</span></small></li>
-            <li>Python<small><span lang="pl">narzędzia · analityka</span><span lang="en">tools · analytics</span></small></li>
-            <li>Poki · CrazyGames SDK<small><span lang="pl">reklamy · zapisy</span><span lang="en">ads · saves</span></small></li>
-          </ul>
+        <div class="skill">
+          <span class="cap">Three.js · WebGL</span>
+          <h3><span lang="pl">Grafika 3D w przeglądarce</span><span lang="en">3D graphics in the browser</span></h3>
+          <p lang="pl">Sceny 3D z fizyką (Rapier, WebAssembly), dynamicznym niebem i optymalizacją pod słabszy sprzęt.</p>
+          <p lang="en">3D scenes with physics (Rapier, WebAssembly), a dynamic sky and tuning for weaker hardware.</p>
+          <p class="proof"><span lang="pl">Dowód:</span><span lang="en">Proof:</span> Untitled Driving Game, Tanki</p>
         </div>
-        <div class="stack-col">
-          <h3>Rust</h3>
-          <ul>
-            <li>wgpu · WGSL<small><span lang="pl">cienie, SSAO, HDR, bloom</span><span lang="en">shadows, SSAO, HDR, bloom</span></small></li>
-            <li><span lang="pl">Serwer autorytatywny</span><span lang="en">Authoritative server</span><small><span lang="pl">stały tick · snapshoty</span><span lang="en">fixed tick · snapshots</span></small></li>
-            <li><span lang="pl">Deterministyczna symulacja</span><span lang="en">Deterministic simulation</span><small><span lang="pl">powtórki bitew</span><span lang="en">battle replays</span></small></li>
-            <li><span lang="pl">Balistyka i pancerz</span><span lang="en">Ballistics and armour</span><small><span lang="pl">płyty 3D · rykoszety</span><span lang="en">3D plates · ricochets</span></small></li>
-            <li><span lang="pl">Kernele geometrii</span><span lang="en">Geometry kernels</span><small>SDF · loft · revolve</small></li>
-            <li><span lang="pl">Edytor map</span><span lang="en">Map editor</span><small><span lang="pl">teren · drogi · linie wzroku</span><span lang="en">terrain · roads · line of sight</span></small></li>
-            <li><span lang="pl">Jakość</span><span lang="en">Quality</span><small>clippy -D warnings · golden tests</small></li>
-            <li><span lang="pl">Benchmarki</span><span lang="en">Benchmarks</span><small><span lang="pl">gorące ścieżki symulacji</span><span lang="en">simulation hot paths</span></small></li>
-          </ul>
+        <div class="skill">
+          <span class="cap">Gameplay</span>
+          <h3><span lang="pl">Rozgrywka i symulacja</span><span lang="en">Gameplay and simulation</span></h3>
+          <p lang="pl">Ekonomia i balans, przeciwnicy, boty testujące grę i symulacja oddzielona od renderu, z powtarzalnymi wynikami.</p>
+          <p lang="en">Economy and balance, enemies, bots that test the game, and simulation kept apart from rendering with reproducible results.</p>
+          <p class="proof"><span lang="pl">Dowód:</span><span lang="en">Proof:</span> Blast Battalion, Fragile Express</p>
+        </div>
+        <div class="skill">
+          <span class="cap">Rust</span>
+          <h3><span lang="pl">Systemy i wydajność</span><span lang="en">Systems and performance</span></h3>
+          <p lang="pl">Renderer na wgpu, shadery WGSL, serwer autorytatywny, replikacja sieciowa, edytor map i benchmarki.</p>
+          <p lang="en">A wgpu renderer, WGSL shaders, an authoritative server, network replication, a map editor and benchmarks.</p>
+          <p class="proof"><span lang="pl">Dowód:</span><span lang="en">Proof:</span> <span lang="pl">gra czołgowa w Ruście</span><span lang="en">tank game in Rust</span></p>
+        </div>
+        <div class="skill">
+          <span class="cap">AI</span>
+          <h3><span lang="pl">Praca z agentami AI</span><span lang="en">Working with AI agents</span></h3>
+          <p lang="pl">Prowadzę Claude Code, Codex i Cursor według spisanych zasad: zakres etapu, testy przed commitem, przegląd każdej zmiany. Mogę to ustawić w zespole.</p>
+          <p lang="en">I run Claude Code, Codex and Cursor by written rules: a scoped stage, tests before every commit, a review of every change. I can set this up in a team.</p>
+          <p class="proof"><span lang="pl">Dowód:</span><span lang="en">Proof:</span> <span lang="pl">pliki AGENTS.md i CLAUDE.md w repozytoriach</span><span lang="en">AGENTS.md and CLAUDE.md in the repos</span></p>
+        </div>
+        <div class="skill">
+          <span class="cap">HTML5 · <span lang="pl">portale</span><span lang="en">portals</span></span>
+          <h3><span lang="pl">Gry na portale webowe</span><span lang="en">Games for web portals</span></h3>
+          <p lang="pl">Integracja SDK Poki i CrazyGames, reklamy nagradzane, mały rozmiar paczki, sterowanie dotykiem, myszą i padem.</p>
+          <p lang="en">Poki and CrazyGames SDK integration, rewarded ads, small bundles, touch, mouse and gamepad controls.</p>
+          <p class="proof"><span lang="pl">Dowód:</span><span lang="en">Proof:</span> Orbling Skies, Cloudkeep</p>
         </div>
       </div>
 
-      <div class="rust">
-        <div class="rust-copy">
-          <p class="eyebrow">Rust</p>
-          <h3><span lang="pl">Rust w skali produkcyjnej</span><span lang="en">Rust at production scale</span></h3>
-          <p lang="pl">WOT to workspace z 35 crate’ami: od kerneli geometrii, przez symulację i sieć, po klienta, serwer i edytor. Każdy pojazd to jeden plik RON, z którego powstaje hitbox, pancerz, mocowania dział i siatka do renderu.</p>
-          <p lang="en">WOT is a workspace of 35 crates: from geometry kernels through simulation and networking to the client, server and editor. Each vehicle is a single RON file that produces its hitbox, armour, gun mounts and render mesh.</p>
-          <p lang="pl">Każda zmiana trafia do repozytorium z testem, który blokuje jej zachowanie.</p>
-          <p lang="en">Every change lands with a test that locks its behaviour.</p>
-        </div>
-        <div class="term">
-          <div class="term-bar"><i></i><i></i><i></i><span>wot / cargo workspace</span></div>
-<pre><span class="d">crates/</span>
-├─ <span class="d">foundation/</span>  game_core, terrain
-├─ <span class="d">kernels/</span>     sdf, sweep, cast_loft, revolve, panel, deform
-├─ <span class="d">vehicle/</span>     vehicle_forge, vehicle_build, vehicle_recipes
-├─ <span class="d">world/</span>       map_forge, world_forge, scene_build
-├─ <span class="d">runtime/</span>     sim, physics, net, battle_host, matchmaker, audio
-├─ <span class="d">render/</span>      renderer_api, renderer_wgpu
-├─ <span class="d">ui/</span>          ui_kit
-├─ <span class="d">apps/</span>        client, server, editor, tools
-└─ <span class="d">tooling/</span>     quality
-
-<span class="c">$</span> cargo run --release -p server -- --map bystra-valley</pre>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= AI ================= -->
-  <section class="section" id="ai">
-    <div class="wrap">
-      <header class="section-head">
-        <p class="eyebrow"><span lang="pl">Sztuczna inteligencja</span><span lang="en">Artificial intelligence</span></p>
-        <h2><span lang="pl">AI w grach i w produkcji</span><span lang="en">AI in games and in production</span></h2>
-        <p lang="pl">Z AI pracuję na dwóch poziomach. W grach buduję boty i przeciwników, którzy grają uczciwie. W produkcji prowadzę zespół agentów AI, który pisze, testuje i poprawia kod według jasnych zasad.</p>
-        <p lang="en">I work with AI on two levels. In games I build bots and enemies that play fair. In production I run a team of AI agents that writes, tests and fixes code by clear rules.</p>
-      </header>
-
-      <div class="ai-grid">
-        <div class="ai-col">
-          <h3><span lang="pl">W grach</span><span lang="en">In games</span> <small>GAMEPLAY AI</small></h3>
-          <ul class="ai-list">
-            <li><span>Tanki</span><p lang="pl">Boty uzupełniają drużyny 7 na 7 i rozgrywają całe bitwy bez grafiki, więc balans sprawdzam na seriach bitew z linii komend.</p><p lang="en">Bots fill 7v7 teams and play whole battles without graphics, so I check the balance on series of battles run from the command line.</p></li>
-            <li><span>Driving Game</span><p lang="pl">Policja reaguje tylko na to, co widzi, a pościg eskaluje od patroli przez blokady po helikopter z reflektorem.</p><p lang="en">Police react only to what they see, and a chase escalates from patrols to roadblocks to a helicopter with a searchlight.</p></li>
-            <li><span>Blast Battalion</span><p lang="pl">Symulowani gracze, od nowicjusza po wprawnego, przechodzą kampanię i zasilają model retencji.</p><p lang="en">Simulated players, from novice to skilled, play the campaign and feed the retention model.</p></li>
-            <li><span>Fragile Express</span><p lang="pl">Bot-gracz przechodzi ekonomię każdej lokacji, a symulator tempa raportuje każdy zakup.</p><p lang="en">A bot player clears the economy of every location, and the pacing simulator reports every purchase.</p></li>
-          </ul>
-        </div>
-        <div class="ai-col">
-          <h3><span lang="pl">W produkcji</span><span lang="en">In production</span> <small>AI WORKFLOW</small></h3>
-          <ul class="ai-list">
-            <li><span lang="pl">Agenci</span><span lang="en">Agents</span><p lang="pl">Claude Code, Codex i Cursor pracują w moich repozytoriach według tych samych spisanych zasad, kontraktów etapów i dziennika sesji.</p><p lang="en">Claude Code, Codex and Cursor work in my repositories by the same written rules, stage contracts and session log.</p></li>
-            <li><span lang="pl">Bramki</span><span lang="en">Gates</span><p lang="pl">Testy muszą być zielone przed pierwszą zmianą i przy każdym commicie. Nikt nie luzuje testu ani budżetu, żeby przejść dalej.</p><p lang="en">Tests must be green before the first edit and at every commit. Nobody loosens a test or a budget to get through.</p></li>
-            <li><span>Bughunt</span><p lang="pl">Agenci polują na błędy sondami i zrzutami ekranu porównywanymi ze wzorcami, a każdą poprawkę przypinają testem.</p><p lang="en">Agents hunt bugs with probes and screenshots compared against golden images, and pin every fix with a test.</p></li>
-            <li><span lang="pl">Autonomia</span><span lang="en">Autonomy</span><p lang="pl">Runbooki do pracy autonomicznej: jeden cel, jedna faza, jasne granice i warunek stopu.</p><p lang="en">Runbooks for autonomous work: one goal, one phase, clear boundaries and a stop condition.</p></li>
-          </ul>
-        </div>
-      </div>
-
-      <figure class="quote">
-        <blockquote><span lang="pl">Jeden goal = jeden mierzalny dowód, jedna faza, jasne non-goals, konkretna walidacja.</span><span lang="en">One goal = one measurable proof, one phase, clear non-goals, concrete validation.</span></blockquote>
-        <figcaption><span lang="pl">Z moich runbooków dla agentów AI</span><span lang="en">From my runbooks for AI agents</span></figcaption>
-      </figure>
-
-      <div class="ai-offer">
-        <p lang="pl">Mogę ustawić to samo u Ciebie: dobór modeli, integracje API, agenci i automatyzacje oraz zasady, dzięki którym AI przyspiesza pracę i nie psuje tego, co już działa.</p>
-        <p lang="en">I can set up the same for you: model selection, API integrations, agents and automation, plus the rules that let AI speed up the work without breaking what already works.</p>
-        <a class="btn btn-primary" href="#kontakt"><span lang="pl">Porozmawiajmy o AI</span><span lang="en">Talk to me about AI</span>
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <div class="grid freelance">
+        <h3><span lang="pl">Zlecenia</span><span lang="en">Freelance</span></h3>
+        <p lang="pl">Przyjmuję też mniejsze projekty: strony, aplikacje webowe, proste gry na zamówienie i narzędzia. Kontaktujesz się bezpośrednio ze mną.</p>
+        <p lang="en">I also take on smaller projects: websites, web apps, simple custom games and tools. You deal with me directly.</p>
+        <a href="#kontakt"><span lang="pl">Napisz →</span><span lang="en">Get in touch →</span></a>
       </div>
     </div>
   </section>
 
   <!-- ================= O MNIE ================= -->
-  <section class="section" id="o-mnie">
-    <div class="wrap about">
-      <div class="about-copy">
-        <p class="eyebrow"><span lang="pl">O mnie</span><span lang="en">About</span></p>
-        <h2>Marcin Płaza</h2>
-        <p class="role"><span lang="pl">Założyciel PlazaWorks · programista · twórca gier</span><span lang="en">Founder of PlazaWorks · developer · game maker</span></p>
-        <p lang="pl">Robię gry i oprogramowanie, a PlazaWorks to moje mini studio. Projekt przechodzi u mnie całą drogę od pomysłu do gotowego produktu, a Ty masz jeden kontakt od pierwszej rozmowy do premiery.</p>
-        <p lang="en">I make games and software, and PlazaWorks is my indie studio. A project goes the whole way from idea to finished product with me, and you have one contact from the first call to launch.</p>
-        <p lang="pl">Najlepiej czuję się tam, gdzie technika spotyka rozgrywkę: w fizyce pojazdów, balistyce, sieci, symulacji i narzędziach, które przyspieszają pracę. Równie chętnie dowożę rzeczy małe i szybkie: stronę, panel albo skrypt, który oszczędza komuś godzinę dziennie.</p>
-        <p lang="en">I am most at home where technology meets gameplay: vehicle physics, ballistics, networking, simulation and tools that speed up the work. I am just as happy to ship small, quick things: a website, a dashboard or a script that saves someone an hour a day.</p>
-        <p lang="pl">AI traktuję jak zespół, którym trzeba dobrze pokierować. Dzięki temu mini studio dowozi zakres, który zwykle wymaga większej ekipy.</p>
-        <p lang="en">I treat AI as a team that needs good direction. That is how a small studio ships the scope that usually takes a bigger crew.</p>
+  <section class="about" id="o-mnie">
+    <div class="wrap">
+      <div class="grid sec-head">
+        <span class="cap"><span lang="pl">O mnie</span><span lang="en">About</span></span>
+        <h2><span lang="pl">Kim jestem</span><span lang="en">Who I am</span></h2>
       </div>
-      <div>
-        <p class="eyebrow" style="margin-bottom:14px"><span lang="pl">Zasady</span><span lang="en">Principles</span></p>
-        <ul class="principles">
-          <li><b><span lang="pl">Uczciwie</span><span lang="en">Fair</span></b><p lang="pl">Bez losowych obrażeń i ukrytych rzutów kością. Gracz zawsze wie, dlaczego wygrał albo przegrał.</p><p lang="en">No random damage and no hidden dice rolls. Players always know why they won or lost.</p></li>
-          <li><b><span lang="pl">Wydajnie</span><span lang="en">Fast</span></b><p lang="pl">Wydajność ma budżet: 60 FPS na laptopowej karcie graficznej i bitwa w 20 sekund od kliknięcia.</p><p lang="en">Performance has a budget: 60 FPS on a laptop GPU and a battle 20 seconds after the click.</p></li>
-          <li><b><span lang="pl">Lekko</span><span lang="en">Light</span></b><p lang="pl">Grafika i dźwięk generowane w kodzie, więc gry ładują się szybko nawet na słabym łączu.</p><p lang="en">Art and audio generated in code, so games load fast even on a slow connection.</p></li>
-          <li><b><span lang="pl">Pewnie</span><span lang="en">Solid</span></b><p lang="pl">Każda zmiana dostaje test, który pilnuje jej działania. Symulacja jest oddzielona od renderu, a wyniki da się powtórzyć.</p><p lang="en">Every change gets a test that guards it. Simulation is kept apart from rendering, and results are reproducible.</p></li>
-          <li><b><span lang="pl">Do końca</span><span lang="en">Finished</span></b><p lang="pl">Projekt jest skończony, gdy działa u użytkownika: wydany, przetestowany i opisany.</p><p lang="en">A project is done when it works for its users: released, tested and documented.</p></li>
+      <div class="grid">
+        <div class="about-copy">
+          <p lang="pl">Zaczynałem od zleceń: sklepów z przedmiotami dla serwerów Minecraft i strony dla salonu fryzjerskiego. Potem skupiłem się na grach. PlazaWorks to szyld, pod którym je tworzę i wydaję.</p>
+          <p lang="en">I started with freelance work: item shops for Minecraft servers and a website for a hair salon. Then I focused on games. PlazaWorks is the label I build and publish them under.</p>
+          <p lang="pl">Najlepiej czuję się tam, gdzie technika spotyka rozgrywkę: w fizyce pojazdów, balistyce, sieci i symulacji. Lubię kończyć rzeczy porządnie: z testami, budżetem wydajności i dokumentacją.</p>
+          <p lang="en">I am most at home where technology meets gameplay: vehicle physics, ballistics, networking and simulation. I like to finish things properly, with tests, a performance budget and documentation.</p>
+          <p lang="pl">Szukam miejsca, w którym będę mógł się rozwijać w zespole: przy grach, aplikacjach webowych albo projektach w Ruście.</p>
+          <p lang="en">I am looking for a team where I can grow: on games, web apps or Rust projects.</p>
+        </div>
+        <ul class="about-side">
+          <li><span class="cap"><span lang="pl">Szukam</span><span lang="en">Looking for</span></span><span lang="pl">etat lub B2B, zlecenia</span><span lang="en">full-time or contract, freelance</span></li>
+          <li><span class="cap"><span lang="pl">Języki</span><span lang="en">Languages</span></span><span lang="pl">polski, angielski</span><span lang="en">Polish, English</span></li>
+          <li><span class="cap"><span lang="pl">Główny stack</span><span lang="en">Main stack</span></span><span>TypeScript, Three.js, Rust</span></li>
+          <li><span class="cap"><span lang="pl">Znam też</span><span lang="en">Also</span></span><span>PixiJS, Unity / C#, C++, Python</span></li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= KONTAKT ================= -->
+  <section class="contact" id="kontakt">
+    <div class="wrap grid">
+      <h2><span lang="pl" class="nw">Porozmawiajmy<span class="dot"></span></span><span lang="en" class="nw">Let’s talk<span class="dot"></span></span></h2>
+      <div class="side">
+        <p lang="pl">Masz ofertę pracy, zlecenie albo pytanie o któryś projekt? Napisz, odpowiem szybko.</p>
+        <p lang="en">Have a job offer, a project or a question about my work? Write to me and I will reply quickly.</p>
+        <!-- Adres e-mail ustawiasz w assets/site.js (CONTACT_EMAIL). Pusty = blok ukryty. -->
+        <div class="mail" id="mail-box" hidden>
+          <a id="mail-link" href="#"></a>
+          <button type="button" id="mail-copy"><span lang="pl">Kopiuj</span><span lang="en">Copy</span></button>
+        </div>
+        <a href="https://github.com/forgemarcineksiema-art" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
 </main>
 
-<!-- ================= KONTAKT ================= -->
-<section class="contact" id="kontakt">
-  <div class="stripe" aria-hidden="true"></div>
-  <div class="wrap contact-inner">
-    <div>
-      <h2><span lang="pl">Masz pomysł?<br><span class="hl">Zróbmy to.</span></span><span lang="en">Got an idea?<br><span class="hl">Let’s build it.</span></span></h2>
-      <p lang="pl">Gra, strona, aplikacja albo wdrożenie AI. Napisz, czego potrzebujesz, a odpowiem z konkretną propozycją, terminem i wyceną.</p>
-      <p lang="en">A game, a website, an app or an AI rollout. Tell me what you need and I will reply with a concrete proposal, timeline and quote.</p>
-    </div>
-    <div class="contact-actions">
-      <!-- Adres e-mail ustawiasz w assets/site.js (CONTACT_EMAIL). Pusty = blok ukryty. -->
-      <div class="mail" id="mail-box" hidden>
-        <a id="mail-link" href="#"></a>
-        <button type="button" id="mail-copy"><span lang="pl">Kopiuj</span><span lang="en">Copy</span></button>
-      </div>
-      <a class="btn btn-primary" href="https://github.com/forgemarcineksiema-art" target="_blank" rel="noopener">
-        <span><span lang="pl">Profil na GitHubie</span><span lang="en">GitHub profile</span></span>
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer class="site-foot">
-  <div class="wrap foot-row">
-    <span>© <span id="year">2026</span> PlazaWorks · Marcin Płaza</span>
-    <span><span lang="pl">Strona statyczna: bez ciasteczek i trackerów</span><span lang="en">Static site: no cookies, no trackers</span></span>
-    <a href="#top"><span lang="pl">Do góry ↑</span><span lang="en">Back to top ↑</span></a>
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Marcin Płaza · PlazaWorks</span>
+    <span><span lang="pl">Bez ciasteczek i trackerów</span><span lang="en">No cookies, no trackers</span></span>
   </div>
 </footer>
 
