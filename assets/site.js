@@ -8,12 +8,12 @@ const root = document.documentElement;
 
 const META = {
   pl: {
-    title: "Marcin Płaza · programista gier i aplikacji webowych",
-    description: "Portfolio Marcina Płazy (PlazaWorks): gry przeglądarkowe, grafika 3D w Three.js, TypeScript, Rust i praca z agentami AI. Szukam pracy i zleceń.",
+    title: "Marcin Płaza · programista: gry, web, Rust",
+    description: "Portfolio Marcina Płazy (PlazaWorks): własny renderer 3D w Ruście, gry i aplikacje webowe w TypeScripcie, praca z agentami AI. Szukam pracy i zleceń.",
   },
   en: {
-    title: "Marcin Płaza · game and web developer",
-    description: "Portfolio of Marcin Płaza (PlazaWorks): browser games, 3D graphics with Three.js, TypeScript, Rust and working with AI agents. Open to work.",
+    title: "Marcin Płaza · software developer: games, web, Rust",
+    description: "Portfolio of Marcin Płaza (PlazaWorks): my own 3D renderer in Rust, web games and apps in TypeScript, working with AI agents. Open to work.",
   },
 };
 

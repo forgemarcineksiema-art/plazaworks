@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Marcin Płaza · programista gier i aplikacji webowych</title>
-<meta name="description" content="Portfolio Marcina Płazy (PlazaWorks): gry przeglądarkowe, grafika 3D w Three.js, TypeScript, Rust i praca z agentami AI. Szukam pracy i zleceń.">
+<title>Marcin Płaza · programista: gry, web, Rust</title>
+<meta name="description" content="Portfolio Marcina Płazy (PlazaWorks): własny renderer 3D w Ruście, gry i aplikacje webowe w TypeScripcie, praca z agentami AI. Szukam pracy i zleceń.">
 <meta name="theme-color" content="#0b0b0b">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Marcin Płaza · programista gier i aplikacji webowych">
-<meta property="og:description" content="Gry przeglądarkowe, Three.js, TypeScript, Rust i AI. Zagraj w moje projekty.">
+<meta property="og:title" content="Marcin Płaza · programista: gry, web, Rust">
+<meta property="og:description" content="Własny renderer 3D w Ruście, gry i aplikacje webowe w TypeScripcie. Zagraj w moje projekty.">
 <meta property="og:image" content="assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -60,10 +60,10 @@
   <div class="wrap hero">
     <p class="status"><span lang="pl">Szukam pracy i zleceń</span><span lang="en">Open to work and freelance</span></p>
     <h1>Marcin Płaza</h1>
-    <p class="role"><span lang="pl">Programista gier i aplikacji webowych</span><span lang="en">Game and web developer</span><span class="dot"></span></p>
+    <p class="role"><span lang="pl">Programista · gry · web · Rust</span><span lang="en">Software developer · games · web · Rust</span><span class="dot"></span></p>
     <div class="grid hero-info">
-      <p class="lead" lang="pl">Robię gry przeglądarkowe i aplikacje w TypeScripcie, grafikę 3D w Three.js i systemy w Ruście. Pracuję z agentami AI, a sam odpowiadam za architekturę, decyzje i jakość kodu. Poniżej możesz zagrać w moje projekty i zajrzeć do ich kodu.</p>
-      <p class="lead" lang="en">I build browser games and apps in TypeScript, 3D graphics with Three.js and systems in Rust. I work with AI agents and own the architecture, the decisions and the code quality myself. Below you can play my projects and read their code.</p>
+      <p class="lead" lang="pl">Piszę gry i oprogramowanie, od silnika po interfejs. Napisałem własny renderer 3D w Ruście: wgpu, 18 shaderów WGSL i siatki pojazdów generowane proceduralnie z opisu w pliku. Gry i aplikacje webowe robię w TypeScripcie. Z agentami AI pracuję na co dzień, ale architektura i decyzje są moje.</p>
+      <p class="lead" lang="en">I write games and software, from the engine to the interface. I built my own 3D renderer in Rust: wgpu, 18 WGSL shaders and vehicle meshes generated procedurally from a data file. I make web games and apps in TypeScript. I work with AI agents every day, but the architecture and the decisions are mine.</p>
       <div class="cta">
         <a class="btn btn-red" href="#projekty"><span lang="pl">Zobacz i zagraj</span><span lang="en">See and play</span><span aria-hidden="true">↓</span></a>
         <a class="btn" href="#kontakt"><span lang="pl">Kontakt</span><span lang="en">Contact</span><span aria-hidden="true">→</span></a>
@@ -107,6 +107,25 @@
         </article>
 
         <article class="grid feat">
+          <figure class="shot"><img src="assets/img/wot-garage.webp" width="960" height="540" alt="Czołg w garażu, render z silnika w Ruście" data-alt-en="A tank in the garage, rendered by the Rust engine" loading="lazy"></figure>
+          <div class="body">
+            <span class="badge"><span lang="pl">W produkcji · Windows</span><span lang="en">In production · Windows</span></span>
+            <h3><span lang="pl">Gra czołgowa w Ruście</span><span lang="en">Tank game in Rust</span></h3>
+            <p lang="pl">Sieciowa gra czołgowa z własnym silnikiem: renderer na wgpu, serwer autorytatywny bez grafiki, deterministyczne obrażenia i penetracja liczona względem płyt pancerza w 3D. Do tego edytor map i powtórki bitew.</p>
+            <p lang="en">An online tank game on my own engine: a wgpu renderer, a headless authoritative server, deterministic damage and penetration resolved against 3D armour plates. Plus a map editor and battle replays.</p>
+            <ul class="facts">
+              <li><span lang="pl">Renderer</span><span lang="en">Renderer</span><span lang="pl">własny, wgpu + 18 shaderów WGSL: cienie, SSAO, bloom, woda, teren, deszcz</span><span lang="en">my own, wgpu + 18 WGSL shaders: shadows, SSAO, bloom, water, terrain, rain</span></li>
+              <li><span lang="pl">Geometria</span><span lang="en">Geometry</span><span lang="pl">siatki pojazdów z plików RON: SDF, surface nets, loft, revolve</span><span lang="en">vehicle meshes from RON files: SDF, surface nets, loft, revolve</span></li>
+              <li><span lang="pl">Struktura</span><span lang="en">Structure</span><span lang="pl">35 crate'ów, render oddzielony od symulacji i serwera</span><span lang="en">35 crates, rendering kept apart from simulation and server</span></li>
+              <li><span lang="pl">Wydajność</span><span lang="en">Performance</span><span lang="pl">cel 60 FPS na GeForce MX330</span><span lang="en">60 FPS target on a GeForce MX330</span></li>
+            </ul>
+            <p class="links">
+              <a href="https://github.com/forgemarcineksiema-art/wot-rust" target="_blank" rel="noopener"><span lang="pl">Kod ↗</span><span lang="en">Code ↗</span></a>
+            </p>
+          </div>
+        </article>
+
+        <article class="grid feat">
           <figure class="shot"><img src="assets/img/driving-streets.webp" width="1280" height="720" alt="Untitled Driving Game: jazda przez miasto" data-alt-en="Untitled Driving Game: driving through town" loading="lazy"></figure>
           <div class="body">
             <span class="badge"><span lang="pl">W produkcji</span><span lang="en">In production</span></span>
@@ -121,24 +140,6 @@
             <p class="links">
               <a class="play" href="" target="_blank" rel="noopener"><span lang="pl">Zagraj ↗</span><span lang="en">Play ↗</span></a>
               <a href="https://github.com/forgemarcineksiema-art/driving-game" target="_blank" rel="noopener"><span lang="pl">Kod ↗</span><span lang="en">Code ↗</span></a>
-            </p>
-          </div>
-        </article>
-
-        <article class="grid feat">
-          <figure class="shot"><img src="assets/img/wot-garage.webp" width="960" height="540" alt="Czołg w garażu, render z silnika w Ruście" data-alt-en="A tank in the garage, rendered by the Rust engine" loading="lazy"></figure>
-          <div class="body">
-            <span class="badge"><span lang="pl">W produkcji · Windows</span><span lang="en">In production · Windows</span></span>
-            <h3><span lang="pl">Gra czołgowa w Ruście</span><span lang="en">Tank game in Rust</span></h3>
-            <p lang="pl">Sieciowa gra czołgowa z własnym silnikiem: renderer na wgpu, serwer autorytatywny bez grafiki, deterministyczne obrażenia i penetracja liczona względem płyt pancerza w 3D. Do tego edytor map i powtórki bitew.</p>
-            <p lang="en">An online tank game on my own engine: a wgpu renderer, a headless authoritative server, deterministic damage and penetration resolved against 3D armour plates. Plus a map editor and battle replays.</p>
-            <ul class="facts">
-              <li><span lang="pl">Technologia</span><span lang="en">Tech</span><span>Rust, wgpu, WGSL, RON</span></li>
-              <li><span lang="pl">Struktura</span><span lang="en">Structure</span><span lang="pl">35 crate'ów: geometria, symulacja, sieć, render, edytor</span><span lang="en">35 crates: geometry, simulation, networking, render, editor</span></li>
-              <li><span lang="pl">Wydajność</span><span lang="en">Performance</span><span lang="pl">cel 60 FPS na GeForce MX330</span><span lang="en">60 FPS target on a GeForce MX330</span></li>
-            </ul>
-            <p class="links">
-              <a href="https://github.com/forgemarcineksiema-art/wot-rust" target="_blank" rel="noopener"><span lang="pl">Kod ↗</span><span lang="en">Code ↗</span></a>
             </p>
           </div>
         </article>
@@ -217,18 +218,18 @@
       </div>
       <div class="grid">
         <div class="skill">
-          <span class="cap">TypeScript · frontend</span>
-          <h3><span lang="pl">Interfejsy i aplikacje webowe</span><span lang="en">Web interfaces and apps</span></h3>
-          <p lang="pl">Menu, HUD-y i ekrany w wielu językach, responsywne od telefonu po desktop. Vite, testy Vitest i Playwright.</p>
-          <p lang="en">Menus, HUDs and screens in many languages, responsive from phone to desktop. Vite, Vitest and Playwright tests.</p>
-          <p class="proof"><span lang="pl">Dowód:</span><span lang="en">Proof:</span> Fragile Express, Tanki</p>
+          <span class="cap">TypeScript · web</span>
+          <h3><span lang="pl">Gry i aplikacje webowe</span><span lang="en">Web games and apps</span></h3>
+          <p lang="pl">Interfejsy w wielu językach, responsywne od telefonu po desktop. Canvas, PixiJS, Three.js i fizyka Rapier (WebAssembly). Testy Vitest i Playwright.</p>
+          <p lang="en">Interfaces in many languages, responsive from phone to desktop. Canvas, PixiJS, Three.js and Rapier physics (WebAssembly). Vitest and Playwright tests.</p>
+          <p class="proof"><span lang="pl">Dowód:</span><span lang="en">Proof:</span> Untitled Driving Game, Fragile Express</p>
         </div>
         <div class="skill">
-          <span class="cap">Three.js · WebGL</span>
-          <h3><span lang="pl">Grafika 3D w przeglądarce</span><span lang="en">3D graphics in the browser</span></h3>
-          <p lang="pl">Sceny 3D z fizyką (Rapier, WebAssembly), dynamicznym niebem i optymalizacją pod słabszy sprzęt.</p>
-          <p lang="en">3D scenes with physics (Rapier, WebAssembly), a dynamic sky and tuning for weaker hardware.</p>
-          <p class="proof"><span lang="pl">Dowód:</span><span lang="en">Proof:</span> Untitled Driving Game, Tanki</p>
+          <span class="cap">Rust · wgpu · WGSL</span>
+          <h3><span lang="pl">Grafika 3D od podstaw</span><span lang="en">3D graphics from scratch</span></h3>
+          <p lang="pl">Własny renderer: cienie, SSAO, bloom, woda, teren i postprocess w shaderach WGSL. Proceduralna geometria pojazdów (SDF, surface nets, loft).</p>
+          <p lang="en">My own renderer: shadows, SSAO, bloom, water, terrain and post-processing in WGSL shaders. Procedural vehicle geometry (SDF, surface nets, loft).</p>
+          <p class="proof"><span lang="pl">Dowód:</span><span lang="en">Proof:</span> <span lang="pl">gra czołgowa w Ruście</span><span lang="en">tank game in Rust</span></p>
         </div>
         <div class="skill">
           <span class="cap">Gameplay</span>
@@ -239,9 +240,9 @@
         </div>
         <div class="skill">
           <span class="cap">Rust</span>
-          <h3><span lang="pl">Systemy i wydajność</span><span lang="en">Systems and performance</span></h3>
-          <p lang="pl">Renderer na wgpu, shadery WGSL, serwer autorytatywny, replikacja sieciowa, edytor map i benchmarki.</p>
-          <p lang="en">A wgpu renderer, WGSL shaders, an authoritative server, network replication, a map editor and benchmarks.</p>
+          <h3><span lang="pl">Systemy i sieć</span><span lang="en">Systems and networking</span></h3>
+          <p lang="pl">Serwer autorytatywny ze stałym tickiem, replikacja snapshotów, deterministyczne powtórki, edytor map i benchmarki.</p>
+          <p lang="en">An authoritative fixed-tick server, snapshot replication, deterministic replays, a map editor and benchmarks.</p>
           <p class="proof"><span lang="pl">Dowód:</span><span lang="en">Proof:</span> <span lang="pl">gra czołgowa w Ruście</span><span lang="en">tank game in Rust</span></p>
         </div>
         <div class="skill">
@@ -288,8 +289,8 @@
         <ul class="about-side">
           <li><span class="cap"><span lang="pl">Szukam</span><span lang="en">Looking for</span></span><span lang="pl">etat lub B2B, zlecenia</span><span lang="en">full-time or contract, freelance</span></li>
           <li><span class="cap"><span lang="pl">Języki</span><span lang="en">Languages</span></span><span lang="pl">polski, angielski</span><span lang="en">Polish, English</span></li>
-          <li><span class="cap"><span lang="pl">Główny stack</span><span lang="en">Main stack</span></span><span>TypeScript, Three.js, Rust</span></li>
-          <li><span class="cap"><span lang="pl">Znam też</span><span lang="en">Also</span></span><span>PixiJS, Unity / C#, C++, Python</span></li>
+          <li><span class="cap"><span lang="pl">Główny stack</span><span lang="en">Main stack</span></span><span>Rust, TypeScript</span></li>
+          <li><span class="cap"><span lang="pl">Znam też</span><span lang="en">Also</span></span><span>Three.js, PixiJS, Unity / C#, C++, Python</span></li>
         </ul>
       </div>
     </div>
