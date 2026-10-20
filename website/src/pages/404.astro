@@ -1,0 +1,12 @@
+---
+import Page from "../layouts/Page.astro";
+import { withBase } from "../lib/site.mjs";
+---
+<Page title="Nie znaleziono strony — PlazaWorks">
+  <section class="not-found wrap">
+    <p class="eyebrow">404</p>
+    <h1>Tu nie ma tej strony.</h1>
+    <p>Wróć na stronę główną, żeby obejrzeć projekty lub znaleźć kontakt.</p>
+    <a class="button" href={withBase("", import.meta.env.BASE_URL)}>Strona główna</a>
+  </section>
+</Page>

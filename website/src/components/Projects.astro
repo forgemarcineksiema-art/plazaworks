@@ -1,0 +1,95 @@
+---
+import { allProjects, site, showreelSource } from "../data/site.mjs";
+import { sourceUrl, withBase } from "../lib/site.mjs";
+const base = import.meta.env.BASE_URL;
+const initial = "blast-battalion";
+const reel = showreelSource(base);
+---
+<section class="projects section wrap" id="projekty" aria-labelledby="projects-heading" data-projects>
+  <div class="section-heading">
+    <h2 id="projects-heading">Projekty</h2>
+    <p>Gry, narzędzia i systemy rozwijane jako prace własne.</p>
+  </div>
+  <figure class="showreel">
+    {reel ? (
+      <video controls playsinline preload="none" poster={withBase(site.showreel.poster, base)}
+        aria-label="Pokaz projektów PlazaWorks">
+        <source src={reel} type={reel.toLowerCase().endsWith(".webm") ? "video/webm" : "video/mp4"} />
+        Twoja przeglądarka nie obsługuje filmu. <a href={reel}>Otwórz film</a>.
+      </video>
+    ) : (
+      <img src={withBase(site.showreel.poster, base)} width="1280" height="720"
+        alt="Czerwony samochód na nadmorskiej trasie w Driving Game." fetchpriority="high" decoding="async" />
+    )}
+    <figcaption>
+      <span>{reel ? "Pokaz projektów" : site.showreel.posterCaption}</span>
+      <a href="#indeks-projektow">Poznaj prace</a>
+    </figcaption>
+  </figure>
+
+  <div class="project-browser" id="indeks-projektow">
+    <nav class="project-index" aria-label="Wybierz projekt">
+      <ol>
+        {allProjects.map((project, index) => (
+          <li>
+            <a href={withBase("projekty/" + project.id + "/", base)} data-project-select={project.id}
+              aria-current={project.id === initial ? "true" : undefined}>
+              <span class="project-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+              <span>{project.name}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+
+    <div class="project-stage">
+      <p class="sr-only" role="status" aria-live="polite" data-project-announcement></p>
+      {allProjects.map(project => (
+        <article class="project-preview" id={"projekt-" + project.id} data-project-panel={project.id}
+          hidden={project.id !== initial} aria-labelledby={"title-" + project.id}>
+          {project.image ? (
+            <figure class="project-figure">
+              <img src={withBase(project.image, base)} width="1440" height="810"
+                alt={project.imageAlt || ""} loading="lazy" decoding="async" />
+              <figcaption>{project.imageCaption}</figcaption>
+            </figure>
+          ) : (
+            <figure class="project-code">
+              <pre><code>{project.excerpt}</code></pre>
+              <figcaption>{project.imageCaption}</figcaption>
+            </figure>
+          )}
+          <div class="project-title-row">
+            <div>
+              <h3 id={"title-" + project.id}>{project.name}</h3>
+              <p class="meta">{project.status}</p>
+            </div>
+            <div class="project-modes" role="tablist" aria-label={"Sposób prezentacji " + project.name} data-modes hidden>
+              <button type="button" role="tab" aria-selected="true" id={"tab-" + project.id + "-effect"}
+                aria-controls={"detail-" + project.id + "-effect"} data-mode="effect" tabindex="0">Działanie</button>
+              <button type="button" role="tab" aria-selected="false" id={"tab-" + project.id + "-build"}
+                aria-controls={"detail-" + project.id + "-build"} data-mode="build" tabindex="-1">Budowa</button>
+            </div>
+          </div>
+          <div class="project-detail" id={"detail-" + project.id + "-effect"} role="tabpanel"
+            aria-labelledby={"tab-" + project.id + "-effect"} tabindex="0" data-mode-panel="effect">
+            <p class="project-summary">{project.effect}</p>
+            <ul class="feature-list">{project.features.map(feature => <li>{feature}</li>)}</ul>
+          </div>
+          <div class="project-detail" id={"detail-" + project.id + "-build"} role="tabpanel"
+            aria-labelledby={"tab-" + project.id + "-build"} tabindex="0" data-mode-panel="build" hidden>
+            <p class="project-summary">{project.mechanism}</p>
+            <p class="meta">{project.tech.join(" · ")}</p>
+            <a class="text-link" href={sourceUrl(project, project.sources[0].path)} target="_blank" rel="noopener noreferrer">
+              {project.sources[0].label}
+            </a>
+          </div>
+          <div class="project-bottom">
+            <a class="text-link" href={withBase("projekty/" + project.id + "/", base)}>Poznaj projekt</a>
+            <span class="meta">{project.platform}</span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

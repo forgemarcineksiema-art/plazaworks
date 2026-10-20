@@ -1,0 +1,47 @@
+---
+const services = [
+  {
+    id: "strony-i-sklepy", number: "01", title: "Strony i sklepy",
+    text: "Wizytówki, strony firmowe, landing page i sklepy internetowe. Możemy zacząć od pomysłu albo gotowego projektu graficznego.",
+    scope: "Układ i treść, wdrożenie, formularze, integracje i uruchomienie.",
+    topic: "Strona lub sklep", action: "Porozmawiajmy o stronie"
+  },
+  {
+    id: "aplikacje-i-systemy", number: "02", title: "Aplikacje i systemy",
+    text: "Aplikacje webowe, desktopowe i mobilne oraz narzędzia dopasowane do konkretnego sposobu pracy.",
+    scope: "Panele, logika biznesowa, praca z danymi i rozwój istniejącego oprogramowania.",
+    topic: "Aplikacja lub system", action: "Porozmawiajmy o aplikacji"
+  },
+  {
+    id: "automatyzacje-i-ai", number: "03", title: "Automatyzacje i AI",
+    text: "Łączenie narzędzi, przetwarzanie informacji i wykorzystanie modeli AI w konkretnym zadaniu.",
+    scope: "Najpierw określamy proces, dane i oczekiwany wynik. Do nich dobieramy model oraz sposób sprawdzania rezultatów.",
+    topic: "Automatyzacja lub AI", action: "Porozmawiajmy o automatyzacji"
+  },
+  {
+    id: "gry-i-interakcja", number: "04", title: "Gry i interakcja",
+    text: "Gry przeglądarkowe, prototypy, symulacje i aplikacje wymagające własnej logiki lub grafiki czasu rzeczywistego.",
+    scope: "Mechaniki, interfejsy i systemy, które można zobaczyć w działaniu.",
+    topic: "Gra lub interakcja", action: "Porozmawiajmy o projekcie"
+  }
+];
+---
+<section class="services section wrap" id="uslugi" aria-labelledby="services-heading">
+  <div class="section-heading section-intro">
+    <p class="eyebrow">Usługi</p>
+    <h2 id="services-heading">Co możemy zrobić.</h2>
+    <p>Małe zlecenie, nowy produkt albo kolejny etap istniejącego projektu. Zakres ustalamy do zadania.</p>
+  </div>
+  <div class="service-rows">
+    {services.map(service => (
+      <article class="service-row" id={service.id}>
+        <div class="service-name"><span class="meta" aria-hidden="true">{service.number}</span><h3>{service.title}</h3></div>
+        <div class="service-description">
+          <p>{service.text}</p>
+          <p class="muted">{service.scope}</p>
+          <a class="text-link" href="#kontakt" data-contact-topic={service.topic}>{service.action}</a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
