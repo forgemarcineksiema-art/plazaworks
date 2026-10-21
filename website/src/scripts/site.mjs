@@ -53,20 +53,30 @@ function initProjects() {
       announcement.textContent = "Wybrano projekt: " + (current?.querySelector("h3")?.textContent || id);
     }
   };
-  select(projectFromHash(location.hash, ids));
+  const scrollToProject = (id, behavior = "instant") => {
+    panels.find(panel => panel.dataset.projectPanel === id)?.scrollIntoView({ block: "start", behavior });
+  };
+  const initialProject = projectFromHash(location.hash, ids);
+  select(initialProject);
+  if (location.hash.startsWith("#projekt-") && ids.includes(initialProject)) {
+    requestAnimationFrame(() => scrollToProject(initialProject));
+  }
   for (const link of links) {
     link.addEventListener("click", event => {
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
       select(link.dataset.projectSelect, true, true);
       if (matchMedia("(max-width: 720px)").matches) {
-        const panel = panels.find(item => item.dataset.projectPanel === link.dataset.projectSelect);
-        panel?.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+        scrollToProject(link.dataset.projectSelect, matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth");
       }
     });
   }
   addEventListener("hashchange", () => {
-    if (location.hash.startsWith("#projekt-")) select(projectFromHash(location.hash, ids), true);
+    if (location.hash.startsWith("#projekt-")) {
+      const id = projectFromHash(location.hash, ids);
+      select(id, true);
+      if (ids.includes(id)) scrollToProject(id);
+    }
   });
 
   for (const panel of panels) {

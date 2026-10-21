@@ -20,7 +20,7 @@ Wymagane Node.js >= 22.22.0; workflow używa Node 24.
 
 ~~~sh
 cd website
-npm install
+npm ci
 npm test
 npm run check
 npm run build
@@ -28,7 +28,7 @@ npm run verify
 npm run dev -- --host 0.0.0.0 --port 4173
 ~~~
 
-Pierwsze npm install tworzy package-lock.json. Należy go zachować i dołączyć do repozytorium po wykonaniu instalacji; potem instalować przez npm ci.
+package-lock.json jest dołączony do repozytorium. Instalacja lokalna i CI używają npm ci.
 
 Build powstaje w website/dist/. Dla GitHub Pages z prefiksem repozytorium należy budować z BASE_PATH=/plazaworks/. Własna domena zazwyczaj wymaga BASE_PATH=/.
 
@@ -51,7 +51,7 @@ Stany projektów i źródła odnoszą się do wersji sprawdzonych w audycie z 20
 
 ## Kontakt
 
-Adres kontaktowy nie został jeszcze podany. Można go wpisać w config.json jako contactEmail lub przekazać do builda przez CONTACT_EMAIL. Adres będzie publiczny.
+Adres kontaktowy pozostaje pusty na życzenie Marcina. Prywatny podgląd działa bez niego. Można go wpisać w config.json jako contactEmail lub przekazać do builda przez CONTACT_EMAIL. Adres będzie publiczny.
 
 - Z adresem przycisk przygotowuje wiadomość w aplikacji pocztowej użytkownika. Nie udaje dostarczenia wiadomości przez serwer.
 - Bez adresu formularz tworzy opis do skopiowania lub pobrania. UI wyraźnie informuje, że nic nie wysłano. Dostępny pozostaje prawdziwy profil GitHub.
@@ -75,11 +75,10 @@ Kontrola statyczna sprawdza m.in. strony ośmiu prac, lokalne materiały i odno�
 
 Przed publikacją:
 
-1. Uzupełnić prawdziwy kontakt oraz docelową domenę SITE_URL.
-2. Wykonać i zachować instalację wraz z lockfile; uruchomić testy, check, build i verify.
-3. Obejrzeć komputer i telefon, porównać z wybranym projektem, sprawdzić podstawowe interakcje, błędy konsoli, klawiaturę i ograniczenie ruchu.
-4. Uzupełnić design-qa.md rzeczywistymi wynikami.
-5. Dopiero po sprawdzeniu ustawić publicationReady=true i wykonać npm run check:ready.
+1. Ustalić docelowy kanał kontaktu i domenę SITE_URL; nie wpisywać przykładowego adresu.
+2. Po dalszych zmianach uruchomić npm ci, testy, check, build i verify.
+3. Wyniki kontroli przeglądarkowej z 21 października 2026 r. są w design-qa.md; materiały porównawcze w qa/.
+4. Prywatny podgląd zachowuje noindex i publicationReady=false. Dopiero przed uruchomieniem docelowej strony ustawić publicationReady=true i wykonać npm run check:ready.
 
 Nie dodawać gier do początkowego pobierania strony. Gotowe dema powinny uruchamiać się po świadomym wybraniu przez odwiedzającego.
 

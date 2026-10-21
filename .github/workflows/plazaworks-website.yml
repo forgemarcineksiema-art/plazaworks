@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '24'
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm ci --no-audit --no-fund
       - name: Test routing, contact and content
         run: npm test
       - name: Check Astro and TypeScript
