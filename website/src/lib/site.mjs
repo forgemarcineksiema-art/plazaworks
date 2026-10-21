@@ -60,6 +60,7 @@ export function buildInquiry(input) {
   const lines = ["Temat: " + topic];
   if (name) lines.push("Imię: " + name);
   if (email) lines.push("E-mail do odpowiedzi: " + email);
+  if (input.replyTo) lines.push("Kontakt do odpowiedzi: " + String(input.replyTo).replace(/[\r\n\t]+/g, " ").trim().slice(0, 254));
   lines.push("", message);
   return { subject, body: lines.join("\n") };
 }

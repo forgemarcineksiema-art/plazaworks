@@ -4,3 +4,13 @@ dist/
 .env
 .env.*
 !.env.example
+
+.astro-output/
+.sites-runtime/
+.wrangler/
+.vinext/
+outputs/
+.dev.vars*
+
+.next/
+*.tsbuildinfo

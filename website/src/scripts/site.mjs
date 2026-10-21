@@ -1,4 +1,4 @@
-import { buildInquiry, buildMailto, projectFromHash } from "../lib/site.mjs";
+import { buildInquiry, projectFromHash } from "../lib/site.mjs";
 
 function initMenu() {
   const header = document.querySelector("[data-header]");
@@ -116,40 +116,68 @@ function initProjects() {
 
 function initInquiry() {
   const form = document.querySelector("[data-inquiry-form]");
-  const settings = document.getElementById("contact-config");
-  if (!(form instanceof HTMLFormElement) || !settings) return;
-  let email = null;
-  try { email = JSON.parse(settings.textContent || "{}").email || null; } catch { return; }
+  if (!(form instanceof HTMLFormElement)) return;
   const status = form.querySelector("[data-form-status]");
   const result = form.querySelector("[data-draft-result]");
   const output = form.querySelector("[data-draft-text]");
+  const submit = form.querySelector("[data-submit-inquiry]");
   const message = value => { if (status) status.textContent = value; };
-  form.hidden = false;
-
+  let fingerprint = "";
+  let submissionId = "";
+  let pending = false;
   for (const link of document.querySelectorAll("[data-contact-topic]")) {
     link.addEventListener("click", () => {
       const field = form.elements.namedItem("topic");
       if (field instanceof HTMLSelectElement) field.value = link.dataset.contactTopic;
     });
   }
-  form.addEventListener("submit", event => {
+  form.addEventListener("submit", async event => {
     event.preventDefault();
-    if (!form.reportValidity()) return;
+    if (pending || !form.reportValidity()) return;
+    const values = Object.fromEntries(new FormData(form).entries());
     try {
-      const values = Object.fromEntries(new FormData(form).entries());
       const inquiry = buildInquiry(values);
-      if (!(output instanceof HTMLTextAreaElement) || !result) return;
-      output.value = inquiry.subject + "\n\n" + inquiry.body;
-      result.hidden = false;
-      if (email) {
-        location.href = buildMailto(email, inquiry);
-        message("Otwieram aplikację pocztową. Wiadomość wyślesz w jej oknie.");
-      } else {
-        message("Opis jest gotowy do skopiowania. Wiadomość nie została wysłana.");
-        output.focus();
+      if (output instanceof HTMLTextAreaElement && result) {
+        output.value = inquiry.subject + "\n\n" + inquiry.body;
+        result.hidden = false;
       }
+      const nextFingerprint = JSON.stringify(values);
+      if (nextFingerprint !== fingerprint || !submissionId) {
+        const bytes = crypto.getRandomValues(new Uint8Array(16));
+        bytes[6] = (bytes[6] & 15) | 64;
+        bytes[8] = (bytes[8] & 63) | 128;
+        const hex = Array.from(bytes, value => value.toString(16).padStart(2, "0")).join("");
+        submissionId = [hex.slice(0, 8), hex.slice(8, 12), hex.slice(12, 16), hex.slice(16, 20), hex.slice(20)].join("-");
+        fingerprint = nextFingerprint;
+      }
+      pending = true;
+      for (const control of form.querySelectorAll("input,select,textarea:not([readonly])")) control.disabled = true;
+      if (submit instanceof HTMLButtonElement) { submit.disabled = true; submit.textContent = "Wysyłam…"; }
+      form.setAttribute("aria-busy", "true");
+      message("Zapisuję Twoje zapytanie…");
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15000);
+      let response;
+      try {
+        response = await fetch(form.action, {
+          method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({ ...values, submissionId }), signal: controller.signal
+        });
+      } finally { clearTimeout(timeout); }
+      let data;
+      try { data = await response.json(); } catch { throw new Error("Serwer nie potwierdził zapisu. Spróbuj ponownie."); }
+      if (!response.ok || data.ok !== true || !data.id) throw new Error(data.message || "Nie udało się potwierdzić zapisu. Spróbuj ponownie.");
+      message("Zapytanie zostało zapisane. Odpowiem na podany kontakt. Kopię możesz zachować poniżej.");
+      form.dataset.sent = "true";
     } catch (error) {
-      message(error instanceof Error ? error.message : "Sprawdź wpisaną treść.");
+      const text = error instanceof Error && error.name !== "AbortError" && error.name !== "TypeError"
+        ? error.message : "Nie udało się potwierdzić zapisu. Sprawdź połączenie i spróbuj ponownie.";
+      message(text + " Twoja treść pozostaje w formularzu.");
+    } finally {
+      pending = false;
+      for (const control of form.querySelectorAll("input,select,textarea:not([readonly])")) control.disabled = false;
+      form.removeAttribute("aria-busy");
+      if (submit instanceof HTMLButtonElement) { submit.disabled = false; submit.textContent = "Wyślij zapytanie"; }
     }
   });
   form.querySelector("[data-copy-draft]")?.addEventListener("click", async () => {
@@ -157,28 +185,39 @@ function initInquiry() {
     try {
       if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable");
       await navigator.clipboard.writeText(output.value);
-      message("Treść skopiowana. Możesz wkleić ją do wiadomości.");
+      message("Treść skopiowana.");
     } catch {
-      output.focus();
-      output.select();
+      output.focus(); output.select();
       message("Treść została zaznaczona. Skopiuj ją z menu urządzenia.");
     }
   });
   form.querySelector("[data-download-draft]")?.addEventListener("click", () => {
     if (!(output instanceof HTMLTextAreaElement)) return;
-    const blob = new Blob([output.value], { type: "text/plain;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
+    const url = URL.createObjectURL(new Blob([output.value], { type: "text/plain;charset=utf-8" }));
     const link = document.createElement("a");
-    link.href = url;
-    link.download = "plazaworks-opis-projektu.txt";
-    document.body.append(link);
-    link.click();
-    link.remove();
+    link.href = url; link.download = "plazaworks-zapytanie.txt";
+    document.body.append(link); link.click(); link.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
-    message("Przygotowano plik z opisem. Zapis nie wysyła wiadomości.");
+    message("Przygotowano kopię zapytania do zapisania.");
   });
+}
+
+function initServices() {
+  const openFromHash = () => {
+    const target = document.getElementById(location.hash.slice(1));
+    if (target instanceof HTMLDetailsElement && target.hasAttribute("data-service")) target.open = true;
+  };
+  openFromHash();
+  addEventListener("hashchange", openFromHash);
+  for (const link of document.querySelectorAll(".services-band a")) {
+    link.addEventListener("click", () => {
+      const target = document.getElementById(link.hash.slice(1));
+      if (target instanceof HTMLDetailsElement) target.open = true;
+    });
+  }
 }
 
 initMenu();
 initProjects();
+initServices();
 initInquiry();

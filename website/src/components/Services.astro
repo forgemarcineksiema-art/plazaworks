@@ -2,26 +2,34 @@
 const services = [
   {
     id: "strony-i-sklepy", number: "01", title: "Strony i sklepy",
-    text: "Wizytówki, strony firmowe, landing page i sklepy internetowe. Możemy zacząć od pomysłu albo gotowego projektu graficznego.",
-    scope: "Układ i treść, wdrożenie, formularze, integracje i uruchomienie.",
-    topic: "Strona lub sklep", action: "Porozmawiajmy o stronie"
+    lead: "Strona dla firmy, sprzedaż w internecie albo poprawki w tym, co już działa.",
+    examples: "Wizytówka, strona firmowa, landing page lub sklep. Także pojedynczy formularz, integracja i przebudowa istniejącej strony.",
+    delivery: "Uzgodniona treść i układ, działająca strona na telefonie i komputerze oraz uruchomienie na wybranym hostingu.",
+    start: "Wystarczy opis firmy i celu strony. Jeśli masz już teksty, grafikę lub istniejącą stronę, zaczniemy od nich.",
+    topic: "Strona lub sklep", action: "Zapytaj o stronę lub sklep"
   },
   {
     id: "aplikacje-i-systemy", number: "02", title: "Aplikacje i systemy",
-    text: "Aplikacje webowe, desktopowe i mobilne oraz narzędzia dopasowane do konkretnego sposobu pracy.",
-    scope: "Panele, logika biznesowa, praca z danymi i rozwój istniejącego oprogramowania.",
-    topic: "Aplikacja lub system", action: "Porozmawiajmy o aplikacji"
+    lead: "Narzędzie do codziennej pracy lub kolejny etap rozwoju Twojego produktu.",
+    examples: "Panel do obsługi zleceń, aplikacja webowa, desktopowa lub mobilna. Praca z danymi, integracje i rozwój istniejącego kodu.",
+    delivery: "Działające funkcje w uzgodnionym zakresie, kod źródłowy i informacje potrzebne do uruchomienia oraz dalszego rozwoju.",
+    start: "Opisz, kto będzie korzystać z aplikacji i jakie zadanie ma wykonać. Przy istniejącym systemie przydadzą się dostęp do kodu i opis problemu.",
+    topic: "Aplikacja lub system", action: "Zapytaj o aplikację"
   },
   {
     id: "automatyzacje-i-ai", number: "03", title: "Automatyzacje i AI",
-    text: "Łączenie narzędzi, przetwarzanie informacji i wykorzystanie modeli AI w konkretnym zadaniu.",
-    scope: "Najpierw określamy proces, dane i oczekiwany wynik. Do nich dobieramy model oraz sposób sprawdzania rezultatów.",
-    topic: "Automatyzacja lub AI", action: "Porozmawiajmy o automatyzacji"
+    lead: "Mniej ręcznego przenoszenia danych i narzędzia, które współpracują ze sobą.",
+    examples: "Łączenie aplikacji, porządkowanie danych, przetwarzanie dokumentów i wykorzystanie modeli AI w określonym procesie.",
+    delivery: "Automatyzacja sprawdzona na uzgodnionych przykładach, opis jej działania i sposób obsługi wyjątków. Przy AI ustalamy też koszty, dane i kryteria oceny wyników.",
+    start: "Pokaż proces, który zabiera Ci czas, oraz przykładowe dane. Na tej podstawie ustalimy, co warto zautomatyzować i jakich narzędzi użyć.",
+    topic: "Automatyzacja lub AI", action: "Opisz proces do usprawnienia"
   },
   {
     id: "gry-i-interakcja", number: "04", title: "Gry i interakcja",
-    text: "Gry przeglądarkowe, prototypy, symulacje i aplikacje wymagające własnej logiki lub grafiki czasu rzeczywistego.",
-    scope: "Mechaniki, interfejsy i systemy, które można zobaczyć w działaniu.",
+    lead: "Gra, symulacja lub interaktywne doświadczenie z własną logiką i grafiką.",
+    examples: "Gry przeglądarkowe, prototypy mechanik, wizualizacje 2D i 3D oraz rozwój systemów istniejącej gry.",
+    delivery: "Wersja do uruchomienia na uzgodnionej platformie, kod projektu i opis najważniejszych mechanizmów.",
+    start: "Opisz pomysł, odbiorcę i urządzenia, na których projekt ma działać. Możemy zacząć od jednej mechaniki, żeby sprawdzić kierunek.",
     topic: "Gra lub interakcja", action: "Porozmawiajmy o projekcie"
   }
 ];
@@ -29,19 +37,26 @@ const services = [
 <section class="services section wrap" id="uslugi" aria-labelledby="services-heading">
   <div class="section-heading section-intro">
     <p class="eyebrow">Usługi</p>
-    <h2 id="services-heading">Co możemy zrobić.</h2>
-    <p>Małe zlecenie, nowy produkt albo kolejny etap istniejącego projektu. Zakres ustalamy do zadania.</p>
+    <h2 id="services-heading">Co mogę dla Ciebie zrobić.</h2>
+    <p>Nowy projekt albo konkretna zmiana w tym, co już masz. Możemy zacząć od małego zlecenia i rozwijać je w kolejnych etapach.</p>
   </div>
   <div class="service-rows">
     {services.map(service => (
-      <article class="service-row" id={service.id}>
-        <div class="service-name"><span class="meta" aria-hidden="true">{service.number}</span><h3>{service.title}</h3></div>
-        <div class="service-description">
-          <p>{service.text}</p>
-          <p class="muted">{service.scope}</p>
+      <details class="service-row" id={service.id} data-service>
+        <summary>
+          <div class="service-name"><span class="meta" aria-hidden="true">{service.number}</span><h3>{service.title}</h3></div>
+          <span class="service-lead">{service.lead}</span>
+          <span class="service-disclosure" aria-hidden="true"><span>Zakres</span><span class="service-symbol"></span></span>
+        </summary>
+        <div class="service-content">
+          <dl class="service-description">
+            <div><dt>Co możesz zlecić</dt><dd>{service.examples}</dd></div>
+            <div><dt>Co otrzymasz</dt><dd>{service.delivery}</dd></div>
+            <div><dt>Od czego zacząć</dt><dd>{service.start}</dd></div>
+          </dl>
           <a class="text-link" href="#kontakt" data-contact-topic={service.topic}>{service.action}</a>
         </div>
-      </article>
+      </details>
     ))}
   </div>
 </section>

@@ -69,3 +69,19 @@ Film zbiorczy pozostaje osobnym zadaniem. Prywatny podgląd zachowuje noindex i 
 - Sprawdzono pełny opis, aktualne odnośniki do kodu 24ba4c5, sekcję pracy z AI i powrót do aktywnego projektu na głównej. Przy szerokościach treści 320 i 390 px clientWidth=scrollWidth. Tytuł, odtwarzacz, podpis i tekst mieszczą się w ekranie.
 - Dowody: `qa/blast-film-mobile-case.jpg`, `qa/blast-film-mobile-card.jpg`, `qa/blast-film-320.jpg`. Zrzuty są wycinkami rzeczywistego obszaru strony z natywnych zrzutów Chrome; ucięto wyłącznie pusty obszar poza ramką testową. To kontrola układu i odtwarzania w Chrome, bez testu fizycznego Androida ani systemowego pełnego ekranu telefonu.
 - 8 testów przechodzi. Astro: 0 błędów, 0 ostrzeżeń. Build i kontrola tras oraz materiałów przechodzą. Pomocnicze ramki usunięto przed końcowym buildem. Film zbiorczy pozostaje oddzielnym materiałem.
+
+## Aktualizacja: oferta, współpraca i odbiór zapytań, 21 października 2026
+
+Ta sekcja zastępuje wcześniejszy opis kolejności strony i lokalnego formularza. Oferta jest przed projektami, szczegóły czterech usług rozwijają się natywnie, a współpraca ma cztery etapy obejmujące wycenę, postępy i przekazanie. Sekcja AI zawiera opis weryfikacji i odnośniki do rzeczywistego przykładu Blast Battalion. Zakładka Budowa pokazuje zakres pracy oraz drogę do architektury.
+
+- Chrome: obejrzano komputer i mobilny obszar treści 320 oraz 390 CSS px, z dodatkowymi 15 px ramki na pasek przewijania. clientWidth=scrollWidth dla głównej, rozwiniętej usługi i opisu projektu. To kontrola responsywnego układu w Chrome, bez testu fizycznego Androida.
+- Sprawdzono menu i Escape, otwieranie zakresu z niebieskiego paska, przejście od usługi do formularza z właściwym tematem oraz wybór WOT Rust, Budowa, odnośnik do architektury i powrót do aktywnej pracy.
+- Rzeczywiste zapytanie testowe wysłano z przeglądarki do lokalnej bazy. UI potwierdził zapis, a niezależny odczyt lokalnej D1 wykazał jeden rekord. Dane testowe nie są migrowane do hostowanej bazy.
+- Wymuszono niedostępny endpoint wyłącznie przyciskiem pomocniczej strony QA. Formularz wyświetlił czytelny błąd, zachował wpisaną treść i przywrócił przycisk. Pomocnicza strona nie wchodzi do finalnego builda.
+- 14 testów przechodzi, w tym trwały zapis na SQLite z rzeczywistą migracją, walidacja, pochodzenie żądania, ponowienia bez duplikatów, awaria zapisu, limit i natywny formularz bez JavaScript. Autoryzacja odrzuca puste i obce tożsamości.
+- Astro: 0 błędów, 0 ostrzeżeń i 0 podpowiedzi. Oba etapy builda i weryfikacja tras, materiałów, migracji oraz zgodności statycznej strony z artefaktem Worker przechodzą.
+- Dowód: `qa/offer-mobile.jpg`. Widoki współpracy i AI obejrzano również w przeglądarce. Wycięto wyłącznie obszar poza rzeczywistą stroną w ramce; nie zmieniano treści ani proporcji renderu.
+- Nie zweryfikowano w przeglądarce zalogowanej sesji właściciela skrzynki: lokalny podgląd zarządzany nie dostarcza tożsamości produkcyjnej. Kod panelu sprawdza tożsamość na serwerze przed odczytem D1, a odpowiedzi mają no-store. Nie uznano prób połączenia z lokalnym HTTP z terminala za potwierdzenie działania panelu; ten kanał nie był dostępny.
+- Widoczne błędy rozszerzenia Chrome dotyczą `chrome-extension://.../content-script.bundle.js`, nie kodu witryny. Testowany błąd odbioru był celowo wywołanym scenariuszem awarii.
+
+Prywatny podgląd i noindex pozostają włączone. Własny e-mail nie jest publikowany; zapytania odczytuje się w skrzynce. Nie skonfigurowano powiadomień e-mail. Nagrania nie były rozbudowywane w tym etapie.

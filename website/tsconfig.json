@@ -5,6 +5,18 @@
     "**/*"
   ],
   "exclude": [
-    "dist"
-  ]
+    "dist",
+    ".astro-output",
+    "node_modules",
+    "scripts",
+    "worker",
+    "vite.config.ts"
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": [
+      "@cloudflare/workers-types",
+      "node"
+    ]
+  }
 }

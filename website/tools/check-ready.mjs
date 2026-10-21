@@ -1,8 +1,9 @@
 import { readFile } from "node:fs/promises";
 import { site } from "../src/data/site.mjs";
-import { isValidContactEmail, validatedSiteOrigin } from "../src/lib/site.mjs";
+import { validatedSiteOrigin } from "../src/lib/site.mjs";
 const errors = [];
-if (!isValidContactEmail(site.contactEmail)) errors.push("Brakuje rzeczywistego adresu kontaktowego.");
+const hosting = JSON.parse(await readFile(new URL("../.openai/hosting.json", import.meta.url), "utf8"));
+if (hosting.d1 !== "DB") errors.push("Brakuje konfiguracji skrzynki zapytań.");
 if (!site.publicationReady) errors.push("Wersja nie została oznaczona do publikacji.");
 try { if (!validatedSiteOrigin(process.env.SITE_URL)) errors.push("Brakuje docelowej domeny SITE_URL."); } catch (error) { errors.push(error.message); }
 const qa = await readFile(new URL("../design-qa.md", import.meta.url), "utf8");

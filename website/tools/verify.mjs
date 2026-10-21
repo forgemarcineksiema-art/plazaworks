@@ -5,7 +5,7 @@ import projects from "../src/data/projects.json" with { type: "json" };
 import { normalizeBase, validateProjects } from "../src/lib/site.mjs";
 
 validateProjects(projects);
-const root = resolve("dist");
+const root = resolve(".astro-output");
 const base = normalizeBase(process.env.BASE_PATH || "/");
 const errors = [];
 const checks = [];
@@ -33,6 +33,10 @@ for (const [path, html] of documents) {
     if (/^(https?:|mailto:|data:|tel:)/i.test(url)) continue;
     if (url.startsWith("//")) { errors.push(label + ": protokół zależny od strony."); continue; }
     const [rawPath, fragment] = url.split("#");
+    if (rawPath === base + "skrzynka") {
+      await stat(resolve("app/skrzynka/page.tsx"));
+      continue;
+    }
     let target = path;
     if (rawPath) {
       const clean = decodeURIComponent(rawPath.split("?")[0]);

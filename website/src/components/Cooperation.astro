@@ -1,0 +1,24 @@
+---
+const steps = [
+  { title: "Rozmawiamy o zadaniu", text: "Co ma powstać, kto będzie z tego korzystać i co masz już przygotowane. Możesz przyjść z pomysłem, gotowym projektem albo problemem do rozwiązania." },
+  { title: "Ustalamy zakres i wycenę", text: "Określamy funkcje, etapy, termin i sposób rozliczenia. Ustalamy też, po czym poznamy, że zadanie zostało wykonane." },
+  { title: "Oglądasz postępy", text: "Pokazuję działającą wersję na uzgodnionych etapach. Sprawdzamy najważniejsze scenariusze, omawiamy uwagi i ustalamy kolejne zmiany." },
+  { title: "Uruchamiamy i przekazuję pracę", text: "Przekazuję kod, potrzebne dostępy i instrukcję uruchomienia. Dalszy rozwój, utrzymanie i zakres wsparcia ustalamy osobno." }
+];
+---
+<section class="cooperation section wrap" id="wspolpraca" aria-labelledby="cooperation-heading">
+  <div class="section-heading section-intro">
+    <p class="eyebrow">Współpraca</p>
+    <h2 id="cooperation-heading">Wiesz, co powstaje i na jakim jest etapie.</h2>
+    <p>Zakres może obejmować pojedynczą poprawkę, pierwszą wersję produktu albo rozwój istniejącego systemu. Sposób pracy dopasowujemy do zadania.</p>
+  </div>
+  <ol class="process">
+    {steps.map((step, index) => (
+      <li><span class="meta" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.text}</p></li>
+    ))}
+  </ol>
+  <div class="cooperation-start">
+    <p>Na początek wystarczy kilka zdań o tym, czego potrzebujesz.</p>
+    <a class="text-link" href="#kontakt">Opisz swoje zadanie</a>
+  </div>
+</section>

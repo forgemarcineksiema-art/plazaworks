@@ -1,20 +1,22 @@
-# PlazaWorks — pierwsza wersja strony firmowej
+# PlazaWorks — strona firmowa i portfolio
 
 Nowa wersja jest w katalogu **website/**. Stary szkic w katalogu głównym pozostaje zachowany do porównania. Ta gałąź nie zmienia domeny ani działającego hostingu.
 
 ## Zakres
 
 - Wybrany ciemny kierunek: jasny logotyp, opis tylko pod logotypem/obok niego, niebieski pasek czterech usług i jedna sekcja projektów.
-- Polska strona główna: oferta, portfolio, warsztat AI, autor, współpraca, rekrutacja i kontakt.
+- Polska strona główna: skrót oferty przed portfolio, jedna sekcja prac, współpraca, warsztat AI, autor i kontakt.
+- Cztery rozwijane zakresy usług: przykłady zleceń, rezultat i materiały na początek.
+- Formularz z rzeczywistym zapisem zapytań i prywatna skrzynka właściciela.
 - Indeks ośmiu projektów z przełączaniem podglądu oraz Działanie/Budowa.
 - Osobne, statycznie generowane opisy ośmiu prac; rozbudowany opis Blast Battalion z mechanizmem terenu i odnośnikami do kodu.
 - Nawigacja na telefonie, obsługa klawiaturą, widoczne stany fokusu i respektowanie ograniczenia ruchu.
 - Oryginalne obrazy projektów. Logo jest osobnym plikiem PNG opracowanym na podstawie wybranego szkicu; Astro tworzy mniejsze warianty WebP do wyświetlania.
-- Brak trackerów, ciasteczek, automatycznie ładowanych gier oraz połączeń do usług AI z przeglądarki.
+- Publiczna część bez trackerów, automatycznie ładowanych gier i połączeń do usług AI z przeglądarki. Logowanie właściciela obsługuje platforma Sites.
 
 ## Technologia i uruchomienie
 
-Astro 7.4.1, TypeScript, lokalny Archivo i własny CSS. Interakcje wykorzystują mały moduł JavaScript bez frameworka klienckiego.
+Astro 7.4.1 generuje publiczną część strony. TypeScript, lokalny Archivo i własny CSS; interakcje strony głównej mają mały moduł JavaScript bez frameworka klienckiego. Vinext i Cloudflare Worker obsługują formularz oraz panel właściciela. Zapytania są zapisywane w D1. Statyczne strony są serwowane jako assets; nie uruchamiają klienta React używanego przez panel.
 
 Wymagane Node.js >= 22.22.0; workflow używa Node 24.
 
@@ -30,7 +32,9 @@ npm run dev -- --host 0.0.0.0 --port 4173
 
 package-lock.json jest dołączony do repozytorium. Instalacja lokalna i CI używają npm ci.
 
-Build powstaje w website/dist/. Dla GitHub Pages z prefiksem repozytorium należy budować z BASE_PATH=/plazaworks/. Własna domena zazwyczaj wymaga BASE_PATH=/.
+`npm run build` tworzy statyczną część w `.astro-output/`, następnie Worker i komplet materiałów w `dist/server` oraz `dist/client`. `.openai/hosting.json` zachowuje tożsamość Site i deklaruje binding `DB`. Pełna wersja z formularzem działa w katalogu głównym domeny (`BASE_PATH=/`). Sam eksport `npm run build:static` można hostować statycznie, ale odbiór zapytań wymaga działającego endpointu serwerowego.
+
+Schemat jest w `db/schema.ts`, migracja w `drizzle/`. Po zmianach schematu użyj `npm run db:generate`. Lokalna baza i baza podglądu hostowanego są osobne. Polecenia migracji lokalnych opisuje instrukcja Sites; publikacja stosuje migracje hostowane. Nie twórz tabel w obsłudze żądania.
 
 ## Treść i materiały
 
@@ -39,7 +43,8 @@ Build powstaje w website/dist/. Dla GitHub Pages z prefiksem repozytorium należ
 | Dane autora, kontakt i film | src/data/config.json |
 | Osiem projektów oraz przypięte wersje źródeł | src/data/projects.json |
 | Usługi | src/components/Services.astro |
-| Autor i współpraca | src/components/About.astro |
+| Współpraca | src/components/Cooperation.astro |
+| Autor i rekrutacja | src/components/About.astro |
 | Warsztat AI | src/components/Workshop.astro |
 | Pełne opisy prac | src/pages/projekty/[slug].astro |
 | Interakcje | src/scripts/site.mjs |
@@ -51,13 +56,16 @@ Stany projektów i źródła odnoszą się do przypiętych wersji kodu. Blast Ba
 
 ## Kontakt
 
-Adres kontaktowy pozostaje pusty na życzenie Marcina. Prywatny podgląd działa bez niego. Można go wpisać w config.json jako contactEmail lub przekazać do builda przez CONTACT_EMAIL. Adres będzie publiczny.
+Własny adres e-mail nie jest publikowany. Formularz przyjmuje imię opcjonalne, kontakt do odpowiedzi (e-mail, telefon lub profil), temat i opis zadania. `POST /api/inquiries` sprawdza pochodzenie żądania, długości i temat, a następnie zapisuje wiadomość w D1. Potwierdzenie sukcesu wymaga odczytu zapisanego rekordu. Identyfikator zgłoszenia zapobiega podwójnemu zapisowi przy ponowieniu wysyłki.
 
-- Z adresem przycisk przygotowuje wiadomość w aplikacji pocztowej użytkownika. Nie udaje dostarczenia wiadomości przez serwer.
-- Bez adresu formularz tworzy opis do skopiowania lub pobrania. UI wyraźnie informuje, że nic nie wysłano. Dostępny pozostaje prawdziwy profil GitHub.
-- Dane formularza nie są wysyłane do endpointu ani zapisywane w localStorage.
+- Błąd lub przerwa w połączeniu pozostawia treść w formularzu; można też skopiować lub pobrać kopię.
+- Natywny formularz działa również bez JavaScript; po zapisie przekierowuje do potwierdzenia.
+- Honeypot i limit zgłoszeń ograniczają automatyczne wysyłki. Limit używa krótkotrwałego skrótu adresu IP, bez zapisywania surowego adresu przy wiadomości.
+- `/skrzynka` wymaga Sign in with ChatGPT i sprawdzenia tożsamości właściciela. Treści nie mają publicznego endpointu odczytu. Odpowiedzi panelu nie są cachowane.
+- Skrzynka wyświetla 25 wiadomości na stronę; odpowiedź następuje wskazanym przez nadawcę kanałem. Nie skonfigurowano automatycznych powiadomień pocztowych.
+- Prywatny podgląd ma odnośnik do skrzynki w stopce. `publicationReady=true` ukrywa ten odnośnik na stronie publicznej, zachowując chronioną trasę.
 
-Wysyłka z serwera może być dodana po wyborze skrzynki/usługi. W obecnej wersji nie ma pozornej wysyłki, sukcesu bez dostarczenia ani fikcyjnego adresu e-mail.
+Dostęp właściciela porównuje zaufane nagłówki tożsamości platformy z konfiguracją serwerową. Repozytorium przechowuje skrót identyfikatora e-mail, a nie publiczny adres kontaktowy. Zmiana konta właściciela wymaga aktualizacji tej konfiguracji.
 
 ## Film
 
@@ -69,7 +77,7 @@ Montaż zbiorczy nie jest jeszcze wykonany. Krótki klip Fragile Express nie zas
 
 ## Weryfikacja i publikacja
 
-Workflow wykonuje testy funkcji kontaktu/routingu/danych, Astro check, build i kontrolę wygenerowanych plików. Nie publikuje strony. Artefakt builda jest przechowywany przez 7 dni.
+Workflow wykonuje 14 testów kontaktu, routingu i danych, w tym zapis i duplikaty na SQLite z rzeczywistą migracją, Astro check, oba etapy builda i kontrolę wygenerowanych plików. Nie publikuje strony. Artefakt builda jest przechowywany przez 7 dni.
 
 Kontrola statyczna sprawdza m.in. strony ośmiu prac, lokalne materiały i odnośniki, kotwice, pojedynczy opis pod logo oraz budżet JavaScript 64 KiB gzip.
 
@@ -77,7 +85,7 @@ Kontrola statyczna sprawdza m.in. strony ośmiu prac, lokalne materiały i odno�
 
 Przed publikacją:
 
-1. Ustalić docelowy kanał kontaktu i domenę SITE_URL; nie wpisywać przykładowego adresu.
+1. Ustalić docelową domenę SITE_URL i sprawdzić skrzynkę po zalogowaniu właściciela. Nie wpisywać przykładowego adresu kontaktowego.
 2. Po dalszych zmianach uruchomić npm ci, testy, check, build i verify.
 3. Wyniki kontroli przeglądarkowej z 21 października 2026 r. są w design-qa.md; materiały porównawcze w qa/.
 4. Prywatny podgląd zachowuje noindex i publicationReady=false. Dopiero przed uruchomieniem docelowej strony ustawić publicationReady=true i wykonać npm run check:ready.
