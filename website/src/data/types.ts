@@ -7,6 +7,13 @@ export interface Project {
   image: string | null;
   imageAlt: string | null;
   imageCaption: string;
+  video?: {
+    src: string;
+    width: number;
+    height: number;
+    caption: string;
+    description: string;
+  };
   tech: string[];
   repo: string;
   commit: string;

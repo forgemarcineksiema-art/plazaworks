@@ -46,7 +46,11 @@ function initProjects() {
       if (link.dataset.projectSelect === id) link.setAttribute("aria-current", "true");
       else link.removeAttribute("aria-current");
     }
-    for (const panel of panels) panel.hidden = panel.dataset.projectPanel !== id;
+    for (const panel of panels) {
+      const active = panel.dataset.projectPanel === id;
+      if (!active) for (const video of panel.querySelectorAll("video")) video.pause();
+      panel.hidden = !active;
+    }
     if (syncHash) history.replaceState(null, "", "#projekt-" + id);
     if (announce && announcement) {
       const current = panels.find(panel => panel.dataset.projectPanel === id);

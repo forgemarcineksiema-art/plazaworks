@@ -59,3 +59,13 @@ Film zbiorczy pozostaje osobnym zadaniem. Prywatny podgląd zachowuje noindex i 
 - [x] Sprawdzić główne interakcje, szerokości i konsolę.
 - [x] Zachować dowody i opisać granice testów.
 - [x] Usunąć pomocnicze ramki z publicznego builda.
+
+## Aktualizacja: film i opis Blast Battalion, 21 października 2026
+
+- Natywny film dodano do wybranej pracy na głównej oraz do pełnego opisu. Materiał ma 9 s, 1280 × 720 px, H.264, 30 fps, 4 154 047 B i nie zawiera ścieżki audio. Planszę startową wycięto z tego samego nagrania. Podpis pełnego opisu wyjaśnia sterowanie botem w wersji rozwojowej.
+- W przeglądarce przed naciśnięciem Play: paused=true, currentTime=0, readyState=0, preload=none, brak autoplay. Po prawdziwym kliknięciu: paused=false, currentTime rośnie, duration=9, readyState=4, brak błędu medium.
+- Zmiana z Blast Battalion na Driving Game podczas odtwarzania dała paused=true, ended=false, currentTime=0,951277 oraz hidden=true dla panelu filmu. Powrót nie uruchamia filmu automatycznie.
+- Na stronie pracy film uruchomiono również w ramce z obszarem treści 390 px: currentTime=0,198583, paused=false, duration=9 i brak błędu medium. Odtwarzacz ma w tym widoku 354 × 199,125 CSS px i zachowuje 16:9.
+- Sprawdzono pełny opis, aktualne odnośniki do kodu 24ba4c5, sekcję pracy z AI i powrót do aktywnego projektu na głównej. Przy szerokościach treści 320 i 390 px clientWidth=scrollWidth. Tytuł, odtwarzacz, podpis i tekst mieszczą się w ekranie.
+- Dowody: `qa/blast-film-mobile-case.jpg`, `qa/blast-film-mobile-card.jpg`, `qa/blast-film-320.jpg`. Zrzuty są wycinkami rzeczywistego obszaru strony z natywnych zrzutów Chrome; ucięto wyłącznie pusty obszar poza ramką testową. To kontrola układu i odtwarzania w Chrome, bez testu fizycznego Androida ani systemowego pełnego ekranu telefonu.
+- 8 testów przechodzi. Astro: 0 błędów, 0 ostrzeżeń. Build i kontrola tras oraz materiałów przechodzą. Pomocnicze ramki usunięto przed końcowym buildem. Film zbiorczy pozostaje oddzielnym materiałem.

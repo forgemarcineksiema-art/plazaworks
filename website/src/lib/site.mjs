@@ -91,6 +91,13 @@ export function validateProjects(projects) {
         !Array.isArray(project.sources) || !project.sources.length) throw new Error("Brak opisu pracy lub źródeł.");
     if (project.image !== null && !/^assets\/img\/[a-z0-9-]+\.(webp|png|jpg)$/.test(project.image)) throw new Error("Nieprawidłowy materiał projektu.");
     if (project.image === null && !project.excerpt) throw new Error("Projekt bez obrazu wymaga rzeczywistego fragmentu źródła.");
+    if (project.video && (!project.image || !/^assets\/video\/[a-z0-9-]+\.mp4$/.test(project.video.src) ||
+        !Number.isSafeInteger(project.video.width) || project.video.width <= 0 ||
+        !Number.isSafeInteger(project.video.height) || project.video.height <= 0 ||
+        typeof project.video.caption !== "string" || !project.video.caption.trim() ||
+        typeof project.video.description !== "string" || !project.video.description.trim())) {
+      throw new Error("Niekompletne lub nieprawidłowe nagranie projektu.");
+    }
     for (const source of project.sources) {
       if (!source.label || !source.path || source.path.startsWith("/") || source.path.includes("..") || source.path.includes("://")) throw new Error("Nieprawidłowe źródło projektu.");
     }

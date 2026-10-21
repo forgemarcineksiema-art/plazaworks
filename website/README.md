@@ -47,7 +47,7 @@ Build powstaje w website/dist/. Dla GitHub Pages z prefiksem repozytorium należ
 
 Opis narzędzi AI wynika z ustaleń z Marcinem. Ofertę wdrażania AI przedstawiono jako zakres usług; gier i HZ Bot nie opisano jako biznesowych wdrożeń modeli językowych.
 
-Stany projektów i źródła odnoszą się do wersji sprawdzonych w audycie z 20 października 2026 r. Nie ma fikcyjnych realizacji, klientów, opinii, rezultatów finansowych ani deklaracji o ukończeniu wszystkich gier.
+Stany projektów i źródła odnoszą się do przypiętych wersji kodu. Blast Battalion zaktualizowano po przeglądzie i poprawkach z 21 października 2026 r. do wersji 24ba4c556f13c02c8acc1a8c06306e4139976650; pozostałe projekty zachowują wersje z audytu z 20 października. Nie ma fikcyjnych realizacji, klientów, opinii, rezultatów finansowych ani deklaracji o ukończeniu wszystkich gier.
 
 ## Kontakt
 
@@ -60,6 +60,8 @@ Adres kontaktowy pozostaje pusty na życzenie Marcina. Prywatny podgląd działa
 Wysyłka z serwera może być dodana po wyborze skrzynki/usługi. W obecnej wersji nie ma pozornej wysyłki, sukcesu bez dostarczenia ani fikcyjnego adresu e-mail.
 
 ## Film
+
+Blast Battalion ma własny 9-sekundowy klip w podglądzie na stronie głównej oraz w pełnym opisie pracy. `src/data/projects.json` zawiera opcjonalne pole `video`; wspólny `ProjectMedia.astro` wyświetla odtwarzacz z kadrem z tego samego nagrania. Plik `public/assets/video/blast-battalion-gameplay.mp4` ma 1280 × 720 px i około 4,2 MB. Odtwarzanie jest natywne, bez autoplay, z `playsinline` i `preload=none`. Zmiana wybranego projektu zatrzymuje ukryty film. Nagranie przedstawia rzeczywistą symulację sterowaną botem w trybie testowym, bez dźwięku.
 
 SHOWREEL_SRC lub showreel.src powinny wskazywać gotowy MP4/WebM. Pusta wartość pokazuje oryginalny kadr Driving Game z podpisem, bez przycisku udającego nieistniejący film. Po ustawieniu filmu pojawi się natywny odtwarzacz, bez autoplay, z preload=none.
 
@@ -84,6 +86,6 @@ Nie dodawać gier do początkowego pobierania strony. Gotowe dema powinny urucha
 
 ## Pochodzenie materiałów
 
-Grafiki projektów pochodzą z repozytoriów Marcina. Kadr Blast Battalion: marketing/screenshots/jungle.png z wersji f260b357052854554c3d8080fd9385d10c8816ed. Materiały Orbling, Driving Game, WOT Rust, Tanki, Fragile Express i Cloudkeep zachowano z istniejących plików repozytorium. Dla HZ Bot pokazano faktyczny fragment config.example.yaml, nie wymyślony zrzut panelu.
+Grafiki projektów pochodzą z repozytoriów Marcina. Film Blast Battalion i jego plansza startowa: własne nagranie z działającej wersji 1.33.2, kod 24ba4c556f13c02c8acc1a8c06306e4139976650. Plansza pochodzi z tego samego pliku filmowego. Materiały Orbling, Driving Game, WOT Rust, Tanki, Fragile Express i Cloudkeep zachowano z istniejących plików repozytorium. Dla HZ Bot pokazano faktyczny fragment config.example.yaml, nie wymyślony zrzut panelu.
 
 Archivo: SIL Open Font License 1.1, zob. public/assets/fonts/LICENSE.md.

@@ -1,6 +1,7 @@
 ---
 import { allProjects, site, showreelSource } from "../data/site.mjs";
 import { sourceUrl, withBase } from "../lib/site.mjs";
+import ProjectMedia from "./ProjectMedia.astro";
 const base = import.meta.env.BASE_URL;
 const initial = "blast-battalion";
 const reel = showreelSource(base);
@@ -47,11 +48,7 @@ const reel = showreelSource(base);
         <article class="project-preview" id={"projekt-" + project.id} data-project-panel={project.id}
           hidden={project.id !== initial} aria-labelledby={"title-" + project.id}>
           {project.image ? (
-            <figure class="project-figure">
-              <img src={withBase(project.image, base)} width="1440" height="810"
-                alt={project.imageAlt || ""} loading="lazy" decoding="async" />
-              <figcaption>{project.imageCaption}</figcaption>
-            </figure>
+            <ProjectMedia project={project} variant="preview" />
           ) : (
             <figure class="project-code">
               <pre><code>{project.excerpt}</code></pre>

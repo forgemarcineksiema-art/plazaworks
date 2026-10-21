@@ -24,7 +24,7 @@ a { color: inherit; text-underline-offset: .3em; text-decoration-thickness: 1px;
 button, select { cursor: pointer; }
 button { color: inherit; }
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible,
-textarea:focus-visible, [tabindex="0"]:focus-visible { outline: 3px solid var(--focus); outline-offset: 5px; }
+textarea:focus-visible, video:focus-visible, [tabindex="0"]:focus-visible { outline: 3px solid var(--focus); outline-offset: 5px; }
 p { margin: 0 0 1.1em; line-height: 1.65; }
 h1, h2, h3, h4 { margin: 0; font-weight: 680; letter-spacing: -.035em; text-wrap: balance; }
 h2 { font-size: clamp(1.9rem, 3.4vw, 3.35rem); line-height: 1.12; }
@@ -81,8 +81,11 @@ figure { margin: 0; }
 .project-index a[aria-current="true"] .project-number { color: inherit; }
 .project-stage { min-width: 0; border-left: 1px solid var(--line); padding-left: 30px; }
 .project-preview { scroll-margin-top: 22px; min-width: 0; }
-.project-figure img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--surface); }
+.project-figure img, .project-figure video { width: 100%; aspect-ratio: 16 / 9; background: var(--surface); }
+.project-figure img { object-fit: cover; }
+.project-figure video { object-fit: contain; }
 .project-figure figcaption, .project-code figcaption { color: var(--muted); font-size: .78rem; margin-top: 8px; }
+.media-note { display: block; margin-top: 5px; line-height: 1.6; }
 .project-code pre { margin: 0; padding: 28px; background: var(--surface); color: #c5d4ed; overflow-x: auto; font: .9rem/1.65 ui-monospace, SFMono-Regular, Consolas, monospace; }
 .project-title-row { display: flex; justify-content: space-between; align-items: start; gap: 18px; padding-top: 22px; }
 .project-title-row h3 { font-size: clamp(1.5rem, 2.5vw, 2.1rem); margin-bottom: 7px; }
@@ -139,7 +142,9 @@ input::placeholder, textarea::placeholder { color: #909db2; opacity: 1; }
 .case-heading .lead { font-size: clamp(1.1rem, 1.9vw, 1.45rem); margin: 0; max-width: 42ch; }
 .case-meta { display: flex; gap: 12px 26px; flex-wrap: wrap; color: var(--muted); font-size: .88rem; }
 .case-hero { margin-bottom: 70px; }
-.case-hero img { width: 100%; max-height: 720px; aspect-ratio: 16 / 9; object-fit: cover; }
+.case-hero img, .case-hero video { width: 100%; max-height: 720px; aspect-ratio: 16 / 9; background: var(--surface); }
+.case-hero img { object-fit: cover; }
+.case-hero video { object-fit: contain; }
 .case-hero figcaption { padding-top: 10px; font-size: .85rem; color: var(--muted); }
 .case-section { display: grid; grid-template-columns: .55fr 1fr; gap: 65px; padding-block: 45px; border-top: 1px solid var(--line); }
 .case-section h2 { font-size: clamp(1.5rem, 2.4vw, 2.2rem); }

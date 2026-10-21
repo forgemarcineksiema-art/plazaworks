@@ -1,5 +1,6 @@
 ---
 import Page from "../../layouts/Page.astro";
+import ProjectMedia from "../../components/ProjectMedia.astro";
 import { allProjects } from "../../data/site.mjs";
 import type { Project } from "../../data/types";
 import { sourceUrl, withBase } from "../../lib/site.mjs";
@@ -27,11 +28,7 @@ const isBlast = project.id === "blast-battalion";
       <p class="lead">{project.summary}</p>
     </header>
     {project.image ? (
-      <figure class="case-hero">
-        <img src={withBase(project.image, base)} width="1440" height="810"
-          alt={project.imageAlt || ""} loading="eager" decoding="async" />
-        <figcaption>{project.imageCaption}</figcaption>
-      </figure>
+      <ProjectMedia project={project} variant="case" />
     ) : (
       <figure class="case-hero project-code">
         <pre><code>{project.excerpt}</code></pre><figcaption>{project.imageCaption}</figcaption>
@@ -47,6 +44,7 @@ const isBlast = project.id === "blast-battalion";
       <section class="case-section" aria-labelledby="case-terrain">
         <h2 id="case-terrain">Co dzieje się po wybuchu.</h2>
         <div>
+          <p>Walka jest czytelna wtedy, gdy gracz rozumie reakcje otoczenia. Wybuch ma zmieniać sytuację: usunąć osłonę, otworzyć drogę albo uruchomić kolejne zniszczenia.</p>
           <p>Teren jest częścią stanu gry. Komórki siatki opisują materiały o różnej wytrzymałości, odporności i podatności na ogień.</p>
           <ol>
             <li><strong>Obrażenia zmieniają stan materiału.</strong> Kod uwzględnia źródło obrażeń oraz właściwości komórki.</li>
@@ -65,7 +63,7 @@ const isBlast = project.id === "blast-battalion";
         <p>{project.mechanism}</p>
         <ul>{project.architecture.map(item => <li>{item}</li>)}</ul>
         {isBlast && (
-          <p>Stały krok symulacji pozwala oddzielić logikę gry od liczby klatek obrazu. Pętla korzysta z interpolacji i ogranicza liczbę kroków wykonywanych po opóźnieniu.</p>
+          <p>Interpolacja wygładza obraz pomiędzy krokami symulacji. Po opóźnieniu pętla ogranicza nadrabianie kroków; obrót telefonu zatrzymuje rozpoczętą misję.</p>
         )}
         <p class="meta">Technologie: {project.tech.join(" · ")}</p>
       </div>
@@ -75,7 +73,11 @@ const isBlast = project.id === "blast-battalion";
       <h2 id="case-scope">Zakres pracy i AI.</h2>
       <div>
         <p>{project.scope}</p>
-        <p class="muted">Projekt własny Marcina Płazy. Kod powstaje z wykorzystaniem agentów AI; repozytorium pozwala zobaczyć implementację i historię rozwoju.</p>
+        {isBlast ? (
+          <p class="muted">Pracuję z Claude i Codex przy rozwijaniu kodu oraz porównywaniu rozwiązań. Kierunek projektu, dobór funkcji i ocena ich działania pozostają po mojej stronie. Repozytorium pokazuje historię tej współpracy.</p>
+        ) : (
+          <p class="muted">Projekt własny Marcina Płazy. Kod powstaje z wykorzystaniem agentów AI; repozytorium pozwala zobaczyć implementację i historię rozwoju.</p>
+        )}
       </div>
     </section>
 
@@ -85,9 +87,9 @@ const isBlast = project.id === "blast-battalion";
         <p>{project.limits}</p>
         {isBlast && (
           <div class="case-callout">
-            <p><strong>Sprawdzony wycinek</strong></p>
-            <p>Audyt z 20 października 2026 r. obejmował domyślne pakowanie gry oraz krótki przebieg uruchomionej misji: postęp symulacji i przyjmowanie sterowania.</p>
-            <p class="muted">Pełna kampania, balans z graczami i działanie reklam na portalach pozostają osobnym zakresem weryfikacji. Wariant pakowania bez minifikacji wymaga poprawki opisanej w audycie.</p>
+            <p><strong>Sprawdzone w działającej grze</strong></p>
+            <p>Przegląd objął start gry, strzelanie, pauzę, opcje i zmianę orientacji ekranu. Dziewięć automatycznych testów sprawdza wybrane zachowania oraz gotowe paczki.</p>
+            <a class="text-link" href={sourceUrl(project, "docs/PORTFOLIO-READINESS-2026-10-21.md")} target="_blank" rel="noopener noreferrer">Zobacz zakres sprawdzenia</a>
           </div>
         )}
         <p class="meta">Opis kodu odnosi się do wersji <code>{project.commit.slice(0, 7)}</code>.</p>

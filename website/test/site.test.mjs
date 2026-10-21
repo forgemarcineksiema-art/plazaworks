@@ -78,7 +78,7 @@ test("portfolio contains the eight selected projects with pinned source versions
     "blast-battalion","tanki","cloudkeep","hz-bot"
   ]);
   const blast = projects.find(project => project.id === "blast-battalion");
-  assert.equal(sourceUrl(blast, "src/terrain.js"), "https://github.com/forgemarcineksiema-art/blast-battalion/blob/f260b357052854554c3d8080fd9385d10c8816ed/src/terrain.js");
+  assert.equal(sourceUrl(blast, "src/terrain.js"), "https://github.com/forgemarcineksiema-art/blast-battalion/blob/24ba4c556f13c02c8acc1a8c06306e4139976650/src/terrain.js");
   const copy = structuredClone(projects);
   copy[1].id = copy[0].id;
   assert.throws(() => validateProjects(copy));

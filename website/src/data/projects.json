@@ -179,30 +179,30 @@
     "category": "Gra akcji z niszczalnym terenem",
     "status": "Projekt własny · w rozwoju",
     "platform": "Przeglądarka",
-    "image": "assets/img/blast-jungle.png",
-    "imageAlt": "Eksplozja i niszczalny teren na mapie w dżungli w Blast Battalion.",
-    "imageCaption": "Kadr z rozgrywki",
+    "image": "assets/img/blast-gameplay.webp",
+    "imageAlt": "Wybuch niszczący fragment bazy na mapie w dżungli w Blast Battalion.",
+    "imageCaption": "Kadr z nagrania rozgrywki",
     "tech": [
       "JavaScript",
       "Canvas 2D"
     ],
     "repo": "blast-battalion",
-    "commit": "f260b357052854554c3d8080fd9385d10c8816ed",
-    "summary": "Gra akcji 2D, w której teren, ogień i obiekty otoczenia są częścią rozgrywki.",
-    "effect": "Ostrzał i wybuchy zmieniają otoczenie. Zniszczenie podparcia może uruchomić zawalenie fragmentu konstrukcji.",
-    "mechanism": "Siatka terenu przechowuje materiał, wytrzymałość i stan ognia. Zmiany trafiają do kolejki sprawdzania podparcia oraz odświeżania obrazu.",
+    "commit": "24ba4c556f13c02c8acc1a8c06306e4139976650",
+    "summary": "Gra akcji 2D, w której ostrzał i wybuchy zmieniają świat.",
+    "effect": "Wybuchy rozrywają teren, niszczą osłony i uruchamiają reakcje łańcuchowe. Gracz wykorzystuje otoczenie podczas walki i uwalniania jeńców.",
+    "mechanism": "Logika gry i obraz pracują osobno. Symulacja prowadzi świat w stałym kroku, a Canvas 2D prezentuje stan postaci, otoczenia i efektów.",
     "features": [
-      "Niszczalny teren",
-      "Stały krok symulacji",
-      "Narzędzia do strojenia i testów"
+      "Niszczalny teren i reakcje łańcuchowe",
+      "Walka i ratowanie jeńców",
+      "Sterowanie klawiaturą i dotykiem"
     ],
     "architecture": [
-      "Stan materiałów i uszkodzeń jest przechowywany w tablicach siatki terenu.",
-      "Zmienione obszary są oznaczane do ponownego narysowania.",
-      "Pętla gry oddziela kroki symulacji od interpolowanego obrazu."
+      "Własne moduły opisują teren, postacie, przeciwników, kamerę i interfejs.",
+      "Grafika i dźwięk powstają w kodzie, więc aplikacja nie wymaga osobnych plików tekstur i nagrań.",
+      "Narzędzia deweloperskie służą do strojenia parametrów, odtwarzania przebiegów i przygotowania wersji webowej."
     ],
-    "scope": "Rozwój gry, mechanik, interfejsu, narzędzi testowych i pakowania wersji webowej z wykorzystaniem Claude i Codex.",
-    "limits": "Projekt przed premierą. Dalsza praca obejmuje m.in. weryfikację pełnej kampanii oraz dopracowanie wybranych wariantów pakowania i integracji platform.",
+    "scope": "Od zasad rozgrywki i symulacji po interfejs, grafikę i dźwięk generowane kodem oraz narzędzia do testowania i nagrywania. Rozwijam całość i sprawdzam gotowe funkcje w działającej grze.",
+    "limits": "Projekt własny w rozwoju. Kolejny etap to testy na fizycznych telefonach i ocena całej kampanii z graczami. Integracje portali wymagają osobnej weryfikacji.",
     "sources": [
       {
         "label": "Mechanizm terenu",
@@ -219,8 +219,19 @@
       {
         "label": "Pakowanie wersji",
         "path": "tools/build.mjs"
+      },
+      {
+        "label": "Testy projektu",
+        "path": "test/runtime.test.mjs"
       }
-    ]
+    ],
+    "video": {
+      "src": "assets/video/blast-battalion-gameplay.mp4",
+      "width": 1280,
+      "height": 720,
+      "caption": "Fragment rozgrywki · 9 s · bez dźwięku",
+      "description": "Dżungla, pustynia i śnieg. Nagranie z wersji rozwojowej; postacią steruje bot w trybie testowym."
+    }
   },
   {
     "id": "tanki",
