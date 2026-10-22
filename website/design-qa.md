@@ -85,3 +85,13 @@ Ta sekcja zastępuje wcześniejszy opis kolejności strony i lokalnego formularz
 - Widoczne błędy rozszerzenia Chrome dotyczą `chrome-extension://.../content-script.bundle.js`, nie kodu witryny. Testowany błąd odbioru był celowo wywołanym scenariuszem awarii.
 
 Prywatny podgląd i noindex pozostają włączone. Własny e-mail nie jest publikowany; zapytania odczytuje się w skrzynce. Nie skonfigurowano powiadomień e-mail. Nagrania nie były rozbudowywane w tym etapie.
+
+## Aktualizacja: jeden blok usług, 22 października 2026
+
+- Zlikwidowano niebieski pasek i podwójne prezentowanie tych samych kategorii. Pod logo są cztery kolumny z nazwą, krótkim opisem i rozwijanym zakresem. Na telefonie te same elementy tworzą cztery wiersze. Usunięto osobne duże wprowadzenie oferty.
+- Chrome: obszary treści 320 i 390 CSS px mają clientWidth=scrollWidth. Sprawdzono pierwszy ekran, otwarty zakres, przełączenie między usługami i wejście przez istniejącą kotwicę `#aplikacje-i-systemy`. Na komputerze rozwinięty zakres ma pełną szerokość bloku (1268 CSS px w sprawdzonym oknie).
+- Space otwiera wskazaną usługę i zamyka poprzednią; Escape zamyka zakres i przywraca fokus przycisku. Stan aria-expanded i widoczność paneli zgadzają się; równocześnie otwarty jest jeden zakres.
+- Odnośnik usługi AI do kontaktu ustawia temat „Automatyzacja lub AI”. Formularz i odbiór zapytań nie były zmieniane.
+- W kodzie sprawdzono wariant bez JavaScript: nagłówki i pełne zakresy są widoczne, przyciski ukryte. Nie wymuszano wyłączenia JavaScript w przeglądarce.
+- Dowody: `qa/services-mobile-20261022.jpg` i `qa/services-desktop-20261022.jpg`. Zrzut mobilny wycięto z rzeczywistego renderu Chrome; usunięto wyłącznie obszar poza testowaną stroną. Gotowe pliki ponownie obejrzano. To kontrola układu w przeglądarce, bez testu fizycznego Androida.
+- 14 istniejących testów przechodzi, Astro zgłasza 0 błędów, 0 ostrzeżeń i 0 podpowiedzi. Oba etapy builda oraz weryfikacja tras, materiałów i artefaktu Worker przechodzą. Plik pomocniczy QA usunięto przed finalnym buildem.

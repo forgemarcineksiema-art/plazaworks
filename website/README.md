@@ -4,9 +4,9 @@ Nowa wersja jest w katalogu **website/**. Stary szkic w katalogu głównym pozos
 
 ## Zakres
 
-- Wybrany ciemny kierunek: jasny logotyp, opis tylko pod logotypem/obok niego, niebieski pasek czterech usług i jedna sekcja projektów.
+- Wybrany ciemny kierunek: jasny logotyp, pojedynczy opis działalności, jeden blok czterech usług bezpośrednio pod marką i jedna sekcja projektów.
 - Polska strona główna: skrót oferty przed portfolio, jedna sekcja prac, współpraca, warsztat AI, autor i kontakt.
-- Cztery rozwijane zakresy usług: przykłady zleceń, rezultat i materiały na początek.
+- Cztery kolumny usług na komputerze i cztery rozwijane wiersze na telefonie. Nazwy występują tylko raz. Wybrany zakres zajmuje pełną szerokość pod kolumnami lub rozwija się pod właściwym wierszem.
 - Formularz z rzeczywistym zapisem zapytań i prywatna skrzynka właściciela.
 - Indeks ośmiu projektów z przełączaniem podglądu oraz Działanie/Budowa.
 - Osobne, statycznie generowane opisy ośmiu prac; rozbudowany opis Blast Battalion z mechanizmem terenu i odnośnikami do kodu.
@@ -97,3 +97,7 @@ Nie dodawać gier do początkowego pobierania strony. Gotowe dema powinny urucha
 Grafiki projektów pochodzą z repozytoriów Marcina. Film Blast Battalion i jego plansza startowa: własne nagranie z działającej wersji 1.33.2, kod 24ba4c556f13c02c8acc1a8c06306e4139976650. Plansza pochodzi z tego samego pliku filmowego. Materiały Orbling, Driving Game, WOT Rust, Tanki, Fragile Express i Cloudkeep zachowano z istniejących plików repozytorium. Dla HZ Bot pokazano faktyczny fragment config.example.yaml, nie wymyślony zrzut panelu.
 
 Archivo: SIL Open Font License 1.1, zob. public/assets/fonts/LICENSE.md.
+
+## Układ usług — 22 października 2026
+
+Nawigację w niebieskim pasku i wcześniejszą listę usług połączono w jeden blok. Usunięto osobne wprowadzenie „Co mogę dla Ciebie zrobić”. Niebieski pozostał przy kontakcie, fokusie i aktywnej usłudze. Dotychczasowe kotwice, np. `#aplikacje-i-systemy`, otwierają właściwy zakres. Klawiatura obsługuje natywne przyciski oraz Escape. Bez JavaScript wszystkie cztery zakresy pozostają widoczne; przyciski ujawniają się dopiero po podłączeniu obsługi. Materiały z weryfikacji: `qa/services-mobile-20261022.jpg`, `qa/services-desktop-20261022.jpg`.

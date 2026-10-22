@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import wordmark from "../assets/wordmark.png";
 import { site } from "../data/site.mjs";
 ---
-<section class="masthead wrap" aria-label="PlazaWorks — oferta">
+<section class="masthead wrap" aria-label="PlazaWorks">
   <div class="identity">
     <h1 class="wordmark">
       <Image src={wordmark} alt="PlazaWorks" widths={[400, 800, 1200, 1600]}
@@ -12,10 +12,4 @@ import { site } from "../data/site.mjs";
     </h1>
     <p class="descriptor">{site.descriptor}</p>
   </div>
-  <nav class="services-band" aria-label="Usługi PlazaWorks">
-    <a href="#strony-i-sklepy">Strony i sklepy</a>
-    <a href="#aplikacje-i-systemy">Aplikacje i systemy</a>
-    <a href="#automatyzacje-i-ai">Automatyzacje i AI</a>
-    <a href="#gry-i-interakcja">Gry i interakcja</a>
-  </nav>
 </section>

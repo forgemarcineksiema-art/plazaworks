@@ -203,18 +203,46 @@ function initInquiry() {
 }
 
 function initServices() {
+  const root = document.querySelector("[data-service-list]");
+  if (!root) return;
+  const cards = Array.from(root.querySelectorAll("[data-service]"));
+  const setOpen = (card, open) => {
+    const button = card.querySelector("[data-service-toggle]");
+    const content = card.querySelector("[data-service-content]");
+    const overview = card.querySelector(".service-overview");
+    if (!button || !content || !overview) return;
+    button.setAttribute("aria-expanded", String(open));
+    content.hidden = !open;
+    overview.toggleAttribute("data-active", open);
+  };
+  const select = card => {
+    for (const item of cards) setOpen(item, item === card);
+  };
+  for (const card of cards) {
+    const button = card.querySelector("[data-service-toggle]");
+    if (!(button instanceof HTMLButtonElement)) continue;
+    setOpen(card, false);
+    button.hidden = false;
+    button.addEventListener("click", () => {
+      select(button.getAttribute("aria-expanded") === "true" ? null : card);
+    });
+    card.addEventListener("keydown", event => {
+      if (event.key === "Escape" && button.getAttribute("aria-expanded") === "true") {
+        select(null);
+        button.focus();
+      }
+    });
+  }
+  root.setAttribute("data-enhanced", "");
   const openFromHash = () => {
     const target = document.getElementById(location.hash.slice(1));
-    if (target instanceof HTMLDetailsElement && target.hasAttribute("data-service")) target.open = true;
+    const card = target?.closest("[data-service]");
+    if (!card || !root.contains(card)) return;
+    select(card);
+    requestAnimationFrame(() => card.querySelector(".service-overview")?.scrollIntoView({ block: "start", behavior: "instant" }));
   };
   openFromHash();
   addEventListener("hashchange", openFromHash);
-  for (const link of document.querySelectorAll(".services-band a")) {
-    link.addEventListener("click", () => {
-      const target = document.getElementById(link.hash.slice(1));
-      if (target instanceof HTMLDetailsElement) target.open = true;
-    });
-  }
 }
 
 initMenu();
