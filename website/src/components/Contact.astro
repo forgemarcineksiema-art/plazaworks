@@ -1,0 +1,34 @@
+---
+import { site } from "../data/site.mjs";
+import { TOPICS, withBase } from "../lib/site.mjs";
+const endpoint = withBase("api/inquiries", import.meta.env.BASE_URL);
+---
+<section class="contact section wrap" id="kontakt" aria-labelledby="contact-heading">
+  <div class="contact-intro">
+    <p class="eyebrow">Kontakt</p>
+    <h2 id="contact-heading">Nad czym chcesz popracować?</h2>
+    <p>Nowa strona, poprawka w aplikacji, własny pomysł lub propozycja pracy w zespole. Napisz kilka zdań i zostaw kontakt do odpowiedzi.</p>
+    <div class="contact-links">
+      <a class="text-link" href={site.github} target="_blank" rel="noopener noreferrer">Profil na GitHubie</a>
+    </div>
+    <details class="contact-privacy">
+      <summary>Co dzieje się z wiadomością?</summary>
+      <p>Opis i podany kontakt trafiają do prywatnej skrzynki PlazaWorks. Wykorzystuję je do odpowiedzi i rozmowy o Twoim zapytaniu. Treść nie pojawia się publicznie na stronie.</p>
+    </details>
+  </div>
+  <div class="contact-form-wrap">
+    <form class="contact-form" data-inquiry-form action={endpoint} method="post">
+      <label>Imię <span class="optional">(opcjonalnie)</span><input name="name" autocomplete="given-name" maxlength="120" /></label>
+      <label>Kontakt do odpowiedzi<input name="replyTo" required minlength="3" maxlength="254" placeholder="E-mail, telefon lub profil do kontaktu" /></label>
+      <label>Temat <select name="topic">{TOPICS.map(topic => <option value={topic}>{topic}</option>)}</select></label>
+      <label><span id="message-label">Wiadomość</span><textarea name="message" rows="5" required minlength="10" maxlength="5000" aria-labelledby="message-label" aria-describedby="message-hint" placeholder="Potrzebuję…"></textarea><span class="field-hint" id="message-hint">Pomogą link do obecnego projektu, planowany termin lub budżet — jeśli już je znasz.</span></label>
+      <div class="form-trap" aria-hidden="true"><label>Witryna<input name="website" tabindex="-1" autocomplete="off" /></label></div>
+      <button type="submit" class="button" data-submit-inquiry>Wyślij zapytanie</button>
+      <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+      <div class="draft-result" data-draft-result hidden>
+        <label>Kopia Twojego zapytania<textarea rows="8" readonly data-draft-text></textarea></label>
+        <div class="inline-links"><button class="text-button" type="button" data-copy-draft>Skopiuj treść</button><button class="text-button" type="button" data-download-draft>Zapisz kopię do pliku</button></div>
+      </div>
+    </form>
+  </div>
+</section>

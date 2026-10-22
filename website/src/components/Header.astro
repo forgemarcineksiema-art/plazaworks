@@ -1,0 +1,17 @@
+---
+import { site } from "../data/site.mjs";
+import { withBase } from "../lib/site.mjs";
+const home = withBase("", import.meta.env.BASE_URL);
+---
+<header class="site-header wrap" data-header>
+  <a class="author" href={home} aria-label="Marcin Płaza — strona główna">{site.author}</a>
+  <nav class="main-nav" id="main-navigation" aria-label="Nawigacja główna" data-main-nav>
+    <a href={home + "#uslugi"}>Usługi</a>
+    <a href={home + "#projekty"}>Projekty</a>
+    <a href={home + "#wspolpraca"}>Współpraca</a>
+    <a href={home + "#ai"}>AI i warsztat</a>
+    <a href={home + "#o-mnie"}>O mnie</a>
+  </nav>
+  <a class="button header-contact" href={home + "#kontakt"}>Porozmawiajmy</a>
+  <button class="menu-button" type="button" aria-controls="main-navigation" aria-expanded="false" data-menu-toggle hidden>Menu</button>
+</header>

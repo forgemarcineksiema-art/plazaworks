@@ -1,0 +1,375 @@
+[
+  {
+    "id": "driving-game",
+    "name": "Driving Game",
+    "category": "Gra 3D w przeglądarce",
+    "status": "Projekt własny · w rozwoju",
+    "platform": "Komputer",
+    "image": "assets/img/driving-coast.webp",
+    "imageAlt": "Czerwony samochód na nadmorskiej trasie w Driving Game.",
+    "imageCaption": "Kadr z rozgrywki",
+    "tech": [
+      "TypeScript",
+      "Three.js",
+      "Rapier"
+    ],
+    "repo": "driving-game",
+    "commit": "9a9e3fd9f3eb3cc09292775e347b2da052e7e135",
+    "summary": "Gra samochodowa 3D: wyspa do odkrywania, zadania i świat reagujący na działania gracza.",
+    "effect": "Prowadzisz samochód, odkrywasz wyspę i wykonujesz zlecenia. Gra łączy jazdę z zadaniami, reakcjami świata i zapisem postępu.",
+    "mechanism": "Fizyka pojazdów, logika świata i klient Three.js współpracują ze stanem aplikacji oraz zapisem postępu. Dzięki temu jazda i zadania należą do jednego rozwijanego świata.",
+    "features": [
+      "Pojazdy i fizyka jazdy",
+      "Zadania i reakcje świata",
+      "Interfejs oraz zapis postępu"
+    ],
+    "architecture": [
+      "Three.js wyświetla świat 3D, a Rapier obsługuje warstwę fizyki.",
+      "Stan aplikacji łączy postęp gracza z interfejsem i zapisem.",
+      "Testy obejmują wybrane zachowania symulacji i przebiegi aplikacji."
+    ],
+    "scope": "Rozwijam mechanikę jazdy, zadania, interfejs oraz narzędzia aplikacji. Praca obejmuje połączenie tych elementów z fizyką i zapisem postępu.",
+    "limits": "Wersja rozwojowa na komputer. Na stronie pokazuję materiał z gry; publiczne demo nie jest obecnie udostępnione.",
+    "sources": [
+      {
+        "label": "Kod projektu",
+        "path": "README.md"
+      },
+      {
+        "label": "Konfiguracja projektu",
+        "path": "package.json"
+      }
+    ],
+    "focus": "Jeden świat, wiele współpracujących systemów.",
+    "challenge": "Pojazdy, zadania i interfejs korzystają ze wspólnego stanu gry. Zmiana wywołana w jednym miejscu musi być widoczna dla pozostałych części."
+  },
+  {
+    "id": "wot-rust",
+    "name": "WOT Rust",
+    "category": "Własny silnik i gra",
+    "status": "Projekt własny · w rozwoju",
+    "platform": "Aplikacja natywna",
+    "image": "assets/img/wot-garage.webp",
+    "imageAlt": "Czołg w garażu projektu WOT Rust.",
+    "imageCaption": "Zapisany materiał z projektu",
+    "tech": [
+      "Rust",
+      "wgpu",
+      "WGSL"
+    ],
+    "repo": "wot-rust",
+    "commit": "e2d4df93c118bfdfe30ec49aa2c4f6b7e4781102",
+    "summary": "Gra czołgowa i własny silnik w Rust: obraz, symulacja, fizyka oraz narzędzia do pracy z pojazdami.",
+    "effect": "Projekt obejmuje grę czołgową oraz rozwijane razem z nią zaplecze: renderer, symulację, dane pojazdów i edytor.",
+    "mechanism": "Parametryczny opis pojazdu służy do generowania geometrii i danych dla gry. Wspólny punkt wyjścia wiąże wygląd pojazdu z jego opisem, a rendering pozostaje oddzielony od symulacji i serwera.",
+    "features": [
+      "Własny renderer wgpu",
+      "Generowanie geometrii pojazdów",
+      "Klient, edytor i warstwa serwerowa"
+    ],
+    "architecture": [
+      "Osobne pakiety odpowiadają za rendering, symulację, narzędzia i warstwę serwerową.",
+      "Renderer wgpu porządkuje etapy rysowania oraz używane przez nie zasoby.",
+      "Dane pojazdów przechodzą przez generowanie geometrii do części używanych w grze."
+    ],
+    "scope": "Prowadzę rozwój silnika i gry: renderera, symulacji, danych pojazdów oraz narzędzi. Projekt obejmuje również oddzielną warstwę serwerową.",
+    "limits": "Projekt natywny w rozwoju. Kolejne zadania obejmują sprawdzenie dłuższych bitew i działania usługi sieciowej przed jej publicznym udostępnieniem.",
+    "sources": [
+      {
+        "label": "Architektura renderera",
+        "path": "crates/render/renderer_wgpu/src/frame_graph.rs"
+      },
+      {
+        "label": "Generowanie pojazdów",
+        "path": "crates/vehicle/vehicle_build/src/lib.rs"
+      },
+      {
+        "label": "Stan rozwoju",
+        "path": "docs/ROADMAP.md"
+      }
+    ],
+    "focus": "Od parametrów pojazdu do świata 3D.",
+    "challenge": "Kształt pojazdu i dane używane przez grę muszą do siebie pasować. Przy rozwijaniu wielu pojazdów ważny jest sposób opisywania i przetwarzania tych informacji."
+  },
+  {
+    "id": "fragile-express",
+    "name": "Fragile Express",
+    "category": "Gra o sortowni paczek",
+    "status": "Projekt własny · w rozwoju",
+    "platform": "Przeglądarka",
+    "image": "assets/img/fragile-hub.webp",
+    "imageAlt": "Widok sortowni paczek w Fragile Express.",
+    "imageCaption": "Materiał z projektu",
+    "tech": [
+      "TypeScript",
+      "PixiJS"
+    ],
+    "repo": "fragile-express",
+    "commit": "71f185ff2883116ed1a6fa905e65c62fbcd93e2f",
+    "summary": "Gra o sortowni paczek, w której zarządzasz pracą, rozwijasz zaplecze i kontrolujesz ekonomię.",
+    "effect": "Obsługujesz paczki, rozwijasz sortownię i podejmujesz decyzje ekonomiczne. Postęp jest zapisywany, a gra uwzględnia także czas spędzony poza nią.",
+    "mechanism": "Stan gry łączy ekonomię, zapis i rozliczanie czasu poza aplikacją. Interfejs zarządzania pokazuje wynik tej samej symulacji, którą można sprawdzać narzędziami projektu.",
+    "features": [
+      "Interfejs zarządzania",
+      "Ekonomia oraz postęp",
+      "Zapis i rozliczanie czasu poza grą"
+    ],
+    "architecture": [
+      "TypeScript opisuje reguły ekonomii i stan aplikacji.",
+      "PixiJS prezentuje sortownię i interfejs zarządzania.",
+      "Narzędzia symulacyjne pomagają sprawdzać tempo rozwoju."
+    ],
+    "scope": "Rozwijam symulację sortowni, ekonomię, interfejs zarządzania i zapis postępu. Projekt obejmuje też narzędzia do sprawdzania przebiegu rozgrywki.",
+    "limits": "Projekt w rozwoju. Przed publicznym demem trzeba dopracować uruchamianie gry z integracjami platform, na których ma być udostępniana.",
+    "sources": [
+      {
+        "label": "Kod i opis projektu",
+        "path": "README.md"
+      },
+      {
+        "label": "Konfiguracja projektu",
+        "path": "package.json"
+      }
+    ],
+    "focus": "Postęp trwa również po zamknięciu gry.",
+    "challenge": "Po powrocie gracza symulacja i interfejs muszą pokazać spójny wynik czasu, który minął. Dotyczy to postępu, zasobów i dalszych decyzji."
+  },
+  {
+    "id": "orbling-skies",
+    "name": "Orbling Skies",
+    "category": "Eksploracja i walka",
+    "status": "Projekt własny · w rozwoju",
+    "platform": "Przeglądarka",
+    "image": "assets/img/orbling-battle.webp",
+    "imageAlt": "Dwa stworzenia na ekranie walki w Orbling Skies.",
+    "imageCaption": "Kadr z rozgrywki",
+    "tech": [
+      "JavaScript",
+      "Canvas 2D"
+    ],
+    "repo": "orbling-skies",
+    "commit": "e11f6e4175aedd11572b5e694cd7eb1ecb35b330",
+    "summary": "Przeglądarkowa gra o odkrywaniu wysp, zbieraniu stworzeń i rozwijaniu własnej drużyny.",
+    "effect": "Odkrywasz wyspy, wykonujesz zadania, zbierasz stworzenia i prowadzisz drużynę w walce. Zapis pozwala kontynuować przygodę.",
+    "mechanism": "Osobne narzędzia sprawdzają dane zawartości, zapis i wybrane przebiegi walki. Pozwala to kontrolować część reguł bez ręcznego przechodzenia całej przygody po każdej zmianie.",
+    "features": [
+      "Eksploracja i zadania",
+      "Kolekcja stworzeń i walka",
+      "Lokalizacja i trwały zapis"
+    ],
+    "architecture": [
+      "JavaScript i Canvas 2D obsługują grę w przeglądarce.",
+      "Generowana grafika jest buforowana do ponownego wykorzystania.",
+      "Sprawdzanie danych, zapisu i walki ma własne narzędzia."
+    ],
+    "scope": "Rozwijam eksplorację, walkę, zawartość i interfejs gry. Przygotowuję też narzędzia do sprawdzania danych oraz zachowania poszczególnych mechanik.",
+    "limits": "Wersja rozwojowa przed publikacją. Do oceny pozostaje pełna kampania, jej balans i przebieg z udziałem graczy.",
+    "sources": [
+      {
+        "label": "Punkt wejścia gry",
+        "path": "src/main.js"
+      },
+      {
+        "label": "Warstwa platformowa",
+        "path": "src/core/platform.js"
+      },
+      {
+        "label": "Sprawdzanie danych",
+        "path": "tools/check.js"
+      }
+    ],
+    "focus": "Zawartość gry, którą można sprawdzać.",
+    "challenge": "Eksploracja, stworzenia i walka korzystają z wielu powiązanych danych. Błąd w zawartości lub zapisie może ujawnić się dopiero podczas dalszej gry."
+  },
+  {
+    "id": "blast-battalion",
+    "name": "Blast Battalion",
+    "category": "Gra akcji z niszczalnym terenem",
+    "status": "Projekt własny · w rozwoju",
+    "platform": "Przeglądarka",
+    "image": "assets/img/blast-gameplay.webp",
+    "imageAlt": "Wybuch niszczący fragment bazy na mapie w dżungli w Blast Battalion.",
+    "imageCaption": "Kadr z nagrania rozgrywki",
+    "tech": [
+      "JavaScript",
+      "Canvas 2D"
+    ],
+    "repo": "blast-battalion",
+    "commit": "24ba4c556f13c02c8acc1a8c06306e4139976650",
+    "summary": "Gra akcji 2D, w której ostrzał i wybuchy zmieniają teren oraz przebieg walki.",
+    "effect": "Niszczysz osłony, otwierasz drogę wybuchami i uruchamiasz reakcje łańcuchowe. Otoczenie pomaga w walce i uwalnianiu jeńców.",
+    "mechanism": "Symulacja prowadzi świat w stałych krokach. Canvas 2D rysuje jego stan, a interpolacja wygładza obraz pomiędzy krokami. Reguły gry i prezentacja mają w ten sposób osobne zadania.",
+    "features": [
+      "Niszczalny teren i reakcje łańcuchowe",
+      "Walka i ratowanie jeńców",
+      "Sterowanie klawiaturą i dotykiem"
+    ],
+    "architecture": [
+      "Moduły gry opisują teren, postacie, przeciwników, kamerę i interfejs.",
+      "Grafika oraz dźwięk są generowane kodem.",
+      "Narzędzia pozwalają odtwarzać przebiegi gry, stroić parametry i przygotowywać wersję webową."
+    ],
+    "scope": "Rozwijam całość: zasady rozgrywki, symulację, interfejs, grafikę i dźwięk generowane kodem. Projekt obejmuje także narzędzia do testowania oraz nagrywania działającej gry.",
+    "limits": "Działająca wersja rozwojowa. Dalszy etap obejmuje testy na fizycznych telefonach, ocenę kampanii z graczami i sprawdzenie integracji z portalami gier.",
+    "sources": [
+      {
+        "label": "Mechanizm terenu",
+        "path": "src/terrain.js"
+      },
+      {
+        "label": "Pętla gry",
+        "path": "src/main.js"
+      },
+      {
+        "label": "Narzędzia testowe",
+        "path": "tools/harness.js"
+      },
+      {
+        "label": "Pakowanie wersji",
+        "path": "tools/build.mjs"
+      },
+      {
+        "label": "Testy projektu",
+        "path": "test/runtime.test.mjs"
+      }
+    ],
+    "video": {
+      "src": "assets/video/blast-battalion-gameplay.mp4",
+      "width": 1280,
+      "height": 720,
+      "caption": "Fragment rozgrywki · 9 s · bez dźwięku",
+      "description": "Dżungla, pustynia i śnieg. Nagranie z wersji rozwojowej; postacią steruje bot w trybie testowym."
+    },
+    "focus": "Reguły świata i płynny obraz.",
+    "challenge": "Ostrzał, zniszczenia i ruch postaci muszą współpracować także wtedy, gdy obraz nie jest rysowany w idealnie równych odstępach."
+  },
+  {
+    "id": "tanki",
+    "name": "Tanki",
+    "category": "Symulacja bitew czołgów",
+    "status": "Projekt własny · w rozwoju",
+    "platform": "Komputer",
+    "image": "assets/img/tanki-sniper.webp",
+    "imageAlt": "Widok celowania w przeglądarkowej grze Tanki.",
+    "imageCaption": "Kadr z rozgrywki",
+    "tech": [
+      "TypeScript",
+      "Three.js"
+    ],
+    "repo": "tanki",
+    "commit": "30f61f44687aec32172f9a4e930c70fb357e6729",
+    "summary": "Przeglądarkowe bitwy czołgów z balistyką, pancerzem i przeciwnikami sterowanymi przez boty.",
+    "effect": "Prowadzisz czołg i walczysz z botami. O wyniku trafienia decydują mechanizmy balistyki oraz pancerza.",
+    "mechanism": "Symulacja, klient 3D i zawartość są rozdzielone na pakiety. Testy mogą dzięki temu sprawdzać wybrane zachowania bitwy niezależnie od rysowania świata w Three.js.",
+    "features": [
+      "Oddzielona symulacja i klient",
+      "Balistyka oraz pancerz",
+      "Generowanie map i testy botów"
+    ],
+    "architecture": [
+      "Pakiety TypeScript rozdzielają symulację, klienta i dane gry.",
+      "Three.js prezentuje stan bitwy w 3D.",
+      "Narzędzia generują dane map i sprawdzają zachowanie botów."
+    ],
+    "scope": "Rozwijam symulację walki, klienta przeglądarkowego, dane map i narzędzia testowe. Ważną częścią pracy jest zachowanie przeciwników sterowanych przez boty.",
+    "limits": "Wersja rozwojowa na komputer. Zachowanie botów i pełny przebieg bitwy w docelowej przeglądarce wymagają dalszego dopracowania.",
+    "sources": [
+      {
+        "label": "Opis i struktura projektu",
+        "path": "README.md"
+      },
+      {
+        "label": "Testy zachowania botów",
+        "path": "packages/content/battle/bots.battle.ts"
+      },
+      {
+        "label": "Generowanie danych",
+        "path": "tools/bake.ts"
+      }
+    ],
+    "focus": "Symulacja niezależna od obrazu.",
+    "challenge": "Przebieg bitwy trzeba móc sprawdzać także poza widokiem gracza. Dotyczy to reguł trafień, zawartości map i decyzji botów."
+  },
+  {
+    "id": "cloudkeep",
+    "name": "Cloudkeep",
+    "category": "Latająca forteca",
+    "status": "Projekt własny · w rozwoju",
+    "platform": "Przeglądarka",
+    "image": "assets/img/cloudkeep-cover.webp",
+    "imageAlt": "Ilustracja promocyjna latającej fortecy Cloudkeep.",
+    "imageCaption": "Materiał promocyjny projektu",
+    "tech": [
+      "JavaScript",
+      "Canvas"
+    ],
+    "repo": "cloudkeep",
+    "commit": "556e1853fc715d1148da6b132012777cbfde29fa",
+    "summary": "Gra o latającej fortecy: kolejne fale przeciwników i decyzje o rozwoju obrony.",
+    "effect": "Bronisz latającej fortecy i wybierasz ulepszenia pomiędzy kolejnymi falami przeciwników.",
+    "mechanism": "Narzędzia uruchamiają sterowane przebiegi symulacji. Pomagają obserwować zachowanie reguł walki i przygotowywać wersję gry dla przeglądarki.",
+    "features": [
+      "Fale przeciwników",
+      "Wybór ulepszeń",
+      "Wersja przeglądarkowa"
+    ],
+    "architecture": [
+      "JavaScript i Canvas obsługują logikę oraz prezentację.",
+      "Osobne narzędzia przygotowują wersję webową i uruchamiają przebiegi symulacji.",
+      "Integracje z platformami publikacji są częścią projektu."
+    ],
+    "scope": "Rozwijam reguły walki, ulepszenia, prezentację i narzędzia gry. Praca obejmuje także przygotowanie wersji przeglądarkowej.",
+    "limits": "Projekt w rozwoju. Dalszych testów wymagają balans całej rozgrywki i integracje z portalami gier. Na stronie pokazuję materiał promocyjny projektu.",
+    "sources": [
+      {
+        "label": "Kod i opis projektu",
+        "path": "README.md"
+      }
+    ],
+    "focus": "Sprawdzanie przebiegu walki.",
+    "challenge": "Fale przeciwników i ulepszenia wpływają na kolejne etapy rozgrywki. Do ich rozwijania potrzebny jest sposób obserwowania przebiegu symulacji."
+  },
+  {
+    "id": "hz-bot",
+    "name": "HZ Bot",
+    "category": "Automatyzacja w Pythonie",
+    "status": "Projekt własny · prototyp",
+    "platform": "Python",
+    "image": null,
+    "imageAlt": null,
+    "imageCaption": "Fragment konfiguracji z repozytorium",
+    "tech": [
+      "Python"
+    ],
+    "repo": "hz-bot",
+    "commit": "25c3dbd7e42e7ffc507ee7f3f65a05311d966f17",
+    "summary": "Narzędzie do automatyzacji czynności w grze, z wyborem strategii, panelem i symulatorem.",
+    "effect": "Konfigurujesz strategię i obserwujesz decyzje automatyzacji w symulatorze. Panel pozwala sterować pracą narzędzia.",
+    "mechanism": "Symulator pozwala uruchamiać logikę planowania niezależnie od połączenia z grą. Konfiguracja określa strategię, przerwy i limity działania.",
+    "features": [
+      "Konfigurowalne strategie",
+      "Panel sterowania",
+      "Testy offline i symulacja"
+    ],
+    "architecture": [
+      "Python obsługuje logikę automatyzacji i współpracę elementów narzędzia.",
+      "Konfiguracja steruje strategiami oraz limitami.",
+      "Symulator umożliwia sprawdzanie wybranych scenariuszy bez serwera gry."
+    ],
+    "scope": "Rozwijam logikę planowania, konfigurację, panel sterowania i symulator do testów offline.",
+    "limits": "Prototyp sprawdzony offline i w symulatorze. Połączenie z rzeczywistym API gry wymaga weryfikacji. Decyzje narzędzia opierają się na regułach; projekt nie korzysta z modelu językowego.",
+    "excerpt": "behaviour:\n  min_delay: 1.5\n  max_delay: 4.0\n  max_consecutive_errors: 5\n\nquests:\n  enabled: true\n  strategy: xp_per_energy",
+    "sources": [
+      {
+        "label": "Przykładowa konfiguracja",
+        "path": "config.example.yaml"
+      },
+      {
+        "label": "Kod i uruchomienie",
+        "path": "README.md"
+      }
+    ],
+    "focus": "Logika, którą można sprawdzić offline.",
+    "challenge": "Strategie działania trzeba móc sprawdzać bez wykonywania każdej próby w prawdziwej grze."
+  }
+]

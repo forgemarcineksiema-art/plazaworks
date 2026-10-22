@@ -1,0 +1,15 @@
+import assert from "node:assert/strict";
+import { readFile, stat, readdir } from "node:fs/promises";
+const source = JSON.parse(await readFile(".openai/hosting.json", "utf8"));
+const built = JSON.parse(await readFile("dist/.openai/hosting.json", "utf8"));
+assert.deepEqual(built, source, "Manifest builda musi odpowiadać źródłom.");
+assert.equal(built.d1, "DB");
+assert.equal(built.static, undefined);
+const runtime = JSON.parse(await readFile("dist/server/wrangler.json", "utf8"));
+assert.equal(runtime.assets.binding, "ASSETS");
+assert.ok(runtime.d1_databases.some(binding => binding.binding === "DB"));
+assert.ok((await stat("dist/server/index.js")).size > 0);
+assert.deepEqual(await readFile("dist/client/index.html"), await readFile(".astro-output/index.html"), "Worker ma serwować aktualną stronę Astro.");
+assert.deepEqual(await readFile("dist/.openai/drizzle/0000_adorable_scrambler.sql"), await readFile("drizzle/0000_adorable_scrambler.sql"));
+assert.ok(!(await readdir("dist/client")).some(name => name.startsWith("qa-")), "Pliki QA nie mogą trafić do publikacji.");
+console.log("Worker, assets strony, binding bazy i migracja: OK.");

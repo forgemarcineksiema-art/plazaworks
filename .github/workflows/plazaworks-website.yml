@@ -1,0 +1,40 @@
+name: PlazaWorks website
+on:
+  push:
+    branches: ['codex/plazaworks-site-*']
+    paths: ['website/**', '.github/workflows/plazaworks-website.yml']
+  pull_request:
+    paths: ['website/**', '.github/workflows/plazaworks-website.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Test routing, contact and content
+        run: npm test
+      - name: Check Astro and TypeScript
+        run: npm run check
+      - name: Build the website
+        run: npm run build
+      - name: Verify generated routes and assets
+        run: npm run verify
+      - name: Save build for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: plazaworks-website
+          path: |
+            website/dist/
+            website/package-lock.json
+          retention-days: 7
+          if-no-files-found: error

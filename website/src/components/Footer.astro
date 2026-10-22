@@ -1,0 +1,15 @@
+---
+import { site } from "../data/site.mjs";
+import { withBase } from "../lib/site.mjs";
+const home = withBase("", import.meta.env.BASE_URL);
+---
+<footer class="site-footer wrap">
+  <p>PlazaWorks <span>Marcin Płaza</span></p>
+  <nav aria-label="Nawigacja w stopce">
+    <a href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href={home + "#kontakt"}>Kontakt</a>
+    {!site.publicationReady && <a href={home + "skrzynka"}>Skrzynka zapytań</a>}
+    <a href="#top">Na górę</a>
+  </nav>
+  <small>© {new Date().getFullYear()} Marcin Płaza</small>
+</footer>

@@ -1,0 +1,62 @@
+---
+const services = [
+  {
+    id: "strony-i-sklepy", number: "01", title: "Strony i sklepy",
+    lead: "Pokaż ofertę firmy, sprzedawaj online lub popraw obecną stronę.",
+    examples: "Potrzebujesz pierwszej strony, chcesz uruchomić sklep albo dodać formularz, płatności czy nową funkcję. Mogę też przebudować obecną witrynę.",
+    delivery: "Treść i układ dopasowane do oferty, wersję na telefon i komputer oraz uruchomienie strony. Przy sklepie ustalamy również produkty, płatności i dostawę.",
+    start: "Napisz, czym zajmuje się firma i do czego ma służyć strona. Jeśli coś już masz, podeślij adres lub materiały.",
+    topic: "Strona lub sklep", action: "Zapytaj o stronę lub sklep"
+  },
+  {
+    id: "aplikacje-i-systemy", number: "02", title: "Aplikacje i systemy",
+    lead: "Narzędzie do codziennej pracy albo aplikacja dla Twoich użytkowników.",
+    examples: "Panel do obsługi zleceń, praca z danymi, połączenie z inną usługą lub brakująca funkcja w obecnym systemie. Aplikacje do przeglądarki, na komputer i telefon.",
+    delivery: "Działającą wersję z ustalonymi funkcjami, kod źródłowy i instrukcję uruchomienia. Pierwszy etap może obejmować jeden najważniejszy proces.",
+    start: "Opisz, kto będzie używać aplikacji i co ma dzięki niej zrobić. Przy rozwoju istniejącego systemu zaczniemy od obejrzenia kodu i problemu.",
+    topic: "Aplikacja lub system", action: "Zapytaj o aplikację"
+  },
+  {
+    id: "automatyzacje-i-ai", number: "03", title: "Automatyzacje i AI",
+    lead: "Łącz narzędzia i ogranicz ręczne przenoszenie danych oraz pracę z dokumentami.",
+    examples: "Przepisujesz te same dane, zbierasz informacje z kilku miejsc lub ręcznie przeglądasz dokumenty. Możemy połączyć aplikacje, przygotować skrypt albo sprawdzić zastosowanie modelu AI.",
+    delivery: "Rozwiązanie sprawdzone na przykładowych danych oraz opis obsługi błędów. Przy AI ustalamy, jakie dane może otrzymać model, koszty użycia i które wyniki wymagają kontroli człowieka.",
+    start: "Pokaż kolejne kroki obecnej pracy i przykładowe dane. Ustalimy, co da się uprościć oraz gdzie potrzebne są reguły, integracja lub AI.",
+    topic: "Automatyzacja lub AI", action: "Opisz proces do usprawnienia"
+  },
+  {
+    id: "gry-i-interakcja", number: "04", title: "Gry i interakcja",
+    lead: "Sprawdź pomysł na mechanikę, rozwiń grę lub stwórz interaktywną prezentację.",
+    examples: "Prototyp gry, symulacja, wizualizacja 2D lub 3D albo rozwój istniejącej mechaniki. Możemy zacząć od niewielkiego fragmentu, który pozwoli ocenić pomysł.",
+    delivery: "Wersję do uruchomienia na wybranych urządzeniach, kod i opis działania. Zakres może obejmować pojedynczy system lub większą część projektu.",
+    start: "Opisz, co ma robić użytkownik i na jakim urządzeniu. Jeśli masz już projekt, pokaż obecną wersję i to, co chcesz zmienić.",
+    topic: "Gra lub interakcja", action: "Porozmawiajmy o projekcie"
+  }
+];
+---
+<section class="services section wrap" id="uslugi" aria-labelledby="services-heading">
+  <h2 class="sr-only" id="services-heading">Usługi</h2>
+  <div class="service-grid" data-service-list>
+    {services.map((service, index) => (
+      <article class="service-card" id={service.id} data-service style={"--service-column:" + (index + 1)}>
+        <div class="service-overview">
+          <span class="service-number meta" aria-hidden="true">{service.number}</span>
+          <h3 id={service.id + "-title"}>{service.title}</h3>
+          <p class="service-lead" id={service.id + "-lead"}>{service.lead}</p>
+          <button class="service-toggle" type="button" data-service-toggle hidden aria-expanded="true"
+            aria-controls={service.id + "-scope"} aria-labelledby={service.id + "-title"} aria-describedby={service.id + "-lead"}>
+            <span class="service-disclosure" aria-hidden="true"><span>Zakres</span><span class="service-symbol"></span></span>
+          </button>
+        </div>
+        <div class="service-content" id={service.id + "-scope"} role="region" aria-labelledby={service.id + "-title"} data-service-content>
+          <dl class="service-description">
+            <div><dt>Z czym możesz przyjść</dt><dd>{service.examples}</dd></div>
+            <div><dt>Co otrzymasz</dt><dd>{service.delivery}</dd></div>
+            <div><dt>Od czego zacząć</dt><dd>{service.start}</dd></div>
+          </dl>
+          <a class="text-link" href="#kontakt" data-contact-topic={service.topic}>{service.action}</a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

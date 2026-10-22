@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import wordmark from "../assets/wordmark.png";
+import { site } from "../data/site.mjs";
+---
+<section class="masthead wrap" aria-label="PlazaWorks">
+  <div class="identity">
+    <h1 class="wordmark">
+      <Image src={wordmark} alt="PlazaWorks" widths={[400, 800, 1200, 1600]}
+        sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1100px) 70vw, 900px"
+        format="webp" quality={90} loading="eager" decoding="async" class="wordmark-image" />
+    </h1>
+    <p class="descriptor">{site.descriptor}</p>
+  </div>
+</section>

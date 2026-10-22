@@ -1,0 +1,29 @@
+---
+import type { Project } from "../data/types";
+import { withBase } from "../lib/site.mjs";
+
+interface Props {
+  project: Project;
+  variant: "preview" | "case";
+}
+const { project, variant } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const captionId = "media-" + project.id;
+---
+<figure class={variant === "case" ? "case-hero" : "project-figure"}>
+  {project.video ? (
+    <video controls playsinline preload="none" width={project.video.width} height={project.video.height}
+      poster={withBase(project.image!, base)} aria-label={"Rozgrywka — " + project.name}
+      aria-describedby={captionId}>
+      <source src={withBase(project.video.src, base)} type="video/mp4" />
+      Twoja przeglądarka nie obsługuje filmu. <a href={withBase(project.video.src, base)}>Otwórz nagranie</a>.
+    </video>
+  ) : (
+    <img src={withBase(project.image!, base)} width="1440" height="810"
+      alt={project.imageAlt || ""} loading={variant === "case" ? "eager" : "lazy"} decoding="async" />
+  )}
+  <figcaption id={captionId}>
+    {project.video ? project.video.caption : project.imageCaption}
+    {project.video && variant === "case" && <span class="media-note">{project.video.description}</span>}
+  </figcaption>
+</figure>

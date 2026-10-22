@@ -1,0 +1,13 @@
+{
+  "name": "PlazaWorks",
+  "author": "Marcin Płaza",
+  "descriptor": "Projektuję i tworzę oprogramowanie.",
+  "github": "https://github.com/forgemarcineksiema-art",
+  "contactEmail": null,
+  "showreel": {
+    "src": null,
+    "poster": "assets/img/driving-coast.webp",
+    "posterCaption": "Driving Game · kadr z projektu"
+  },
+  "publicationReady": false
+}
