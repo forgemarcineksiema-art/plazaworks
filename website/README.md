@@ -9,7 +9,7 @@ Nowa wersja jest w katalogu **website/**. Stary szkic w katalogu głównym pozos
 - Cztery kolumny usług na komputerze i cztery rozwijane wiersze na telefonie. Nazwy występują tylko raz. Wybrany zakres zajmuje pełną szerokość pod kolumnami lub rozwija się pod właściwym wierszem.
 - Formularz z rzeczywistym zapisem zapytań i prywatna skrzynka właściciela.
 - Indeks ośmiu projektów z przełączaniem podglądu oraz Działanie/Budowa.
-- Osobne, statycznie generowane opisy ośmiu prac; rozbudowany opis Blast Battalion z mechanizmem terenu i odnośnikami do kodu.
+- Osobne, statycznie generowane opisy ośmiu wybranych prac oraz PlazaWorks jako własnej strony firmowej z obsługą zapytań. Opisy wskazują problem, rozwiązanie, zakres pracy i stan rozwoju.
 - Nawigacja na telefonie, obsługa klawiaturą, widoczne stany fokusu i respektowanie ograniczenia ruchu.
 - Oryginalne obrazy projektów. Logo jest osobnym plikiem PNG opracowanym na podstawie wybranego szkicu; Astro tworzy mniejsze warianty WebP do wyświetlania.
 - Publiczna część bez trackerów, automatycznie ładowanych gier i połączeń do usług AI z przeglądarki. Logowanie właściciela obsługuje platforma Sites.
@@ -47,6 +47,7 @@ Schemat jest w `db/schema.ts`, migracja w `drizzle/`. Po zmianach schematu użyj
 | Autor i rekrutacja | src/components/About.astro |
 | Warsztat AI | src/components/Workshop.astro |
 | Pełne opisy prac | src/pages/projekty/[slug].astro |
+| PlazaWorks jako przykład strony firmowej | src/pages/projekty/plazaworks.astro |
 | Interakcje | src/scripts/site.mjs |
 | Układ, kolor i responsywność | src/styles/global.css |
 
@@ -101,3 +102,11 @@ Archivo: SIL Open Font License 1.1, zob. public/assets/fonts/LICENSE.md.
 ## Układ usług — 22 października 2026
 
 Nawigację w niebieskim pasku i wcześniejszą listę usług połączono w jeden blok. Usunięto osobne wprowadzenie „Co mogę dla Ciebie zrobić”. Niebieski pozostał przy kontakcie, fokusie i aktywnej usłudze. Dotychczasowe kotwice, np. `#aplikacje-i-systemy`, otwierają właściwy zakres. Klawiatura obsługuje natywne przyciski oraz Escape. Bez JavaScript wszystkie cztery zakresy pozostają widoczne; przyciski ujawniają się dopiero po podłączeniu obsługi. Materiały z weryfikacji: `qa/services-mobile-20261022.jpg`, `qa/services-desktop-20261022.jpg`.
+
+## Aktualizacja treści, 22 października 2026
+
+Usługi zaczynają się od sytuacji klienta. Współpraca opisuje wycenę, działający podgląd, dodatkowy zakres i przekazanie. Fragment o autorze łączy interfejs, dane oraz logikę przez przykłady z własnych projektów i zachowuje drogę dla rekruterów. Kontakt ma jedną zachętę i podpowiedź, jakie materiały pomogą w rozmowie. Etykieta pola Wiadomość jest oddzielona od jego opisu dla technologii asystujących.
+
+Osiem wybranych prac zachowuje identyfikatory i przypięte wersje kodu. Pola `focus` i `challenge` opisują konkretny problem, a `mechanism` wyjaśnia zastosowane rozwiązanie. Informacje o stanie gry używają prostszego języka. AI ma wspólne wyjaśnienie warsztatu i krótką wzmiankę przy zakresie danej pracy; nie dopisano wdrożeń ani wyników klientów.
+
+Dodatkowy opis PlazaWorks przedstawia rzeczywisty projekt własny: prezentację usług, portfolio, formularz oraz kod prywatnej skrzynki. Odnośniki do niezmienianych w tym etapie funkcji serwerowych są przypięte do `b25d65d`. Nie dodano nowego projektu gry ani demonstracyjnego klienta. Wyniki kontroli bieżącej wersji są w `design-qa.md`.

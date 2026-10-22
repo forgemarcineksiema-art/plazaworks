@@ -95,3 +95,15 @@ Prywatny podgląd i noindex pozostają włączone. Własny e-mail nie jest publi
 - W kodzie sprawdzono wariant bez JavaScript: nagłówki i pełne zakresy są widoczne, przyciski ukryte. Nie wymuszano wyłączenia JavaScript w przeglądarce.
 - Dowody: `qa/services-mobile-20261022.jpg` i `qa/services-desktop-20261022.jpg`. Zrzut mobilny wycięto z rzeczywistego renderu Chrome; usunięto wyłącznie obszar poza testowaną stroną. Gotowe pliki ponownie obejrzano. To kontrola układu w przeglądarce, bez testu fizycznego Androida.
 - 14 istniejących testów przechodzi, Astro zgłasza 0 błędów, 0 ostrzeżeń i 0 podpowiedzi. Oba etapy builda oraz weryfikacja tras, materiałów i artefaktu Worker przechodzą. Plik pomocniczy QA usunięto przed finalnym buildem.
+
+## Aktualizacja: treść i opisy rozwiązań, 22 października 2026
+
+- Przepisano cztery zakresy usług, współpracę, sekcję o autorze i rekrutacji, warsztat AI oraz kontakt. Zachowano duże logo, pojedynczy opis działalności, jeden blok usług i dotychczasową kolejność głównych sekcji.
+- Osiem opisów prac ma konkretny problem i rozwiązanie, własny zakres oraz prostszy stan rozwoju. Zakładka Budowa pokazuje wyróżnione rozwiązanie. Ograniczenia i przypięte wersje kodu pozostają jawne. Nie dopisano klientów, efektów finansowych, wdrożeń LLM ani ukończenia gier.
+- Dodano krótki przykład PlazaWorks w sekcji projektów oraz osobny opis `/projekty/plazaworks/`. To projekt własny strony i odbioru zapytań, z odnośnikami do istniejących funkcji serwerowych.
+- Chrome: obejrzano komputer, mobilne usługi, sekcję o autorze oraz pełny opis PlazaWorks. Przy szerokości treści 320 px sprawdzono otwarty zakres AI i opis PlazaWorks; przy 390 px zakres stron, sekcję autora i opis Fragile Express. W sprawdzonych widokach `clientWidth=scrollWidth`. Ramki miały dodatkowe 15 px na klasyczny pasek przewijania. To kontrola układu w Chrome, bez testu fizycznego Androida.
+- Sprawdzono przejście od usługi AI do formularza z tematem Automatyzacja lub AI, nawigację mobilną do autora, nowy opis strony, pełny opis rozwiązania Fragile Express i wybór WOT Rust / Budowa. Etykieta Wiadomość jest dostępna pod własną nazwą, a podpowiedź przez aria-describedby. Nie wykonywano ponownej wysyłki zapytania: backend pozostaje bez zmian i ma istniejące testy.
+- Wszystkie 14 testów przechodzi. Astro: 0 błędów, 0 ostrzeżeń, 0 podpowiedzi. Końcowy build i weryfikacja 11 dokumentów, odnośników, kotwic, materiałów oraz zgodności Worker/assets/migracji przechodzą. Kod strony głównej: 3131 B gzip. Pomocniczy plik QA usunięto przed końcowym buildem.
+- Nowe rendery obejrzano w przeglądarce. Pliku zrzutu nie dołączono do repozytorium: nie pojawił się w udostępnionym katalogu po udanym zapisie po stronie przeglądarki i kontroli synchronizacji. Poprzednie obrazy QA pozostają historycznymi dowodami wcześniejszych etapów.
+
+Prywatna widoczność, noindex, brak własnego publicznego e-maila i dotychczasowe nagranie pozostają bez zmian. Nie wykonywano ponownej kontroli produkcyjnej sesji właściciela skrzynki.

@@ -6,9 +6,8 @@ const endpoint = withBase("api/inquiries", import.meta.env.BASE_URL);
 <section class="contact section wrap" id="kontakt" aria-labelledby="contact-heading">
   <div class="contact-intro">
     <p class="eyebrow">Kontakt</p>
-    <h2 id="contact-heading">Opowiedz, co chcesz zrobić.</h2>
-    <p>Napisz, czego potrzebujesz i co masz już przygotowane. Możesz zapytać o pojedynczą zmianę, nowy projekt lub współpracę z zespołem.</p>
-    <p class="muted">Podaj kontakt do odpowiedzi. Jeśli zakres nie jest jeszcze jasny, opisz cel — od tego zaczniemy.</p>
+    <h2 id="contact-heading">Nad czym chcesz popracować?</h2>
+    <p>Nowa strona, poprawka w aplikacji, własny pomysł lub propozycja pracy w zespole. Napisz kilka zdań i zostaw kontakt do odpowiedzi.</p>
     <div class="contact-links">
       <a class="text-link" href={site.github} target="_blank" rel="noopener noreferrer">Profil na GitHubie</a>
     </div>
@@ -20,9 +19,9 @@ const endpoint = withBase("api/inquiries", import.meta.env.BASE_URL);
   <div class="contact-form-wrap">
     <form class="contact-form" data-inquiry-form action={endpoint} method="post">
       <label>Imię <span class="optional">(opcjonalnie)</span><input name="name" autocomplete="given-name" maxlength="120" /></label>
-      <label>Kontakt do odpowiedzi<input name="replyTo" required minlength="3" maxlength="254" aria-describedby="reply-hint" placeholder="E-mail, telefon lub profil do kontaktu" /><span class="field-hint" id="reply-hint">Podaj sposób, w jaki mogę się z Tobą skontaktować.</span></label>
+      <label>Kontakt do odpowiedzi<input name="replyTo" required minlength="3" maxlength="254" placeholder="E-mail, telefon lub profil do kontaktu" /></label>
       <label>Temat <select name="topic">{TOPICS.map(topic => <option value={topic}>{topic}</option>)}</select></label>
-      <label>Co chcesz zrobić?<textarea name="message" rows="5" required minlength="10" maxlength="5000" placeholder="Potrzebuję…"></textarea></label>
+      <label><span id="message-label">Wiadomość</span><textarea name="message" rows="5" required minlength="10" maxlength="5000" aria-labelledby="message-label" aria-describedby="message-hint" placeholder="Potrzebuję…"></textarea><span class="field-hint" id="message-hint">Pomogą link do obecnego projektu, planowany termin lub budżet — jeśli już je znasz.</span></label>
       <div class="form-trap" aria-hidden="true"><label>Witryna<input name="website" tabindex="-1" autocomplete="off" /></label></div>
       <button type="submit" class="button" data-submit-inquiry>Wyślij zapytanie</button>
       <p class="form-status" role="status" aria-live="polite" data-form-status></p>

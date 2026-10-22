@@ -81,7 +81,7 @@ export function validateProjects(projects) {
   if (!Array.isArray(projects) || projects.length === 0) throw new Error("Brak projektów.");
   const seen = new Set();
   for (const project of projects) {
-    for (const field of ["id","name","summary","effect","mechanism","scope","limits","repo","commit","status","platform"]) {
+    for (const field of ["id","name","summary","effect","focus","challenge","mechanism","scope","limits","repo","commit","status","platform"]) {
       if (typeof project[field] !== "string" || !project[field].trim()) throw new Error("Niekompletne dane projektu: " + field);
     }
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(project.id) || seen.has(project.id)) throw new Error("Nieprawidłowy lub powtórzony identyfikator projektu.");

@@ -15,21 +15,21 @@
     ],
     "repo": "driving-game",
     "commit": "9a9e3fd9f3eb3cc09292775e347b2da052e7e135",
-    "summary": "Otwarty świat, pojazdy i zadania połączone w jednej aplikacji przeglądarkowej.",
-    "effect": "Jazda po wyspie, zlecenia, reakcje świata i zapis postępu.",
-    "mechanism": "Fizyka pojazdów i stan świata współpracują z klientem Three.js oraz trwałym zapisem.",
+    "summary": "Gra samochodowa 3D: wyspa do odkrywania, zadania i świat reagujący na działania gracza.",
+    "effect": "Prowadzisz samochód, odkrywasz wyspę i wykonujesz zlecenia. Gra łączy jazdę z zadaniami, reakcjami świata i zapisem postępu.",
+    "mechanism": "Fizyka pojazdów, logika świata i klient Three.js współpracują ze stanem aplikacji oraz zapisem postępu. Dzięki temu jazda i zadania należą do jednego rozwijanego świata.",
     "features": [
       "Pojazdy i fizyka jazdy",
       "Zadania i reakcje świata",
       "Interfejs oraz zapis postępu"
     ],
     "architecture": [
-      "Three.js odpowiada za obraz świata 3D.",
-      "Rapier stanowi część warstwy fizyki.",
+      "Three.js wyświetla świat 3D, a Rapier obsługuje warstwę fizyki.",
+      "Stan aplikacji łączy postęp gracza z interfejsem i zapisem.",
       "Testy obejmują wybrane zachowania symulacji i przebiegi aplikacji."
     ],
-    "scope": "Rozwój aplikacji webowej 3D, jej mechanik, interfejsu i narzędzi projektu z wykorzystaniem agentów AI.",
-    "limits": "Gra jest przygotowywana z myślą o komputerze. Materiały na stronie można oglądać również na telefonie.",
+    "scope": "Rozwijam mechanikę jazdy, zadania, interfejs oraz narzędzia aplikacji. Praca obejmuje połączenie tych elementów z fizyką i zapisem postępu.",
+    "limits": "Wersja rozwojowa na komputer. Na stronie pokazuję materiał z gry; publiczne demo nie jest obecnie udostępnione.",
     "sources": [
       {
         "label": "Kod projektu",
@@ -39,7 +39,9 @@
         "label": "Konfiguracja projektu",
         "path": "package.json"
       }
-    ]
+    ],
+    "focus": "Jeden świat, wiele współpracujących systemów.",
+    "challenge": "Pojazdy, zadania i interfejs korzystają ze wspólnego stanu gry. Zmiana wywołana w jednym miejscu musi być widoczna dla pozostałych części."
   },
   {
     "id": "wot-rust",
@@ -57,21 +59,21 @@
     ],
     "repo": "wot-rust",
     "commit": "e2d4df93c118bfdfe30ec49aa2c4f6b7e4781102",
-    "summary": "Własny silnik w Rust: rendering, symulacja, fizyka, narzędzia i warstwa serwerowa.",
-    "effect": "Gra czołgowa rozwijana razem z własnym zapleczem silnikowym.",
-    "mechanism": "Parametryczny opis pojazdu trafia do generowania geometrii i danych używanych przez grę. Rendering jest oddzielony od symulacji i serwera.",
+    "summary": "Gra czołgowa i własny silnik w Rust: obraz, symulacja, fizyka oraz narzędzia do pracy z pojazdami.",
+    "effect": "Projekt obejmuje grę czołgową oraz rozwijane razem z nią zaplecze: renderer, symulację, dane pojazdów i edytor.",
+    "mechanism": "Parametryczny opis pojazdu służy do generowania geometrii i danych dla gry. Wspólny punkt wyjścia wiąże wygląd pojazdu z jego opisem, a rendering pozostaje oddzielony od symulacji i serwera.",
     "features": [
       "Własny renderer wgpu",
       "Generowanie geometrii pojazdów",
       "Klient, edytor i warstwa serwerowa"
     ],
     "architecture": [
-      "Kod jest podzielony na pakiety odpowiedzialne za poszczególne części silnika.",
-      "Renderer posiada opisane przebiegi i zasoby klatki.",
-      "Parametryczne dane pojazdów są powiązane z geometrią oraz symulacją."
+      "Osobne pakiety odpowiadają za rendering, symulację, narzędzia i warstwę serwerową.",
+      "Renderer wgpu porządkuje etapy rysowania oraz używane przez nie zasoby.",
+      "Dane pojazdów przechodzą przez generowanie geometrii do części używanych w grze."
     ],
-    "scope": "Rozwój własnego silnika i aplikacji gry, wraz z narzędziami oraz danymi pojazdów, z wykorzystaniem Claude i Codex.",
-    "limits": "Projekt natywny w rozwoju. Wydajność dłuższych bitew i gotowość publicznej usługi sieciowej wymagają dalszej weryfikacji.",
+    "scope": "Prowadzę rozwój silnika i gry: renderera, symulacji, danych pojazdów oraz narzędzi. Projekt obejmuje również oddzielną warstwę serwerową.",
+    "limits": "Projekt natywny w rozwoju. Kolejne zadania obejmują sprawdzenie dłuższych bitew i działania usługi sieciowej przed jej publicznym udostępnieniem.",
     "sources": [
       {
         "label": "Architektura renderera",
@@ -85,7 +87,9 @@
         "label": "Stan rozwoju",
         "path": "docs/ROADMAP.md"
       }
-    ]
+    ],
+    "focus": "Od parametrów pojazdu do świata 3D.",
+    "challenge": "Kształt pojazdu i dane używane przez grę muszą do siebie pasować. Przy rozwijaniu wielu pojazdów ważny jest sposób opisywania i przetwarzania tych informacji."
   },
   {
     "id": "fragile-express",
@@ -102,21 +106,21 @@
     ],
     "repo": "fragile-express",
     "commit": "71f185ff2883116ed1a6fa905e65c62fbcd93e2f",
-    "summary": "Sortownia paczek z interfejsem zarządzania, ekonomią i zapisem postępu.",
-    "effect": "Rozwój sortowni, obsługa paczek i podejmowanie decyzji ekonomicznych.",
-    "mechanism": "Symulacja, stan gry i interfejs są rozwijane jako powiązane części aplikacji.",
+    "summary": "Gra o sortowni paczek, w której zarządzasz pracą, rozwijasz zaplecze i kontrolujesz ekonomię.",
+    "effect": "Obsługujesz paczki, rozwijasz sortownię i podejmujesz decyzje ekonomiczne. Postęp jest zapisywany, a gra uwzględnia także czas spędzony poza nią.",
+    "mechanism": "Stan gry łączy ekonomię, zapis i rozliczanie czasu poza aplikacją. Interfejs zarządzania pokazuje wynik tej samej symulacji, którą można sprawdzać narzędziami projektu.",
     "features": [
       "Interfejs zarządzania",
       "Ekonomia oraz postęp",
       "Zapis i rozliczanie czasu poza grą"
     ],
     "architecture": [
-      "TypeScript opisuje logikę i stan aplikacji.",
-      "PixiJS jest używany do prezentacji gry.",
+      "TypeScript opisuje reguły ekonomii i stan aplikacji.",
+      "PixiJS prezentuje sortownię i interfejs zarządzania.",
       "Narzędzia symulacyjne pomagają sprawdzać tempo rozwoju."
     ],
-    "scope": "Rozwój symulacji, interfejsu i narzędzi projektu z wykorzystaniem agentów AI.",
-    "limits": "Projekt w rozwoju. Przed udostępnieniem publicznego dema potrzebne jest domknięcie wybranych ścieżek inicjalizacji integracji platformowych.",
+    "scope": "Rozwijam symulację sortowni, ekonomię, interfejs zarządzania i zapis postępu. Projekt obejmuje też narzędzia do sprawdzania przebiegu rozgrywki.",
+    "limits": "Projekt w rozwoju. Przed publicznym demem trzeba dopracować uruchamianie gry z integracjami platform, na których ma być udostępniana.",
     "sources": [
       {
         "label": "Kod i opis projektu",
@@ -126,7 +130,9 @@
         "label": "Konfiguracja projektu",
         "path": "package.json"
       }
-    ]
+    ],
+    "focus": "Postęp trwa również po zamknięciu gry.",
+    "challenge": "Po powrocie gracza symulacja i interfejs muszą pokazać spójny wynik czasu, który minął. Dotyczy to postępu, zasobów i dalszych decyzji."
   },
   {
     "id": "orbling-skies",
@@ -143,21 +149,21 @@
     ],
     "repo": "orbling-skies",
     "commit": "e11f6e4175aedd11572b5e694cd7eb1ecb35b330",
-    "summary": "Eksploracja wysp, zbieranie stworzeń, walka i zadania w przeglądarce.",
-    "effect": "Gracz odkrywa wyspy, zbiera stworzenia i rozwija drużynę.",
-    "mechanism": "Dane zawartości, zapis, walka i zarządzanie zasobami są sprawdzane osobnymi narzędziami projektu.",
+    "summary": "Przeglądarkowa gra o odkrywaniu wysp, zbieraniu stworzeń i rozwijaniu własnej drużyny.",
+    "effect": "Odkrywasz wyspy, wykonujesz zadania, zbierasz stworzenia i prowadzisz drużynę w walce. Zapis pozwala kontynuować przygodę.",
+    "mechanism": "Osobne narzędzia sprawdzają dane zawartości, zapis i wybrane przebiegi walki. Pozwala to kontrolować część reguł bez ręcznego przechodzenia całej przygody po każdej zmianie.",
     "features": [
       "Eksploracja i zadania",
       "Kolekcja stworzeń i walka",
       "Lokalizacja i trwały zapis"
     ],
     "architecture": [
-      "Gra używa JavaScript i Canvas 2D.",
-      "Generowanie i buforowanie grafiki ogranicza powtarzanie pracy.",
-      "Oddzielne narzędzia sprawdzają dane, zapis i wybrane przebiegi walki."
+      "JavaScript i Canvas 2D obsługują grę w przeglądarce.",
+      "Generowana grafika jest buforowana do ponownego wykorzystania.",
+      "Sprawdzanie danych, zapisu i walki ma własne narzędzia."
     ],
-    "scope": "Rozwój gry przeglądarkowej i narzędzi do sprawdzania jej danych oraz mechanik z wykorzystaniem agentów AI.",
-    "limits": "Projekt własny przed publikacją. Sprawdzenie wybranych przebiegów nie oznacza przejścia i oceny całej kampanii.",
+    "scope": "Rozwijam eksplorację, walkę, zawartość i interfejs gry. Przygotowuję też narzędzia do sprawdzania danych oraz zachowania poszczególnych mechanik.",
+    "limits": "Wersja rozwojowa przed publikacją. Do oceny pozostaje pełna kampania, jej balans i przebieg z udziałem graczy.",
     "sources": [
       {
         "label": "Punkt wejścia gry",
@@ -171,7 +177,9 @@
         "label": "Sprawdzanie danych",
         "path": "tools/check.js"
       }
-    ]
+    ],
+    "focus": "Zawartość gry, którą można sprawdzać.",
+    "challenge": "Eksploracja, stworzenia i walka korzystają z wielu powiązanych danych. Błąd w zawartości lub zapisie może ujawnić się dopiero podczas dalszej gry."
   },
   {
     "id": "blast-battalion",
@@ -188,21 +196,21 @@
     ],
     "repo": "blast-battalion",
     "commit": "24ba4c556f13c02c8acc1a8c06306e4139976650",
-    "summary": "Gra akcji 2D, w której ostrzał i wybuchy zmieniają świat.",
-    "effect": "Wybuchy rozrywają teren, niszczą osłony i uruchamiają reakcje łańcuchowe. Gracz wykorzystuje otoczenie podczas walki i uwalniania jeńców.",
-    "mechanism": "Logika gry i obraz pracują osobno. Symulacja prowadzi świat w stałym kroku, a Canvas 2D prezentuje stan postaci, otoczenia i efektów.",
+    "summary": "Gra akcji 2D, w której ostrzał i wybuchy zmieniają teren oraz przebieg walki.",
+    "effect": "Niszczysz osłony, otwierasz drogę wybuchami i uruchamiasz reakcje łańcuchowe. Otoczenie pomaga w walce i uwalnianiu jeńców.",
+    "mechanism": "Symulacja prowadzi świat w stałych krokach. Canvas 2D rysuje jego stan, a interpolacja wygładza obraz pomiędzy krokami. Reguły gry i prezentacja mają w ten sposób osobne zadania.",
     "features": [
       "Niszczalny teren i reakcje łańcuchowe",
       "Walka i ratowanie jeńców",
       "Sterowanie klawiaturą i dotykiem"
     ],
     "architecture": [
-      "Własne moduły opisują teren, postacie, przeciwników, kamerę i interfejs.",
-      "Grafika i dźwięk powstają w kodzie, więc aplikacja nie wymaga osobnych plików tekstur i nagrań.",
-      "Narzędzia deweloperskie służą do strojenia parametrów, odtwarzania przebiegów i przygotowania wersji webowej."
+      "Moduły gry opisują teren, postacie, przeciwników, kamerę i interfejs.",
+      "Grafika oraz dźwięk są generowane kodem.",
+      "Narzędzia pozwalają odtwarzać przebiegi gry, stroić parametry i przygotowywać wersję webową."
     ],
-    "scope": "Od zasad rozgrywki i symulacji po interfejs, grafikę i dźwięk generowane kodem oraz narzędzia do testowania i nagrywania. Rozwijam całość i sprawdzam gotowe funkcje w działającej grze.",
-    "limits": "Projekt własny w rozwoju. Kolejny etap to testy na fizycznych telefonach i ocena całej kampanii z graczami. Integracje portali wymagają osobnej weryfikacji.",
+    "scope": "Rozwijam całość: zasady rozgrywki, symulację, interfejs, grafikę i dźwięk generowane kodem. Projekt obejmuje także narzędzia do testowania oraz nagrywania działającej gry.",
+    "limits": "Działająca wersja rozwojowa. Dalszy etap obejmuje testy na fizycznych telefonach, ocenę kampanii z graczami i sprawdzenie integracji z portalami gier.",
     "sources": [
       {
         "label": "Mechanizm terenu",
@@ -231,7 +239,9 @@
       "height": 720,
       "caption": "Fragment rozgrywki · 9 s · bez dźwięku",
       "description": "Dżungla, pustynia i śnieg. Nagranie z wersji rozwojowej; postacią steruje bot w trybie testowym."
-    }
+    },
+    "focus": "Reguły świata i płynny obraz.",
+    "challenge": "Ostrzał, zniszczenia i ruch postaci muszą współpracować także wtedy, gdy obraz nie jest rysowany w idealnie równych odstępach."
   },
   {
     "id": "tanki",
@@ -248,21 +258,21 @@
     ],
     "repo": "tanki",
     "commit": "30f61f44687aec32172f9a4e930c70fb357e6729",
-    "summary": "Przeglądarkowa gra czołgowa z osobną symulacją, klientem 3D i botami.",
-    "effect": "Bitwy czołgów z balistyką, pancerzem i przeciwnikami sterowanymi przez boty.",
-    "mechanism": "Symulacja, zawartość, generowanie map i klient są rozdzielone na pakiety.",
+    "summary": "Przeglądarkowe bitwy czołgów z balistyką, pancerzem i przeciwnikami sterowanymi przez boty.",
+    "effect": "Prowadzisz czołg i walczysz z botami. O wyniku trafienia decydują mechanizmy balistyki oraz pancerza.",
+    "mechanism": "Symulacja, klient 3D i zawartość są rozdzielone na pakiety. Testy mogą dzięki temu sprawdzać wybrane zachowania bitwy niezależnie od rysowania świata w Three.js.",
     "features": [
       "Oddzielona symulacja i klient",
       "Balistyka oraz pancerz",
       "Generowanie map i testy botów"
     ],
     "architecture": [
-      "Monorepo TypeScript dzieli odpowiedzialności pomiędzy pakiety.",
-      "Klient Three.js prezentuje stan symulacji.",
-      "Testy zachowań pomagają znajdować problemy, takie jak blokowanie się botów."
+      "Pakiety TypeScript rozdzielają symulację, klienta i dane gry.",
+      "Three.js prezentuje stan bitwy w 3D.",
+      "Narzędzia generują dane map i sprawdzają zachowanie botów."
     ],
-    "scope": "Rozwój przeglądarkowej gry i narzędzi jej symulacji z wykorzystaniem agentów AI.",
-    "limits": "Gra wymaga komputera. Zachowanie botów i pełny przebieg testów w docelowej przeglądarce wymagają dalszego dopracowania.",
+    "scope": "Rozwijam symulację walki, klienta przeglądarkowego, dane map i narzędzia testowe. Ważną częścią pracy jest zachowanie przeciwników sterowanych przez boty.",
+    "limits": "Wersja rozwojowa na komputer. Zachowanie botów i pełny przebieg bitwy w docelowej przeglądarce wymagają dalszego dopracowania.",
     "sources": [
       {
         "label": "Opis i struktura projektu",
@@ -276,7 +286,9 @@
         "label": "Generowanie danych",
         "path": "tools/bake.ts"
       }
-    ]
+    ],
+    "focus": "Symulacja niezależna od obrazu.",
+    "challenge": "Przebieg bitwy trzeba móc sprawdzać także poza widokiem gracza. Dotyczy to reguł trafień, zawartości map i decyzji botów."
   },
   {
     "id": "cloudkeep",
@@ -293,59 +305,59 @@
     ],
     "repo": "cloudkeep",
     "commit": "556e1853fc715d1148da6b132012777cbfde29fa",
-    "summary": "Gra o latającej fortecy, falach przeciwników i wyborze ulepszeń.",
-    "effect": "Gracz rozwija fortecę i odpiera kolejne fale przeciwników.",
-    "mechanism": "Logika walki, ulepszenia oraz przygotowanie wersji dla przeglądarki tworzą wspólny projekt gry.",
+    "summary": "Gra o latającej fortecy: kolejne fale przeciwników i decyzje o rozwoju obrony.",
+    "effect": "Bronisz latającej fortecy i wybierasz ulepszenia pomiędzy kolejnymi falami przeciwników.",
+    "mechanism": "Narzędzia uruchamiają sterowane przebiegi symulacji. Pomagają obserwować zachowanie reguł walki i przygotowywać wersję gry dla przeglądarki.",
     "features": [
       "Fale przeciwników",
       "Wybór ulepszeń",
       "Wersja przeglądarkowa"
     ],
     "architecture": [
-      "JavaScript i Canvas stanowią podstawę aplikacji.",
-      "Narzędzia projektu pozwalają budować wersję webową i wykonywać sterowane przebiegi symulacji.",
-      "Integracje platformowe wymagają osobnej kontroli zachowania."
+      "JavaScript i Canvas obsługują logikę oraz prezentację.",
+      "Osobne narzędzia przygotowują wersję webową i uruchamiają przebiegi symulacji.",
+      "Integracje z platformami publikacji są częścią projektu."
     ],
-    "scope": "Rozwój gry przeglądarkowej i jej narzędzi z wykorzystaniem agentów AI.",
-    "limits": "Projekt w rozwoju. Krótkie testy symulacji i build nie potwierdzają pełnego balansu ani gotowości integracji portali.",
+    "scope": "Rozwijam reguły walki, ulepszenia, prezentację i narzędzia gry. Praca obejmuje także przygotowanie wersji przeglądarkowej.",
+    "limits": "Projekt w rozwoju. Dalszych testów wymagają balans całej rozgrywki i integracje z portalami gier. Na stronie pokazuję materiał promocyjny projektu.",
     "sources": [
       {
         "label": "Kod i opis projektu",
         "path": "README.md"
       }
-    ]
+    ],
+    "focus": "Sprawdzanie przebiegu walki.",
+    "challenge": "Fale przeciwników i ulepszenia wpływają na kolejne etapy rozgrywki. Do ich rozwijania potrzebny jest sposób obserwowania przebiegu symulacji."
   },
   {
     "id": "hz-bot",
     "name": "HZ Bot",
-    "category": "Narzędzie automatyzacji",
+    "category": "Automatyzacja w Pythonie",
     "status": "Projekt własny · prototyp",
     "platform": "Python",
     "image": null,
     "imageAlt": null,
     "imageCaption": "Fragment konfiguracji z repozytorium",
     "tech": [
-      "Python",
-      "Panel sterowania",
-      "Symulator"
+      "Python"
     ],
     "repo": "hz-bot",
     "commit": "25c3dbd7e42e7ffc507ee7f3f65a05311d966f17",
-    "summary": "Automatyzacja powtarzalnych czynności w grze, z konfiguracją, panelem i symulatorem.",
-    "effect": "Konfigurowanie strategii oraz obserwowanie decyzji automatyzacji.",
-    "mechanism": "Planowanie działań można sprawdzać w symulatorze, niezależnie od prawdziwego interfejsu gry.",
+    "summary": "Narzędzie do automatyzacji czynności w grze, z wyborem strategii, panelem i symulatorem.",
+    "effect": "Konfigurujesz strategię i obserwujesz decyzje automatyzacji w symulatorze. Panel pozwala sterować pracą narzędzia.",
+    "mechanism": "Symulator pozwala uruchamiać logikę planowania niezależnie od połączenia z grą. Konfiguracja określa strategię, przerwy i limity działania.",
     "features": [
       "Konfigurowalne strategie",
       "Panel sterowania",
       "Testy offline i symulacja"
     ],
     "architecture": [
-      "Python opisuje logikę automatyzacji i współpracę elementów narzędzia.",
-      "Konfiguracja kontroluje strategie, przerwy i limity działania.",
-      "Symulator pozwala sprawdzać wybrane scenariusze bez prawdziwego serwera gry."
+      "Python obsługuje logikę automatyzacji i współpracę elementów narzędzia.",
+      "Konfiguracja steruje strategiami oraz limitami.",
+      "Symulator umożliwia sprawdzanie wybranych scenariuszy bez serwera gry."
     ],
-    "scope": "Rozwój narzędzia automatyzacji i narzędzi do jego sprawdzania z wykorzystaniem agentów AI.",
-    "limits": "Sprawdzono testy offline i symulację. Zgodność z rzeczywistym API gry nie jest potwierdzona. To narzędzie automatyzacji, bez integracji modelu językowego.",
+    "scope": "Rozwijam logikę planowania, konfigurację, panel sterowania i symulator do testów offline.",
+    "limits": "Prototyp sprawdzony offline i w symulatorze. Połączenie z rzeczywistym API gry wymaga weryfikacji. Decyzje narzędzia opierają się na regułach; projekt nie korzysta z modelu językowego.",
     "excerpt": "behaviour:\n  min_delay: 1.5\n  max_delay: 4.0\n  max_consecutive_errors: 5\n\nquests:\n  enabled: true\n  strategy: xp_per_energy",
     "sources": [
       {
@@ -356,6 +368,8 @@
         "label": "Kod i uruchomienie",
         "path": "README.md"
       }
-    ]
+    ],
+    "focus": "Logika, którą można sprawdzić offline.",
+    "challenge": "Strategie działania trzeba móc sprawdzać bez wykonywania każdej próby w prawdziwej grze."
   }
 ]

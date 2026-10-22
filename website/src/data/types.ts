@@ -19,6 +19,8 @@ export interface Project {
   commit: string;
   summary: string;
   effect: string;
+  focus: string;
+  challenge: string;
   mechanism: string;
   features: string[];
   architecture: string[];

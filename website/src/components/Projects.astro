@@ -9,7 +9,7 @@ const reel = showreelSource(base);
 <section class="projects section wrap" id="projekty" aria-labelledby="projects-heading" data-projects>
   <div class="section-heading">
     <h2 id="projects-heading">Projekty</h2>
-    <p>Moje projekty: od aplikacji przeglądarkowych i automatyzacji po własny silnik w Rust. Zobacz działanie albo zajrzyj do budowy.</p>
+    <p>Strona firmowa, gry, symulacje i narzędzia. Pokazuję, co działa, jakie problemy rozwiązuję i jak poszczególne części łączą się w całość.</p>
   </div>
   <figure class="showreel">
     {reel ? (
@@ -27,6 +27,17 @@ const reel = showreelSource(base);
       <a href="#indeks-projektow">Poznaj prace</a>
     </figcaption>
   </figure>
+
+  <article class="website-example" aria-labelledby="website-example-heading">
+    <div>
+      <p class="eyebrow">Strona firmowa · projekt własny</p>
+      <h3 id="website-example-heading">PlazaWorks — od oferty do zapytania.</h3>
+    </div>
+    <div>
+      <p>Ta strona łączy prezentację usług i portfolio z formularzem zapisującym wiadomości w prywatnej skrzynce. Jest też przykładem mojej pracy nad treścią, interfejsem i obsługą danych.</p>
+      <a class="text-link" href={withBase("projekty/plazaworks/", base)}>Zobacz założenia i rozwiązania</a>
+    </div>
+  </article>
 
   <div class="project-browser" id="indeks-projektow">
     <nav class="project-index" aria-label="Wybierz projekt">
@@ -75,13 +86,14 @@ const reel = showreelSource(base);
           </div>
           <div class="project-detail" id={"detail-" + project.id + "-build"} role="tabpanel"
             aria-labelledby={"tab-" + project.id + "-build"} tabindex="0" data-mode-panel="build" hidden>
+            <h4 class="project-focus">{project.focus}</h4>
             <p class="project-summary">{project.mechanism}</p>
             <p class="meta">{project.tech.join(" · ")}</p>
             <a class="text-link" href={sourceUrl(project, project.sources[0].path)} target="_blank" rel="noopener noreferrer">
               {project.sources[0].label}
             </a>
             <p class="project-scope"><span class="meta">Zakres mojej pracy</span>{project.scope}</p>
-            <a class="text-link" href={withBase("projekty/" + project.id + "/#case-build", base)}>Architektura i decyzje techniczne</a>
+            <a class="text-link" href={withBase("projekty/" + project.id + "/#case-build", base)}>Problem i rozwiązanie</a>
           </div>
           <div class="project-bottom">
             <a class="text-link" href={withBase("projekty/" + project.id + "/", base)}>Poznaj projekt</a>

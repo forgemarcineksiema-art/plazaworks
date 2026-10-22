@@ -36,7 +36,7 @@ const isBlast = project.id === "blast-battalion";
     )}
 
     <section class="case-section" aria-labelledby="case-effect">
-      <h2 id="case-effect">Co robi projekt.</h2>
+      <h2 id="case-effect">Co można w nim zrobić.</h2>
       <div><p>{project.effect}</p><ul>{project.features.map(feature => <li>{feature}</li>)}</ul></div>
     </section>
 
@@ -58,26 +58,23 @@ const isBlast = project.id === "blast-battalion";
     )}
 
     <section class="case-section" aria-labelledby="case-build">
-      <h2 id="case-build">Jak jest zbudowany.</h2>
+      <h2 id="case-build">{project.focus}</h2>
       <div>
+        <p>{project.challenge}</p>
         <p>{project.mechanism}</p>
         <ul>{project.architecture.map(item => <li>{item}</li>)}</ul>
         {isBlast && (
-          <p>Interpolacja wygładza obraz pomiędzy krokami symulacji. Po opóźnieniu pętla ogranicza nadrabianie kroków; obrót telefonu zatrzymuje rozpoczętą misję.</p>
+          <p>Po opóźnieniu pętla ogranicza nadrabianie kroków. Obrót telefonu zatrzymuje rozpoczętą misję.</p>
         )}
         <p class="meta">Technologie: {project.tech.join(" · ")}</p>
       </div>
     </section>
 
     <section class="case-section" aria-labelledby="case-scope">
-      <h2 id="case-scope">Zakres pracy i AI.</h2>
+      <h2 id="case-scope">Zakres mojej pracy.</h2>
       <div>
         <p>{project.scope}</p>
-        {isBlast ? (
-          <p class="muted">Pracuję z Claude i Codex przy rozwijaniu kodu oraz porównywaniu rozwiązań. Kierunek projektu, dobór funkcji i ocena ich działania pozostają po mojej stronie. Repozytorium pokazuje historię tej współpracy.</p>
-        ) : (
-          <p class="muted">Projekt własny Marcina Płazy. Kod powstaje z wykorzystaniem agentów AI; repozytorium pozwala zobaczyć implementację i historię rozwoju.</p>
-        )}
+        <p class="muted">Projekt rozwijam z wykorzystaniem agentów AI. <a href={home + "#ai"}>Poznaj mój warsztat</a>.</p>
       </div>
     </section>
 
@@ -86,11 +83,7 @@ const isBlast = project.id === "blast-battalion";
       <div>
         <p>{project.limits}</p>
         {isBlast && (
-          <div class="case-callout">
-            <p><strong>Sprawdzone w działającej grze</strong></p>
-            <p>Przegląd objął start gry, strzelanie, pauzę, opcje i zmianę orientacji ekranu. Dziewięć automatycznych testów sprawdza wybrane zachowania oraz gotowe paczki.</p>
-            <a class="text-link" href={sourceUrl(project, "docs/PORTFOLIO-READINESS-2026-10-21.md")} target="_blank" rel="noopener noreferrer">Zobacz zakres sprawdzenia</a>
-          </div>
+          <p><a class="text-link" href={sourceUrl(project, "docs/PORTFOLIO-READINESS-2026-10-21.md")} target="_blank" rel="noopener noreferrer">Sprawdzone zachowania i testy tej wersji</a></p>
         )}
         <p class="meta">Opis kodu odnosi się do wersji <code>{project.commit.slice(0, 7)}</code>.</p>
       </div>
@@ -99,7 +92,7 @@ const isBlast = project.id === "blast-battalion";
     <section class="case-section" aria-labelledby="case-code">
       <h2 id="case-code">Zajrzyj do kodu.</h2>
       <div>
-        <p>Odnośniki prowadzą do konkretnej wersji projektu, której dotyczy opis.</p>
+        <p>Sprawdź implementację wybranych rozwiązań. Odnośniki prowadzą do wersji kodu opisanej na tej stronie.</p>
         <ul class="case-sources">{project.sources.map(source => (
           <li><a class="text-link" href={sourceUrl(project, source.path)} target="_blank" rel="noopener noreferrer">{source.label}</a></li>
         ))}</ul>

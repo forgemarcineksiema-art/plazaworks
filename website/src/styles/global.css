@@ -90,6 +90,11 @@ figure { margin: 0; }
 .project-modes button[aria-selected="true"] { background: var(--blue); border-color: var(--blue); color: #fff; }
 .project-detail { padding-top: 22px; }
 .project-summary { font-size: 1rem; max-width: 62ch; }
+.project-focus { font-size: 1.12rem; line-height: 1.4; margin-bottom: 12px; }
+.website-example { display: grid; grid-template-columns: .8fr 1.2fr; gap: 40px; padding-block: 28px; margin-block: 30px 40px; border-block: 1px solid var(--line); }
+.website-example h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); }
+.website-example .eyebrow { font-size: .72rem; margin-bottom: 12px; }
+.website-example p:not(.eyebrow) { color: var(--muted); font-size: .95rem; }
 .feature-list { margin: 0 0 20px; padding-left: 20px; color: var(--muted); font-size: .92rem; line-height: 1.7; }
 .project-bottom { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; border-top: 1px solid var(--line); padding-top: 20px; margin-top: 20px; }
 .services.section { padding-block: 0 26px; }
@@ -217,6 +222,7 @@ input::placeholder, textarea::placeholder { color: #909db2; opacity: 1; }
   .section-heading { display: block; }
   .section-heading > p:not(.eyebrow) { margin-top: 14px; }
   .workshop-layout, .about-layout, .contact { grid-template-columns: 1fr; }
+  .website-example { grid-template-columns: 1fr; gap: 20px; }
   .process { gap: 24px; }
   .process h3 { font-size: 1.1rem; }
   .case-heading { grid-template-columns: 1fr; gap: 24px; }

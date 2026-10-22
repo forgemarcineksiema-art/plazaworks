@@ -2,34 +2,34 @@
 const services = [
   {
     id: "strony-i-sklepy", number: "01", title: "Strony i sklepy",
-    lead: "Strona dla firmy, sklep internetowy lub rozwój obecnej witryny.",
-    examples: "Wizytówka, strona firmowa, landing page lub sklep. Także pojedynczy formularz, integracja i przebudowa istniejącej strony.",
-    delivery: "Uzgodniona treść i układ, działająca strona na telefonie i komputerze oraz uruchomienie na wybranym hostingu.",
-    start: "Wystarczy opis firmy i celu strony. Jeśli masz już teksty, grafikę lub istniejącą stronę, zaczniemy od nich.",
+    lead: "Pokaż ofertę firmy, sprzedawaj online lub popraw obecną stronę.",
+    examples: "Potrzebujesz pierwszej strony, chcesz uruchomić sklep albo dodać formularz, płatności czy nową funkcję. Mogę też przebudować obecną witrynę.",
+    delivery: "Treść i układ dopasowane do oferty, wersję na telefon i komputer oraz uruchomienie strony. Przy sklepie ustalamy również produkty, płatności i dostawę.",
+    start: "Napisz, czym zajmuje się firma i do czego ma służyć strona. Jeśli coś już masz, podeślij adres lub materiały.",
     topic: "Strona lub sklep", action: "Zapytaj o stronę lub sklep"
   },
   {
     id: "aplikacje-i-systemy", number: "02", title: "Aplikacje i systemy",
-    lead: "Narzędzia do pracy i aplikacje webowe, desktopowe oraz mobilne.",
-    examples: "Panel do obsługi zleceń, aplikacja webowa, desktopowa lub mobilna. Praca z danymi, integracje i rozwój istniejącego kodu.",
-    delivery: "Działające funkcje w uzgodnionym zakresie, kod źródłowy i informacje potrzebne do uruchomienia oraz dalszego rozwoju.",
-    start: "Opisz, kto będzie korzystać z aplikacji i jakie zadanie ma wykonać. Przy istniejącym systemie przydadzą się dostęp do kodu i opis problemu.",
+    lead: "Narzędzie do codziennej pracy albo aplikacja dla Twoich użytkowników.",
+    examples: "Panel do obsługi zleceń, praca z danymi, połączenie z inną usługą lub brakująca funkcja w obecnym systemie. Aplikacje do przeglądarki, na komputer i telefon.",
+    delivery: "Działającą wersję z ustalonymi funkcjami, kod źródłowy i instrukcję uruchomienia. Pierwszy etap może obejmować jeden najważniejszy proces.",
+    start: "Opisz, kto będzie używać aplikacji i co ma dzięki niej zrobić. Przy rozwoju istniejącego systemu zaczniemy od obejrzenia kodu i problemu.",
     topic: "Aplikacja lub system", action: "Zapytaj o aplikację"
   },
   {
     id: "automatyzacje-i-ai", number: "03", title: "Automatyzacje i AI",
-    lead: "Łączenie narzędzi, przetwarzanie danych i usprawnianie powtarzalnej pracy.",
-    examples: "Łączenie aplikacji, porządkowanie danych, przetwarzanie dokumentów i wykorzystanie modeli AI w określonym procesie.",
-    delivery: "Automatyzacja sprawdzona na uzgodnionych przykładach, opis jej działania i sposób obsługi wyjątków. Przy AI ustalamy też koszty, dane i kryteria oceny wyników.",
-    start: "Pokaż proces, który zabiera Ci czas, oraz przykładowe dane. Na tej podstawie ustalimy, co warto zautomatyzować i jakich narzędzi użyć.",
+    lead: "Łącz narzędzia i ogranicz ręczne przenoszenie danych oraz pracę z dokumentami.",
+    examples: "Przepisujesz te same dane, zbierasz informacje z kilku miejsc lub ręcznie przeglądasz dokumenty. Możemy połączyć aplikacje, przygotować skrypt albo sprawdzić zastosowanie modelu AI.",
+    delivery: "Rozwiązanie sprawdzone na przykładowych danych oraz opis obsługi błędów. Przy AI ustalamy, jakie dane może otrzymać model, koszty użycia i które wyniki wymagają kontroli człowieka.",
+    start: "Pokaż kolejne kroki obecnej pracy i przykładowe dane. Ustalimy, co da się uprościć oraz gdzie potrzebne są reguły, integracja lub AI.",
     topic: "Automatyzacja lub AI", action: "Opisz proces do usprawnienia"
   },
   {
     id: "gry-i-interakcja", number: "04", title: "Gry i interakcja",
-    lead: "Gry, symulacje i interaktywne doświadczenia w 2D oraz 3D.",
-    examples: "Gry przeglądarkowe, prototypy mechanik, wizualizacje 2D i 3D oraz rozwój systemów istniejącej gry.",
-    delivery: "Wersja do uruchomienia na uzgodnionej platformie, kod projektu i opis najważniejszych mechanizmów.",
-    start: "Opisz pomysł, odbiorcę i urządzenia, na których projekt ma działać. Możemy zacząć od jednej mechaniki, żeby sprawdzić kierunek.",
+    lead: "Sprawdź pomysł na mechanikę, rozwiń grę lub stwórz interaktywną prezentację.",
+    examples: "Prototyp gry, symulacja, wizualizacja 2D lub 3D albo rozwój istniejącej mechaniki. Możemy zacząć od niewielkiego fragmentu, który pozwoli ocenić pomysł.",
+    delivery: "Wersję do uruchomienia na wybranych urządzeniach, kod i opis działania. Zakres może obejmować pojedynczy system lub większą część projektu.",
+    start: "Opisz, co ma robić użytkownik i na jakim urządzeniu. Jeśli masz już projekt, pokaż obecną wersję i to, co chcesz zmienić.",
     topic: "Gra lub interakcja", action: "Porozmawiajmy o projekcie"
   }
 ];
@@ -50,7 +50,7 @@ const services = [
         </div>
         <div class="service-content" id={service.id + "-scope"} role="region" aria-labelledby={service.id + "-title"} data-service-content>
           <dl class="service-description">
-            <div><dt>Co możesz zlecić</dt><dd>{service.examples}</dd></div>
+            <div><dt>Z czym możesz przyjść</dt><dd>{service.examples}</dd></div>
             <div><dt>Co otrzymasz</dt><dd>{service.delivery}</dd></div>
             <div><dt>Od czego zacząć</dt><dd>{service.start}</dd></div>
           </dl>
